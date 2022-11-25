@@ -9,8 +9,8 @@
 	</div>
 	<ul class="sidebar-menu do-nicescrol">
 		<li class="sidebar-header">CHỨC NĂNG QUẢN LÍ</li>
-		<li><a href="index.html"> <i class="zmdi zmdi-view-dashboard"></i>
-				<span>Dashboard</span>
+		<li><a href="AdminHomePage.jsp"> <i class="zmdi zmdi-view-dashboard"></i>
+				<span>Trang chủ</span>
 		</a></li>
 
 		<li><a href="icons.html"> <i class="zmdi zmdi-invert-colors"></i>
@@ -21,7 +21,7 @@
 				class="zmdi zmdi-format-list-bulleted"></i> <span>Forms</span>
 		</a></li>
 
-		<li><a href="Score.jsp"> <i class="zmdi zmdi-grid"></i> <span>Score</span>
+		<li><a href="Score.jsp"> <i class="zmdi zmdi-grid"></i> <span>Quản lí điểm</span>
 		</a></li>
 
 		<li><a href="calendar.html"> <i
