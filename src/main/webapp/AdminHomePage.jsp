@@ -6,11 +6,7 @@
 <meta charset="UTF-8">
 <title>Trang chủ</title>
 <%@include file="includes/includeAdminStyle.jsp"%>
-<style>
-body {
-	background-color: #39414c;
-}
-</style>
+
 </head>
 <body>
 	<div id="wrapper">
@@ -28,7 +24,7 @@ body {
 							<div class="card-body pt-5">
 								<img src="https://via.placeholder.com/110x110"
 									alt="profile-image" class="profile">
-								<h5 class="card-title">Bùi Nguyễn Nhật Tân</h5>
+								<h5 class="card-title">Bùi Nguyễn Nhật Tân - Admin</h5>
 								<p class="card-text">Sinh viên đang học tại trường sư phạm đà nẵng.</p>
 								
 							</div>
