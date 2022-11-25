@@ -12,7 +12,7 @@
 <div id="wrapper">
 		<%@include file="includes/sliderbar.jsp" %>
 		<%@include file="includes/Topbar.jsp" %>
-		<%@include file="Teacher/Course.jsp" %>
+		<%@include file="Teacher/MangementCourse.jsp" %>
 	</div>
 	<%@include file="includes/script.jsp" %>
 </body>
