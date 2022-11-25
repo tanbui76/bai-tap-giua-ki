@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Danh sách sinh viên</title>
 </head>
 <body>
 <%@include file="includes/includeAdminStyle.jsp" %>
