@@ -9,3 +9,8 @@
   <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
   <link href="assets/css/sidebar-menu.css" rel="stylesheet" />
   <link href="assets/css/app-style.css" rel="stylesheet" />
+  <style>
+body {
+	background-color: #3a77cf;
+}
+</style>
