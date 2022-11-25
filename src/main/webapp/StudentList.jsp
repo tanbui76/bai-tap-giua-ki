@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -12,7 +12,7 @@
 <div id="wrapper">
 		<%@include file="includes/sliderbar.jsp" %>
 		<%@include file="includes/Topbar.jsp" %>
-		<%@include file="scheduleStudent/Schedule.jsp" %>
+		<%@include file="Admin/StudentList.jsp" %>
 	</div>
 	<%@include file="includes/script.jsp" %>
 </body>

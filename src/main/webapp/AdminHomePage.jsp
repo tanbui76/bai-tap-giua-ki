@@ -45,41 +45,9 @@
 											<div class="alert-icon">
 												<i class="icon-info"></i>
 											</div>
-											<div class="alert-message">
-												<span><strong>Info!</strong> Lorem Ipsum is simply
-													dummy text.</span>
-											</div>
+											
 										</div>
-										<div class="table-responsive">
-											<table class="table table-hover table-striped">
-												<tbody>
-													<tr>
-														<td><span class="float-right font-weight-bold">3
-																hrs ago</span> Here is your a link to the latest summary report
-															from the..</td>
-													</tr>
-													<tr>
-														<td><span class="float-right font-weight-bold">Yesterday</span>
-															There has been a request on your account since that was..
-														</td>
-													</tr>
-													<tr>
-														<td><span class="float-right font-weight-bold">9/10</span>
-															Porttitor vitae ultrices quis, dapibus id dolor. Morbi
-															venenatis lacinia rhoncus.</td>
-													</tr>
-													<tr>
-														<td><span class="float-right font-weight-bold">9/4</span>
-															Vestibulum tincidunt ullamcorper eros eget luctus.</td>
-													</tr>
-													<tr>
-														<td><span class="float-right font-weight-bold">9/4</span>
-															Maxamillion ais the fix for tibulum tincidunt ullamcorper
-															eros.</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
+										
 									</div>
 									<div class="tab-pane  active" id="edit">
 										<form>
@@ -113,25 +81,25 @@
 												<label class="col-lg-3 col-form-label form-control-label">Địa chỉ</label>
 												<div class="col-lg-9">
 													<input class="form-control" type="text" value=""
-														placeholder="Street">
+														placeholder="Đường">
 												</div>
 											</div>
 											<div class="form-group row">
 												<label class="col-lg-3 col-form-label form-control-label"></label>
 												<div class="col-lg-6">
 													<input class="form-control" type="text" value=""
-														placeholder="City">
+														placeholder="Quận">
 												</div>
 												<div class="col-lg-3">
 													<input class="form-control" type="text" value=""
-														placeholder="State">
+														placeholder="Thành phố">
 												</div>
 											</div>
 
 											<div class="form-group row">
 												<label class="col-lg-3 col-form-label form-control-label">Tên đăng nhập</label>
 												<div class="col-lg-9">
-													<input class="form-control" type="text" value="jhonsanmark">
+													<input class="form-control" type="text" value="tanbui76">
 												</div>
 											</div>
 											<div class="form-group row">
