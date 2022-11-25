@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>	CHI TIET DIEM</title>
+<title>BẢNG ĐIỂM CHI TIẾT</title>
 </head>
 <%@include file="includes/includeAdminStyle.jsp"%>
 <body>

@@ -3,16 +3,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>ĐIỂM CỦA SINH VIÊN</title>
-<%@include file="includes/includeAdminStyle.jsp" %>
-
+<meta charset="UTF-8">
+<title>DANH SÁCH GIÁO VIÊN</title>
 </head>
 <body>
-	<div id="wrapper">
+<%@include file="includes/includeAdminStyle.jsp" %>
+
+<div id="wrapper">
 		<%@include file="includes/sliderbar.jsp" %>
 		<%@include file="includes/Topbar.jsp" %>
-		<%@include file="CollegeStudent/StudentScore.jsp" %>
+		<%@include file="Admin/TeacherList.jsp" %>
 	</div>
 	<%@include file="includes/script.jsp" %>
 </body>

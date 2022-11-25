@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Student Score</title>
+<title>ĐIỂM CỦA SINH VIÊN</title>
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -87,7 +87,7 @@
 											<td align="center" width="7%" class=""></td>
 											<td align="center" width="7%" class="">A</td>
 											<td align="center" width="7%" class=""></td>
-											<td align="center" width="7%" class=""><a href="./">Chitiet2</a></td>
+											<td align="center" width="7%" class=""><a href="DetailScore2.jsp">Chitiet2</a></td>
 
 										</tr>
 										<tr class="alt">
