@@ -7,10 +7,17 @@
 <title>Insert title here</title>
 </head>
 <body>
+<<<<<<< HEAD
  sadxfcgvhydysdyadaydyssydysadsdfghjyadsydsadfghjkj
  fhjfdjfkslljklj
  <h1>sdhvjfkhmljk/g
  sfghjhgsdfghjkl;
  dgfhjklkl</h1>
+=======
+ ydysdyadaydyssydysadyadsyqqqqqqqqqqqqqqqqqq
+ qqqqqqqqqqqqqqqqqqqqqqqqq
+ qqqqqqqqqqqqqqqqqqqqqqqq
+ qqqqqqqqqqqqqqqqqqqqqqq
+>>>>>>> branch 'master' of https://github.com/tanbui76/bai-tap-giua-ki.git
 </body>
 </html>
