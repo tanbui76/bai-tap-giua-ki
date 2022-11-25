@@ -6,11 +6,7 @@
 <meta charset="UTF-8">
 <title>Trang chủ</title>
 <%@include file="includes/includeAdminStyle.jsp"%>
-<style>
-body {
-	background-color: #39414c;
-}
-</style>
+
 </head>
 <body>
 	<div id="wrapper">
