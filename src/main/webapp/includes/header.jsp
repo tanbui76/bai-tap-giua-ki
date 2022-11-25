@@ -17,3 +17,8 @@
 	href="vendor/daterangepicker/daterangepicker.css">
 <link rel="stylesheet" type="text/css" href="css/util.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
+<style>
+body {
+	background-color: #3a77cf;
+}
+</style>
