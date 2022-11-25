@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<body>
 <div class="content-wrapper">
 	<div class="container-fluid">
 		<div class="card">
@@ -45,7 +45,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button class="btn btn-warning" type="submit">Thêm</button>
+          <button class="btn btn-warning" type="submit" onclick="funcThem()">Thêm</button>
 
         </div>
       </div>
@@ -121,3 +121,7 @@
 	</div>
 </div>
 
+<script type="text/javascript">
+
+</script>
+</body>
