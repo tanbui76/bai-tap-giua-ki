@@ -6,11 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <%@include file="includes/includeAdminStyle.jsp" %>
-<style>
-	body{
-	 	background-color: #39414c;
-	}
-</style>
+
 </head>
 <body>
 	<div id="wrapper">
