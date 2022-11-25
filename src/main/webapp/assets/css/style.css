@@ -1,0 +1,22 @@
+h2{
+    clear: both;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px 10px 5px 10px;
+    margin: 20px 0px;
+    background: #2c69a0;
+    box-shadow: 1px 1px 10px 5px #dddddd;
+}
+.table th{
+    background: #2c69a0;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px 10px 5px 10px;
+    margin: 20px 0px;
+}
+.fixheader{
+    margin-top: 15px;
+}
