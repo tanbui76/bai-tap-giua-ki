@@ -8,11 +8,7 @@
 </head>
 <body>
 <%@include file="includes/includeAdminStyle.jsp" %>
-<style>
-	body{
-	 	background-color: #39414c;
-	}
-</style>
+
 <div id="wrapper">
 		<%@include file="includes/sliderbar.jsp" %>
 		<%@include file="includes/Topbar.jsp" %>
