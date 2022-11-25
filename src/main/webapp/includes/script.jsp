@@ -9,3 +9,4 @@
 <script src="vendor/daterangepicker/daterangepicker.js"></script>
 <script src="vendor/countdowntime/countdowntime.js"></script>
 <script src="js/main.js"></script>
+<script src="Sweetalert/package/dist/sweetalert2.all.min.js"></script>

@@ -121,7 +121,7 @@
 												<label class="col-lg-3 col-form-label form-control-label"></label>
 												<div class="col-lg-9">
 													 <input type="button"
-														class="btn btn-primary" value="Lưu thay đổi">
+														class="btn btn-primary" value="Lưu thay đổi" onclick="success()">
 												</div>
 											</div>
 										</form>
@@ -142,5 +142,16 @@
 		</div>
 	</div>
 	<%@include file="includes/script.jsp"%>
+	<script type="text/javascript">
+		function success(){
+			Swal.fire({
+				  position: 'top-end',
+				  icon: 'success',
+				  title: 'Lưu thay đổi thành công',
+				  showConfirmButton: false,
+				  timer: 1500
+				})
+		}
+	</script>
 </body>
 </html>
