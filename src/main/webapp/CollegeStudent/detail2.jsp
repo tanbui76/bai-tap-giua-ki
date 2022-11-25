@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>BẢNG ĐIỂM CHI TIẾT</title>
+<title>BẢNG DDIEMR CHI TIẾT</title>
 </head>
 <body>
 	<div class="content-wrapper">
@@ -34,17 +34,17 @@
                                                     </tr>
                                                     <tr>
                                                         <td align="right" width="30%" style="padding: 2%;">Điểm giữa kỳ</td>
-                                                        <td align="left">9,0</td>
+                                                        <td align="left">7,5</td>
                                                     </tr>
                                                     <tr>
                                                         <td align="right" width="30%" style="padding: 2%;">Điểm thi kết thúc
                                                         </td>
-                                                        <td align="left">8,0</td>
+                                                        <td align="left">9,5</td>
                                                     </tr>
                                                     <tr>
                                                         <td align="right" width="30%" class="bold" style="padding: 2%;">Điểm
                                                             HP hệ 10</td>
-                                                        <td align="left" class="bold">8,7</td>
+                                                        <td align="left" class="bold">9,0</td>
                                                     </tr>
                                                     <tr>
                                                         <td align="right" width="30%" class="bold" style="padding: 2%;">Điểm
