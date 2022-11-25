@@ -16,12 +16,12 @@
 						
 					</div>
 					<div class="col-lg-2">
-						<button type="submit" class="btn btn-light px-5">
+						<button type="submit"  class="btn btn-light px-5" data-toggle="modal" data-target="#myModal">
 							<i class="bi bi-wrench-adjustable-circle"></i> Sửa
 						</button>
 					</div>
 					<div class="col-lg-2">
-						<button type="submit" class="btn btn-light px-5">
+						<button type="submit"  class="btn btn-light px-5" data-toggle="modal" data-target="#myModal">
 							<i class="bi bi-person-x"></i> Xóa
 						</button>
 					</div>
