@@ -24,9 +24,9 @@
 		<li><a href="Score.jsp"> <i class="zmdi zmdi-grid"></i> <span>Quản lí điểm</span>
 		</a></li>
 
-		<li><a href="calendar.html"> <i
-				class="zmdi zmdi-calendar-check"></i> <span>Calendar</span> <small
-				class="badge float-right badge-light">New</small>
+		<li><a href="schedule.jsp"> <i
+				class="zmdi zmdi-calendar-check"></i> <span>Thời khóa biểu</span> <!-- <small
+				class="badge float-right badge-light">New</small> -->
 		</a></li>
 
 		<li><a href="profile.html"> <i class="zmdi zmdi-face"></i> <span>Profile</span>
@@ -41,8 +41,8 @@
 		</a></li>
 
 		<li class="sidebar-header">THÔNG TIN TÀI KHOẢN</li>
-		<li><a href="javaScript:void();"><i
-				class="zmdi zmdi-coffee text-danger"></i> <span>Important</span></a></li>
+		<li><a href="Cousre.jsp"><i
+				class="zmdi zmdi-coffee text-danger"></i> <span>Quản lý môn  học</span></a></li>
 		<li><a href="javaScript:void();"><i
 				class="zmdi zmdi-chart-donut text-success"></i> <span>Warning</span></a></li>
 		<li><a href="javaScript:void();"><i
