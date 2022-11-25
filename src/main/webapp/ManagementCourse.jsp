@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Danh sách sinh viên</title>
+<title>Insert title here</title>
 </head>
 <body>
 <%@include file="includes/includeAdminStyle.jsp" %>
@@ -12,8 +12,9 @@
 <div id="wrapper">
 		<%@include file="includes/sliderbar.jsp" %>
 		<%@include file="includes/Topbar.jsp" %>
-		<%@include file="Admin/StudentList.jsp" %>
+		<%@include file="Teacher/Course.jsp" %>
 	</div>
 	<%@include file="includes/script.jsp" %>
+
 </body>
 </html>
