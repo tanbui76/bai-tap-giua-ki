@@ -15,6 +15,5 @@
 		<%@include file="Teacher/Course.jsp" %>
 	</div>
 	<%@include file="includes/script.jsp" %>
-
 </body>
 </html>
