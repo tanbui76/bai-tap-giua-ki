@@ -13,7 +13,7 @@
                 <div class="card-body">
                 	<div class="col-lg-2">
                 		<a href="Score.jsp">
-                			<button type="submit" class="btn btn-light px-5" >
+                			<button type="submit" class="btn btn-light px-5" style="padding:1%;" >
 							<i class="bi bi-person-x"></i> Trở về
 							</button>
       					</a>
