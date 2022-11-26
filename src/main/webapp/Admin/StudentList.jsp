@@ -7,12 +7,12 @@
 				<div class="row mt-3">
 					<div class="col-lg-2">
 						<button type="submit" class="btn btn-light px-5">
-							<i class="bi bi-person-add"></i> Thêm 
+							<i class="bi bi-person-add"></i> Thêm
 						</button>
 					</div>
 					<div class="col-lg-2">
 						<button type="submit" class="btn btn-light px-5">
-							<i class="bi bi-wrench-adjustable-circle"></i> Sửa 
+							<i class="bi bi-wrench-adjustable-circle"></i> Sửa
 						</button>
 					</div>
 					<div class="col-lg-2">
@@ -41,19 +41,25 @@
 								<th scope="row">1</th>
 								<td>3120220257</td>
 								<td>Bùi Nguyễn Nhật Tân</td>
-								<td>Chi tiết</td>
+								<td><button type="submit" class="btn btn-light px-5" onclick="funcDel()">
+										<i class="bi bi-person-x"></i> Xóa
+									</button></td>
 							</tr>
 							<tr>
 								<th scope="row">2</th>
 								<td>3120220242</td>
 								<td>Thái Thị Thanh Ngân</td>
-								<td>Chi tiết</td>
+								<td><button type="submit" class="btn btn-light px-5">
+										<i class="bi bi-person-x"></i> Xóa
+									</button></td>
 							</tr>
 							<tr>
 								<th scope="row">3</th>
 								<td>3120220236</td>
 								<td>Hồ Thị Kiều Linh</td>
-								<td>Chi tiết</td>
+								<td><button type="submit" class="btn btn-light px-5">
+										<i class="bi bi-person-x"></i> Xóa
+									</button></td>
 							</tr>
 						</tbody>
 					</table>
