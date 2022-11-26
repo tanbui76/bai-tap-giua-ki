@@ -29,16 +29,14 @@
 								<option value="1">Kì 1</option>
 								<option value="2">Kì 2</option>
 							</select>
-							</div>
-							
-							
-							
+							</div>							
+							<br>							
 							<div>
 							<span>Tuần</span>
-							<select id="" style="margin: 0 6%">
+							<select id="" style="margin: 0 11%">
 							<option value="">Chọn tuần</option>
-								<option value="1">20CNTT1</option>
-								<option value="2">20CNTT2</option>
+								<option value="1">Tuần 1</option>
+								<option value="2">Tuần 2</option>
 							</select>
 							</div>
 
@@ -118,71 +116,53 @@
 					</div>
 				</div>
 			</div>
-			<div class="card">
-				<div class="card-body">
-					<h5 class="card-title">Quản lý điểm </h5>
-					<div class="table-responsive">
-						<table class="table">
-							<thead>
-								<tr>
-									<th rowspan="2">#</th>
-									<th rowspan="2">Mã sinh viên</th>
-									<th rowspan="2">Tên sinh viên</th>
-									<tr>
-									<th rowspan="2">Điểm HP hệ 4</th>
-									<th rowspan="2">Điểm HP hệ 10</th>
-									</tr>
-									<th rowspan="2">Hành động</th>
-
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<th scope="row">1</th>
-									<td>S01</td>
-									<td>Bùi Nguyễn Nhật Tân</td>
-									<td>
-										<div class="col-lg-2">
-											<button type="submit" class="btn btn-light px-5"
-												data-toggle="modal" data-target="#myModal" onclick="funcDel()">
-												<i class="bi bi-person-x"></i> Xóa
-											</button>
-										</div>
-									</td>
-
-								</tr>
-								<tr>
-									<th scope="row">2</th>
-									<td>S02</td>
-									<td>Hồ Thị Kiều Linh</td>
-									<td>
-										<div class="col-lg-2">
-											<button type="submit" class="btn btn-light px-5"
-												data-toggle="modal" data-target="#myModal">
-												<i class="bi bi-person-x"></i> Xóa
-											</button>
-										</div>
-									</td>
-
-								</tr>
-								<tr>
-									<th scope="row">3</th>
-									<td>S03</td>
-									<td>Thái Thị Thanh Ngân</td>
-									<td>
-										<div class="col-lg-2">
-											<button type="submit" class="btn btn-light px-5"
-												data-toggle="modal" data-target="#myModal">
-												<i class="bi bi-person-x"></i> Xóa
-											</button>
-										</div>
-									</td>
-
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
+	<div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Quản lý điểm của sinh viên </h5>
+            <div class="divp-list" style="overflow:auto">
+                <table id="" style="border-collapse: collapse;" name="" width="100%" border="1" class="table-list fixheader">
+                <thead>
+                <tr>
+                    <th rowspan="2" align="center" style="width: 55px;">Stt</th>
+                    <th rowspan="2" align="center" style="width: 166px;">Mã SV</th>
+                    <th rowspan="2" align="center" style="width: 20px;">Mã môn học</th>
+                    <th rowspan="2" align="center" style="width: 40px;">Tên môn học</th>
+                    <th rowspan="2" align="center" style="width: 180px;">Tên SV</th>
+                    <th colspan="2" align="center" style="width: 66px;">Điểm</th>
+                    <th colspan="2" align="center" style="width: 66px;">Hành động</th>
+              
+                </tr>
+                <tr>
+                    <th align="center" style="width: 80px;">Lần 1</th>
+                    <th align="center" style="width: 80px;">Lần 2</th>                 
+                </tr>
+                </thead>
+                <tbody>                             
+                <tr>
+                <th align="center" width="5%" class="">3</th>
+                <td align="left" width="14%" class="">31131250</td>
+                <td align="center" width="7%" class="">20-0102</td>
+                <td align="left" class="">Giải tích thực và đại số tuyến tính</td>
+                <td align="center" width="7%" class="">Hồ Thị Kiều Linh</td>               
+                <td align="center" width="7%" class="">10</td>
+                <td align="center" width="7%" class="">9,5</td>
+        
+               
+                </tr>
+                <tr class="alt">
+                <th align="center" width="5%" class="">4</th>
+                <td align="left" width="14%" class="">31231389</td>
+                <td align="center" width="7%" class="">20-0102</td>
+                <td align="left" class="">Giải tích thực và đại số tuyến tính</td>
+                <td align="center" width="7%" class="">Bùi Nguyễn Nhật Tân</td>    
+                <td align="center" width="7%" class="">10</td>           
+                <td align="center" width="7%" class="">8,4</td>
+                        
+                </tr>                        
+                </tbody>
+            </table>
+                <table id="fixedtableheader0" style="border-collapse: collapse; position: absolute; top: -356.6px; left: 0px; width: 1228px; display: none;" name="tb_xemketquahoctap_0" width="100%" border="1" class="table-list fixheader"><tbody><tr><th rowspan="2" align="center" style="width: 55px;">Stt</th><th rowspan="2" align="center" style="width: 166px;">Mã HP</th><th rowspan="2" align="center" style="width: 250px;">Tên học phần</th><th rowspan="2" align="center" style="width: 80px;">Nhóm</th><th rowspan="2" align="center" style="width: 80px;">ĐVHT</th><th colspan="2" align="center" style="width: 166px;">Điểm HP hệ 10</th><th colspan="2" align="center" style="width: 166px;">Điểm HP hệ 4</th><th rowspan="2" align="center" style="width: 55px;">N</th><th rowspan="2" align="center" style="width: 62px;">Chi tiết</th><th rowspan="2" align="center" style="width: 89px;">Phúc khảo</th></tr><tr class="alt"><th align="center" style="width: 80px;">Lần 1</th><th align="center" style="width: 80px;">Lần 2</th><th align="center" style="width: 80px;">Lần 1</th><th align="center" style="width: 80px;">Lần 2</th></tr></tbody></table></div>
+               </div>
 			</div>
 
 		</div>
