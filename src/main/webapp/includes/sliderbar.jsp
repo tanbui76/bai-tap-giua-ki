@@ -22,7 +22,8 @@
 		-->
 		
 
-		<li><a href="Score.jsp"> <i class="zmdi zmdi-grid"></i> <span>Quản lí điểm</span>
+		<!-- <li><a href="Score.jsp"> <i class="zmdi zmdi-grid"></i> <span>Quản lí điểm</span> -->
+		<li><a href="Score.jsp"> <i class="zmdi zmdi-grid"></i> <span>Bảng điểm chi tiết</span>
 		</a></li>
 
 		<li><a href="schedule.jsp"> <i
