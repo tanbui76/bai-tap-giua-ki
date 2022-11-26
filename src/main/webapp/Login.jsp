@@ -42,7 +42,7 @@
 
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" onclick="funcErr()">Đăng nhập</button>
+						<a href="AdminHomePage.jsp" class="login100-form-btn">Đăng nhập</a>
 					</div>
 
 

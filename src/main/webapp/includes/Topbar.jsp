@@ -16,7 +16,7 @@
 		</ul>
 
 		<ul class="navbar-nav align-items-center right-nav-link">
-			<li class="nav-item dropdown-lg"><a
+		<!--  	<li class="nav-item dropdown-lg"><a
 				class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect"
 				data-toggle="dropdown" href="javascript:void();"> <i
 					class="fa fa-envelope-open-o"></i></a></li>
@@ -37,7 +37,7 @@
 						class="flag-icon flag-icon-cn mr-2"></i> Chinese</li>
 					<li class="dropdown-item"><i
 						class="flag-icon flag-icon-de mr-2"></i> German</li>
-				</ul></li>
+				</ul></li>-->
 			<li class="nav-item"><a
 				class="nav-link dropdown-toggle dropdown-toggle-nocaret"
 				data-toggle="dropdown" href="#"> <span class="user-profile"><img
@@ -53,12 +53,12 @@
 										src="https://via.placeholder.com/110x110" alt="user avatar">
 								</div>
 								<div class="media-body">
-									<h6 class="mt-2 user-title">Sarajhon Mccoy</h6>
-									<p class="user-subtitle">mccoy@example.com</p>
+									<h6 class="mt-2 user-title">Bùi Nguyễn Nhật Tân</h6>
+									<p class="user-subtitle">nhattan@gmail.com</p>
 								</div>
 							</div>
 					</a></li>
-					<li class="dropdown-divider"></li>
+		<!--  			<li class="dropdown-divider"></li>
 					<li class="dropdown-item"><i class="icon-envelope mr-2"></i>
 						Inbox</li>
 					<li class="dropdown-divider"></li>
@@ -67,9 +67,9 @@
 					<li class="dropdown-divider"></li>
 					<li class="dropdown-item"><i class="icon-settings mr-2"></i>
 						Setting</li>
-					<li class="dropdown-divider"></li>
-					<li class="dropdown-item"><i class="icon-power mr-2"></i>
-						Logout</li>
+					<li class="dropdown-divider"></li>-->
+					<li class="dropdown-item"><a href="Login.jsp"><i class="icon-power mr-2"></i>
+						Đăng xuất</li></a>
 				</ul></li>
 		</ul>
 	</nav>
