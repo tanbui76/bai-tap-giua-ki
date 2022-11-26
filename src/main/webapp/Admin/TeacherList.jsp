@@ -38,7 +38,7 @@
 								<td>Mai Hà Thi</td>
 								<td>
 									<a href="">Chi tiết</a>
-								<button type="submit" class="btn btn-light px-5">
+								<button type="submit" class="btn btn-light px-5" onclick="funcDel()">
 								<i class="bi bi-person-x"></i> Xóa
 								</button>
 								</td>
@@ -49,7 +49,7 @@
 								<td>Nguyễn Đình Lầu</td>
 								<td>
 									<a href="">Chi tiết</a>
-								<button type="submit" class="btn btn-light px-5">
+								<button type="submit" class="btn btn-light px-5" onclick="funcDel()">
 								<i class="bi bi-person-x"></i> Xóa
 								</button>
 								</td>
@@ -60,7 +60,7 @@
 								<td>Phạm Anh Phương</td>
 								<td>
 									<a href="">Chi tiết</a>
-								<button type="submit" class="btn btn-light px-5">
+								<button type="submit" class="btn btn-light px-5" onclick="funcDel()">
 								<i class="bi bi-person-x"></i> Xóa
 								</button>
 								</td>
@@ -71,7 +71,7 @@
 								<td>Phạm Thị Thu Hằng</td>
 								<td>
 									<a href="">Chi tiết</a>
-								<button type="submit" class="btn btn-light px-5" ">
+								<button type="submit" class="btn btn-light px-5" onclick="funcDel()">
 								<i class="bi bi-person-x"></i> Xóa
 								</button>
 								</td>
@@ -82,7 +82,7 @@
 								<td>Hồ Ngọc Tú</td>
 								<td>
 									<a href="">Chi tiết</a>
-								<button type="submit" class="btn btn-light px-5">
+								<button type="submit" class="btn btn-light px-5" onclick="funcDel()">
 								<i class="bi bi-person-x"></i> Xóa
 								</button>
 								</td>
