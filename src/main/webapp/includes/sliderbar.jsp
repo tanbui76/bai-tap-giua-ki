@@ -43,8 +43,8 @@
 		<li class="sidebar-header">THÔNG TIN TÀI KHOẢN</li>
 		<li><a href="Cousre.jsp"><i
 				class="zmdi zmdi-coffee text-danger"></i> <span>Quản lý môn  học</span></a></li>
-		<li><a href="javaScript:void();"><i
-				class="zmdi zmdi-chart-donut text-success"></i> <span>Warning</span></a></li>
+		<li><a href="StudentList.jsp"><i
+				class="zmdi zmdi-chart-donut text-success"></i> <span>Quản lí sinh viên</span></a></li>
 		<li><a href="javaScript:void();"><i
 				class="zmdi zmdi-share text-info"></i> <span>Information</span></a></li>
 
