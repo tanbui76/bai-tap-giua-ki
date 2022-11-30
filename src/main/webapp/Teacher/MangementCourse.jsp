@@ -1,6 +1,7 @@
 <%@page import="QuanliCLB.dao.CourseDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <body>
 	<div class="content-wrapper">
 		<div class="container-fluid">
@@ -110,12 +111,25 @@
 
 								</tr>
 							</thead>
-							<tbody>
-							<%CourseDAO courseDAO = new CourseDAO();
+							<tbody>	
+							<c:forEach items="${listMon}" var="o" varStatus="theCount">
+							<tr>
+									<th scope="row">${theCount.count}</th>									
+									<td>${o.tenMonHoc}</td>
+									<td>
+										<div class="col-lg-2">
+											<button type="submit" class="btn btn-light px-5"
+												data-toggle="modal" data-target="#myModal" onclick="funcDel()">
+												<i class="bi bi-person-x"></i> Xóa
+											</button>
+										</div>
+									</td>
+
+								</tr>
 							
-							
-							%>
-								<tr>
+							</c:forEach>
+											
+								<!-- <tr>
 									<th scope="row">1</th>
 									
 									<td>Thiết kế và lập trình</td>
@@ -128,8 +142,8 @@
 										</div>
 									</td>
 
-								</tr>
-								<tr>
+								</tr> -->
+								<!-- <tr>
 									<th scope="row">2</th>
 					
 									<td>Lập trình java căn bản</td>
@@ -142,8 +156,8 @@
 										</div>
 									</td>
 
-								</tr>
-								<tr>
+								</tr> -->
+								<!-- <tr>
 									<th scope="row">3</th>
 						
 									<td>Lập trình C++</td>
@@ -156,7 +170,7 @@
 										</div>
 									</td>
 
-								</tr>
+								</tr> -->
 							</tbody>
 						</table>
 					</div>
