@@ -1,7 +1,7 @@
 package QuanliCLB.model;
 
 public class MonHoc {
-	private int idMonHoc;
+	private String idMonHoc;
 	private String tenMonhoc;
 	private int tongSoTiet;
 	
@@ -9,17 +9,17 @@ public class MonHoc {
 		// TODO Auto-generated constructor stub
 	}
 
-	public MonHoc(int idMonHoc, String tenMonhoc, int tongSoTiet) {
+	public MonHoc(String idMonHoc, String tenMonhoc, int tongSoTiet) {
 		this.idMonHoc = idMonHoc;
 		this.tenMonhoc = tenMonhoc;
 		this.tongSoTiet = tongSoTiet;
 	}
 
-	public int getIdMonHoc() {
+	public String getIdMonHoc() {
 		return idMonHoc;
 	}
 
-	public void setIdMonHoc(int idMonHoc) {
+	public void setIdMonHoc(String idMonHoc) {
 		this.idMonHoc = idMonHoc;
 	}
 

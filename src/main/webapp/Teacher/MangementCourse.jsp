@@ -1,3 +1,4 @@
+<%@page import="QuanliCLB.dao.CourseDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <body>
@@ -102,17 +103,21 @@
 						<table class="table">
 							<thead>
 								<tr>
-									<th scope="col">#</th>
-									<th scope="col">Mã môn học</th>
+									<th scope="col">STT</th>
+							<!-- 		<th scope="col">Mã môn học</th> -->
 									<th scope="col">Tên môn học</th>
 									<th scope="col">Hành động</th>
 
 								</tr>
 							</thead>
 							<tbody>
+							<%CourseDAO courseDAO = new CourseDAO();
+							
+							
+							%>
 								<tr>
 									<th scope="row">1</th>
-									<td>M01</td>
+									
 									<td>Thiết kế và lập trình</td>
 									<td>
 										<div class="col-lg-2">
@@ -126,7 +131,7 @@
 								</tr>
 								<tr>
 									<th scope="row">2</th>
-									<td>M02</td>
+					
 									<td>Lập trình java căn bản</td>
 									<td>
 										<div class="col-lg-2">
@@ -140,7 +145,7 @@
 								</tr>
 								<tr>
 									<th scope="row">3</th>
-									<td>M03</td>
+						
 									<td>Lập trình C++</td>
 									<td>
 										<div class="col-lg-2">
