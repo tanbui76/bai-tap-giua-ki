@@ -1,7 +1,7 @@
 package QuanliCLB.model;
 
 public class TaiKhoan {
-	private int idTaiKhoan;
+	private String idTaiKhoan;
 	private String tenDangNhap;
 	private String matKhau;
 	private int phanQuyen;
@@ -10,7 +10,7 @@ public class TaiKhoan {
 		// TODO Auto-generated constructor stub
 	}
 
-	public TaiKhoan(int idTaiKhoan, String tenDangNhap, String matKhau, int phanQuyen) {
+	public TaiKhoan(String idTaiKhoan, String tenDangNhap, String matKhau, int phanQuyen) {
 		super();
 		this.idTaiKhoan = idTaiKhoan;
 		this.tenDangNhap = tenDangNhap;
@@ -18,11 +18,11 @@ public class TaiKhoan {
 		this.phanQuyen = phanQuyen;
 	}
 
-	public int getIdTaiKhoan() {
+	public String getIdTaiKhoan() {
 		return idTaiKhoan;
 	}
 
-	public void setIdTaiKhoan(int idTaiKhoan) {
+	public void setIdTaiKhoan(String idTaiKhoan) {
 		this.idTaiKhoan = idTaiKhoan;
 	}
 
