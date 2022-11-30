@@ -63,8 +63,15 @@
 											<th colspan="2" align="center" style="width: 166px;">Điểm
 												HP hệ 4</th>
 											<th rowspan="2" align="center" style="width: 62px;">Chi
-												tiết</th>
+												tiết
+											</th>
 										</tr>
+										<tr class="alt">
+                                            <th align="center" style="width: 80px;">Lần 1</th>
+                                            <th align="center" style="width: 80px;">Lần 2</th>
+                                            <th align="center" style="width: 80px;">Lần 1</th>
+                                            <th align="center" style="width: 80px;">Lần 2</th>
+                                        </tr>
 									</thead>
 									<tbody>
 										<tr class="alt">
