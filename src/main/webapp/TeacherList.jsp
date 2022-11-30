@@ -15,27 +15,6 @@
 		<%@include file="Admin/TeacherList.jsp" %>
 	</div>
 	<%@include file="includes/script.jsp" %>
-	<script>
-	function funcDel() {
-		Swal.fire({
-			  title: 'Bạn có chắc chắn muốn xóa?',
-			  text: "Bạn sẽ không thể khôi phục lại dữ liệu!",
-			  icon: 'warning',
-			  showCancelButton: true,
-			  confirmButtonColor: '#3085d6',
-			  cancelButtonColor: '#d33',
-			  confirmButtonText: 'Xóa'
-			}).then((result) => {
-			  if (result.isConfirmed) {
-			    Swal.fire(
-			      'Đã xóa!',
-			      'Xóa thành công',
-			      'success'
-			    )
-			  }
-			})
-		
-	}
-	</script>
+
 </body>
 </html>
