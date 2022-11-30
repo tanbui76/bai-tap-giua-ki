@@ -22,7 +22,8 @@
 		-->
 		
 
-		<li><a href="Score.jsp"> <i class="zmdi zmdi-grid"></i> <span>Quản lí điểm</span>
+		<!-- <li><a href="Score.jsp"> <i class="zmdi zmdi-grid"></i> <span>Quản lí điểm</span> -->
+		<li><a href="Score.jsp"> <i class="zmdi zmdi-grid"></i> <span>Bảng điểm chi tiết</span>
 		</a></li>
 
 		<li><a href="schedule.jsp"> <i
@@ -50,6 +51,8 @@
 				class="zmdi zmdi-chart-donut text-success"></i> <span>Quản lí sinh viên</span></a></li>
 		<li><a href="TeacherList.jsp"><i
 				class="zmdi zmdi-share text-info"></i> <span>Quản lí giáo viên</span></a></li>
+		<li><a href="Mark.jsp"><i
+				class="zmdi zmdi-share text-info"></i> <span>Quản lí điểm của sinh viên</span></a></li>
 
 	</ul>
 

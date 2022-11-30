@@ -42,7 +42,7 @@
 
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">Đăng nhập</button>
+						<a href="AdminHomePage.jsp" class="login100-form-btn">Đăng nhập</a>
 					</div>
 
 
@@ -54,5 +54,17 @@
 	</div>
 
 	<%@include file="includes/script.jsp" %>
+	<script type="text/javascript">
+	function funcErr() {
+		Swal.fire({
+			  position: 'top-end',
+			  icon: 'error',
+			  title: 'Sai tên đăng nhập hoặc mật khẩu',
+			  showConfirmButton: false,
+			  timer: 1500
+			})
+		
+	}
+	</script>
 </body>
 </html>
