@@ -1,4 +1,4 @@
-package QuanliCLB.modal;
+package QuanliCLB.model;
 
 public class GiaoVien {
 	private String idGiaoVien;

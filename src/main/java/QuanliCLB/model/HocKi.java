@@ -1,4 +1,4 @@
-package QuanliCLB.modal;
+package QuanliCLB.model;
 
 public class HocKi {
 	private int idHocKi;
