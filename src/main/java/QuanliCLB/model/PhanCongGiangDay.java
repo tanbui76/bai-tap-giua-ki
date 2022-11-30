@@ -1,4 +1,4 @@
-package QuanliCLB.modal;
+package QuanliCLB.model;
 
 import java.sql.Date;
 
