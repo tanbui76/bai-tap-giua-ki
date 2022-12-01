@@ -7,14 +7,14 @@ public class GiaoVien {
 	private String github;
 	private String diaChiGiaoVien;
 	private String emailGiaoVien;
-	private int idTaiKhoan;
+	private String idTaiKhoan;
 	
 	public GiaoVien() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public GiaoVien(String idGiaoVien, String hoTenGiaoVien, String anhDaiDienGiaoVien, String github,
-			String diaChiGiaoVien, String emailGiaoVien, int idTaiKhoan) {
+			String diaChiGiaoVien, String emailGiaoVien, String idTaiKhoan) {
 		this.idGiaoVien = idGiaoVien;
 		this.hoTenGiaoVien = hoTenGiaoVien;
 		this.anhDaiDienGiaoVien = anhDaiDienGiaoVien;
@@ -72,11 +72,11 @@ public class GiaoVien {
 		this.emailGiaoVien = emailGiaoVien;
 	}
 
-	public int getIdTaiKhoan() {
+	public String getIdTaiKhoan() {
 		return idTaiKhoan;
 	}
 
-	public void setIdTaiKhoan(int idTaiKhoan) {
+	public void setIdTaiKhoan(String idTaiKhoan) {
 		this.idTaiKhoan = idTaiKhoan;
 	}
 	

@@ -49,7 +49,7 @@
 				class="zmdi zmdi-coffee text-danger"></i> <span>Quản lý môn  học</span></a></li>
 		<li><a href="StudentList.jsp"><i
 				class="zmdi zmdi-chart-donut text-success"></i> <span>Quản lí sinh viên</span></a></li>
-		<li><a href="TeacherList.jsp"><i
+		<li><a href="TeacherListServlet"><i
 				class="zmdi zmdi-share text-info"></i> <span>Quản lí giáo viên</span></a></li>
 		<li><a href="Mark.jsp"><i
 				class="zmdi zmdi-share text-info"></i> <span>Quản lí điểm của sinh viên</span></a></li>
