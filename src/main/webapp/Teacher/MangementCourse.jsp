@@ -112,6 +112,7 @@
 								</tr>
 							</thead>
 							<tbody>	
+							
 							<c:forEach items="${listMon}" var="o" varStatus="theCount">
 							<tr>
 									<th scope="row">${theCount.count}</th>									
