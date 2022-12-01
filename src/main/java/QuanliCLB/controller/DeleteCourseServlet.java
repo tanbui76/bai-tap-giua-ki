@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import QuanliCLB.dao.CourseDAO;
+
 
 @WebServlet("/DeleteCourseServlet")
 public class DeleteCourseServlet extends HttpServlet {
@@ -15,12 +17,16 @@ public class DeleteCourseServlet extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		    String idMonHoc = request.getParameter("cbMaMonHoc");
+			CourseDAO  courseDAO = new CourseDAO();
+			courseDAO.DeleteMonHoc(idMonHoc);
+			response.sendRedirect("CourseListServlet");
 	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+	   
+	    
 	}
 
 }

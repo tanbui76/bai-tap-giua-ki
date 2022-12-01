@@ -35,7 +35,17 @@
 									<i class="bi bi-wrench-adjustable-circle"></i> Sửa
 								</button>
 							</div>
-
+							
+							<!-- <div class="col-lg-2">
+							<a href="DeleteCourseServlet">
+							<button type="submit" class="btn btn-light px-5">
+							<i class="bi bi-person-x"></i> Xóa
+							</button>
+							
+							</a>
+									
+							</div>
+ -->
 
 							<div class="modal fade" id="myModal1" tabindex="-1" role="dialog"
 								aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -53,21 +63,17 @@
 										</div>
 										<form action="AddCourseServlet" method="post">
 											<div class="modal-body">
-
 												<div class="form-group">
 													<label for="message-text" class="col-form-label"
 														style="color: #000;">Mã môn học</label> <input type="text"
 														name="txtMaMonHoc" id="recipient-name"
-														style="width: 100%;"> <label for="message-text"
+														style="width: 100%;"> <1label for="message-text"
 														class="col-form-label" style="color: #000;">Tên
 														môn học</label> <input type="text" name="txtTenMonHoc"
 														id="recipient-name" style="width: 100%;">
-
 												</div>
-
 											</div>
 											<div class="modal-footer">
-
 												<button class="btn btn-success">Thêm</button>
 
 											</div>
@@ -123,34 +129,28 @@
 										<th scope="col"> </th>
 										<th scope="col">STT</th>
 										<th scope="col">Tên môn học</th>
-										<th scope="col">Hành động</th>
-
-
+										 <th scope="col">Hành động</th>
 									</tr>
 								</thead>
 								<tbody>
-
-									<c:forEach var="o" items="${listMon}" varStatus="i">
+								<form action="DeleteCourseServlet"  method="get">
+								<c:forEach var="o" items="${listMon}" varStatus="i">
 										<tr>
 											<td>											
-											<input type="checkbox" name="cbMaMonHoc"  value="${o.idMonhoc}">								
-											
+											<input type="checkbox" name="cbMaMonHoc" value="${o.idMonHoc}">																		
 											</td>
 											<td>${i.index+1}</td>
 											<td>${o.tenMonhoc}</td>
 											<td>
-											
-												<div class="col-lg-2">
-													<button type="submit" class="btn btn-light px-5"
-														onclick="funcDel()">
-														<i class="bi bi-person-x"></i> Xóa
-													</button>
-												</div>
-											</td>
-
+											    <button type="submit" class="btn btn-light px-5">
+							                    <i class="bi bi-person-x"></i> Xóa</button>
+										    </td>
 										</tr>
 
 									</c:forEach>
+								</form>
+
+									
 
 								</tbody>
 							</table>

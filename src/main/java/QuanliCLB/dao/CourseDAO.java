@@ -54,12 +54,20 @@ public class CourseDAO {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
-		
-		
-		
-		
-		
+			
+	}
+	
+	public void DeleteMonHoc(String idMonHoc) {
+		String query ="delete from MonHoc where idMonHoc=?";
+		try {
+			conn = dbConnection.getConnection();
+			stm = conn.prepareStatement(query);	
+			stm.setString(1, idMonHoc);
+			stm.executeUpdate();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 	
 }
