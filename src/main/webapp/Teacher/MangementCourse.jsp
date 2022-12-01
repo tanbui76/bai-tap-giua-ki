@@ -113,9 +113,9 @@
 							</thead>
 							<tbody>	
 							
-							<c:forEach items="${listMon}" var="o" varStatus="theCount">
+							<c:forEach items="${listMon}" var="o" varStatus="counter">
 							<tr>
-									<th scope="row">${theCount.count}</th>									
+									<td scope="row">${counter.count}</td>							
 									<td>${o.tenMonHoc}</td>
 									<td>
 										<div class="col-lg-2">
