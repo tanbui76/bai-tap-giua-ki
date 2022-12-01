@@ -113,7 +113,7 @@
 											<span aria-hidden="true">&times;</span>
 										</button>
 									</div>
-									<form action="TeacherListServlet" method="post">
+									<form action="AddTeacher" method="post">
 										<div class="modal-body">
 											<div class="form-group">
 												<label for="message-text" class="col-form-label"

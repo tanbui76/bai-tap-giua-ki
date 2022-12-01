@@ -44,14 +44,21 @@ public class TeacherListDAO {
 		}
 		return list;
 	}
-	public void Insert() {
+	public void Insert(String idGiaoVien, String hoTenGiaoVien, String emailGiaoVien, String diachiGiaoVien, String idTaiKhoan) {
 		Connection connection = null;
 		PreparedStatement stm = null;
 		ResultSet rs = null;
 		try {
 			connection = dbConnection.getConnection();
-			String  query = "INSERT INTO `sql6580911`.`GiaoVien` (`idGiaoVien`, `hoTenGiaoVien`, `emailGiaoVien`, `diachiGiaoVien`, `idTaiKhoan`) VALUES ('?', '?', '?', '?', '?')";
-			
+			String  query = "INSERT INTO GiaoVien (idGiaoVien,hoTenGiaoVien,emailGiaoVien, diachiGiaoVien,idTaiKhoan) "
+					+ "VALUES (?, ?, ?, ?, ?)";
+			stm = connection.prepareStatement(query);
+			stm.setString(1, idGiaoVien);
+			stm.setString(2, hoTenGiaoVien);
+			stm.setString(3, emailGiaoVien);
+			stm.setString(4, diachiGiaoVien);
+			stm.setString(5, idTaiKhoan);
+			stm.executeUpdate();
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
