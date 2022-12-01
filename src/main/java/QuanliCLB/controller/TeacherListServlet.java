@@ -1,6 +1,7 @@
 package QuanliCLB.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,6 +9,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import QuanliCLB.dao.TeacherListDAO;
+import QuanliCLB.model.GiaoVien;
 
 @WebServlet("/TeacherListServlet")
 public class TeacherListServlet extends HttpServlet {
@@ -15,14 +20,21 @@ public class TeacherListServlet extends HttpServlet {
   
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		TeacherListDAO tDao = new TeacherListDAO();
+		HttpSession session = request.getSession();
+		try {
+			List<GiaoVien> list = tDao.getTeacherList();
+			session.setAttribute("list", list);
+			RequestDispatcher rDispatcher = request.getRequestDispatcher("TeacherList.jsp");
+			rDispatcher.forward(request, response);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd =  request.getRequestDispatcher("Login.jsp");
-		rd.forward(request, response);
-		doGet(request, response);
+		
 	}
 
 }
