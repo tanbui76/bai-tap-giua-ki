@@ -29,6 +29,7 @@
 				<div class="table-responsive">
 					<table class="table">
 						<thead>
+							
 							<tr>
 								<th scope="col">#</th>
 								<th scope="col">Mã sinh viên</th>
@@ -37,30 +38,16 @@
 							</tr>
 						</thead>
 						<tbody>
+							<c:forEach var="item" items="${list}">
 							<tr>
 								<th scope="row">1</th>
-								<td>3120220257</td>
-								<td>Bùi Nguyễn Nhật Tân</td>
+								<td>${item.idSinhVien}</td>
+								<td>${item.hoTenSinhVien}</td>
 								<td><button type="submit" class="btn btn-light px-5" onclick="funcDel()">
 										<i class="bi bi-person-x"></i> Xóa
 									</button></td>
 							</tr>
-							<tr>
-								<th scope="row">2</th>
-								<td>3120220242</td>
-								<td>Thái Thị Thanh Ngân</td>
-								<td><button type="submit" class="btn btn-light px-5">
-										<i class="bi bi-person-x"></i> Xóa
-									</button></td>
-							</tr>
-							<tr>
-								<th scope="row">3</th>
-								<td>3120220236</td>
-								<td>Hồ Thị Kiều Linh</td>
-								<td><button type="submit" class="btn btn-light px-5">
-										<i class="bi bi-person-x"></i> Xóa
-									</button></td>
-							</tr>
+							</c:forEach>
 						</tbody>
 					</table>
 				</div>
