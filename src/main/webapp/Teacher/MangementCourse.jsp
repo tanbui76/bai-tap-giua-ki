@@ -104,8 +104,7 @@
 						<table class="table">
 							<thead>
 								<tr>
-									<th scope="col">STT</th>
-							<!-- 		<th scope="col">Mã môn học</th> -->
+									<th scope="col">STT</th>					
 									<th scope="col">Tên môn học</th>
 									<th scope="col">Hành động</th>
 
