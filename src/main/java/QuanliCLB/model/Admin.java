@@ -4,13 +4,13 @@ public class Admin {
 	private String idAdmin;
 	private String hoVaTen;
 	private String email;
-	private int idTaiKhoan;
+	private String idTaiKhoan;
 	
 	public Admin() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Admin(String idAdmin, String hoVaTen, String email, int idTaiKhoan) {
+	public Admin(String idAdmin, String hoVaTen, String email, String idTaiKhoan) {
 		this.idAdmin = idAdmin;
 		this.hoVaTen = hoVaTen;
 		this.email = email;
@@ -41,11 +41,11 @@ public class Admin {
 		this.email = email;
 	}
 
-	public int getIdTaiKhoan() {
+	public String getIdTaiKhoan() {
 		return idTaiKhoan;
 	}
 
-	public void setIdTaiKhoan(int idTaiKhoan) {
+	public void setIdTaiKhoan(String idTaiKhoan) {
 		this.idTaiKhoan = idTaiKhoan;
 	}
 	
