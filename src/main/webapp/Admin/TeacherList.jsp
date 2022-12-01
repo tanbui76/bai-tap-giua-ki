@@ -9,14 +9,14 @@
 					<div class="col-lg-2">
 					
 						<button type="submit" class="btn btn-light px-5"
-						data-toggle="modal" data-target="#myModal1">>
+						data-toggle="modal" data-target="#myModal1">
 							<i class="bi bi-person-add"></i> Thêm 
 						</button>
 					</div>
 					<div class="col-lg-2">
 					
 						<button type="submit" class="btn btn-light px-5"
-						data-toggle="modal" data-target="#myModal2">>
+						data-toggle="modal" data-target="#myModal2">
 							<i class="bi bi-wrench-adjustable-circle"></i> Cập nhật 
 						</button>
 					</div>
@@ -29,27 +29,44 @@
 									<div class="modal-header">
 										<h5 class="modal-title" id="exampleModalLabel"
 											style="font-size: 20px; font-weight: 600; color: #000;">Thêm
-											môn học</h5>
+											Giáo Viên</h5>
 										<button type="button" class="close" data-dismiss="modal"
 											aria-label="Close">
 											<span aria-hidden="true">&times;</span>
 										</button>
 									</div>
+									<form action="TeacherListServlet" method="post">
 									<div class="modal-body">
-										<form>
+										
 											<div class="form-group">
 												<label for="message-text" class="col-form-label"
-													style="color: #000;">Tên môn học</label> <input type="text"
-													id="recipient-name" style="width: 100%;">
+													style="color: #000;">Tên giáo viên: </label> <input type="text"
+													id="recipient-name" name="txtTenGiaoVien" style="width: 100%;">
 											</div>
-										</form>
+											<div class="form-group">
+												<label for="message-text" class="col-form-label"
+													style="color: #000;">Email: </label> <input type="text"
+													id="recipient-name" name="txtEmail" style="width: 100%;">
+											</div>
+											<div class="form-group">
+												<label for="message-text" class="col-form-label"
+													style="color: #000;">Địa chỉ: </label> <input type="text"
+													id="recipient-name" name="txtDiachi" style="width: 100%;">
+											</div>
+											<div class="form-group">
+												<label for="message-text" class="col-form-label"
+													style="color: #000;">Mã Tài Khoản: </label> <input type="text"
+													id="recipient-name" name="txtMaTaiKhoan" style="width: 100%;">
+											</div>
+										
 									</div>
 									<div class="modal-footer">
 										<button type="button" class="btn btn-secondary"
 											data-dismiss="modal">Close</button>
-										<button type="button" class="btn btn-success" onclick="funcIn()">Thêm
+										<button type="button" class="btn btn-success" >Thêm
 											</button>	
 									</div>
+									</form>
 								</div>
 							</div>
 						</div>
@@ -106,56 +123,65 @@
 								<td>2120220243</td>
 								<td>Mai Hà Thi</td>
 								<td>
-									<a href="">Chi tiết</a>
+								<button type="submit" class="btn btn-light px-5"
+								data-toggle="modal" data-target="#myModal1">
+								<i class="bi bi-person-add"></i> Chi tiết 
+								</button>
+								<!-- 
+									<div class="modal fade" id="myModal1" tabindex="-1" role="dialog"
+							aria-labelledby="exampleModalLabel" aria-hidden="true">
+							<div class="modal-dialog" role="document"
+								style="position: relative; top: 10%;">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel"
+											style="font-size: 20px; font-weight: 600; color: #000;">Thêm
+											Giáo Viên</h5>
+										<button type="button" class="close" data-dismiss="modal"
+											aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<form>
+											<div class="form-group">
+												<label for="message-text" class="col-form-label"
+													style="color: #000;">Tên giáo viên: </label> <input type="text"
+													id="recipient-name" name="txtTenGiaoVien" style="width: 100%;">
+											</div>
+											<div class="form-group">
+												<label for="message-text" class="col-form-label"
+													style="color: #000;">Email: </label> <input type="text"
+													id="recipient-name" name="txtEmail" style="width: 100%;">
+											</div>
+											<div class="form-group">
+												<label for="message-text" class="col-form-label"
+													style="color: #000;">Địa chỉ: </label> <input type="text"
+													id="recipient-name" name="txtDiachi" style="width: 100%;">
+											</div>
+											<div class="form-group">
+												<label for="message-text" class="col-form-label"
+													style="color: #000;">Mã Tài Khoản: </label> <input type="text"
+													id="recipient-name" name="txtMaTaiKhoan" style="width: 100%;">
+											</div>
+										</form>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary"
+											data-dismiss="modal">Close</button>
+										<button type="button" class="btn btn-success" onclick="funcIn()">Chi tiết
+											</button>	
+									</div>
+								</div>
+							</div>
+						</div>
+								 -->
 								<button type="submit" class="btn btn-light px-5" onclick="funcDel()">
 								<i class="bi bi-person-x"></i> Xóa
 								</button>
 								</td>
 							</tr>
-							<tr>
-								<th scope="row">2</th>
-								<td>2120220242</td>
-								<td>Nguyễn Đình Lầu</td>
-								<td>
-									<a href="">Chi tiết</a>
-								<button type="submit" class="btn btn-light px-5" onclick="funcDel()">
-								<i class="bi bi-person-x"></i> Xóa
-								</button>
-								</td>
-							</tr>
-							<tr>
-								<th scope="row">3</th>
-								<td>2120220241</td>
-								<td>Phạm Anh Phương</td>
-								<td>
-									<a href="">Chi tiết</a>
-								<button type="submit" class="btn btn-light px-5" onclick="funcDel()">
-								<i class="bi bi-person-x"></i> Xóa
-								</button>
-								</td>
-							</tr>
-							<tr>
-								<th scope="row">4</th>
-								<td>2120220240</td>
-								<td>Phạm Thị Thu Hằng</td>
-								<td>
-									<a href="">Chi tiết</a>
-								<button type="submit" class="btn btn-light px-5" onclick="funcDel()">
-								<i class="bi bi-person-x"></i> Xóa
-								</button>
-								</td>
-							</tr>
-							<tr>
-								<th scope="row">5</th>
-								<td>2120220239</td>
-								<td>Hồ Ngọc Tú</td>
-								<td>
-									<a href="">Chi tiết</a>
-								<button type="submit" class="btn btn-light px-5" onclick="funcDel()">
-								<i class="bi bi-person-x"></i> Xóa
-								</button>
-								</td>
-							</tr>
+							
 						</tbody>
 					</table>
 				</div>
