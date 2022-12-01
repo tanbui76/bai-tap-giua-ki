@@ -17,8 +17,9 @@ public class CourseDAO {
 	 PreparedStatement stm = null;
 	
 	public List<MonHoc> getMonHoc(){
-		String query = "select * from sql6580911.MonHoc";
 		List<MonHoc> listMon = new ArrayList<>();
+		String query = "SELECT * FROM sql6580911.MonHoc";
+		
 		try {
 			conn = dbConnection.getConnection();
 			stm = conn.prepareStatement(query);		

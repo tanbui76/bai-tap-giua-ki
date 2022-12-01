@@ -16,7 +16,7 @@
 		</ul>
 
 		<ul class="navbar-nav align-items-center right-nav-link">
-		<!--  	<li class="nav-item dropdown-lg"><a
+			<!--  	<li class="nav-item dropdown-lg"><a
 				class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect"
 				data-toggle="dropdown" href="javascript:void();"> <i
 					class="fa fa-envelope-open-o"></i></a></li>
@@ -53,12 +53,20 @@
 										src="https://via.placeholder.com/110x110" alt="user avatar">
 								</div>
 								<div class="media-body">
-									<h6 class="mt-2 user-title">Bùi Nguyễn Nhật Tân</h6>
-									<p class="user-subtitle">nhattan@gmail.com</p>
+									<h6 class="mt-2 user-title">
+										<c:if test="${tk.phanQuyen == 1 }">
+											<c:out value="${admin.hoVaTen}"></c:out> - Admin
+										</c:if>
+									</h6>
+									<p class="user-subtitle">
+									<c:if test="${tk.phanQuyen == 1 }">
+											<c:out value="${admin.email}"></c:out>
+										</c:if>
+									</p>
 								</div>
 							</div>
 					</a></li>
-		<!--  			<li class="dropdown-divider"></li>
+					<!--  			<li class="dropdown-divider"></li>
 					<li class="dropdown-item"><i class="icon-envelope mr-2"></i>
 						Inbox</li>
 					<li class="dropdown-divider"></li>
@@ -68,8 +76,9 @@
 					<li class="dropdown-item"><i class="icon-settings mr-2"></i>
 						Setting</li>
 					<li class="dropdown-divider"></li>-->
-					<li class="dropdown-item"><a href="Login.jsp"><i class="icon-power mr-2"></i>
-						Đăng xuất</li></a>
+					<li class="dropdown-item"><a href="Login.jsp"><i
+							class="icon-power mr-2"></i> Đăng xuất</li>
+					</a>
 				</ul></li>
 		</ul>
 	</nav>

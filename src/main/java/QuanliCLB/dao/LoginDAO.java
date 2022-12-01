@@ -17,12 +17,14 @@ public class LoginDAO {
 	}
 	
 	
-	public TaiKhoan isLogin(TaiKhoan taikhoan) {
+	public TaiKhoan isLogin(String username,String password) {
 		TaiKhoan tk = null;
-		String query = "SELECT * FROM sql6085911.TaiKhoan";
+		String query = "Select * from  sql6580911.TaiKhoan where tenDangNhap = ? and matKhau = ?";
 		try {
 			connection = dbConnection.getConnection();
 			stm = connection.prepareStatement(query);
+			stm.setString(1,username);
+			stm.setString(2,password);
 			rs = stm.executeQuery();
 			if(rs.next()) {
 				 String idTaiKhoan =rs.getString("idTaiKhoan");
@@ -37,4 +39,5 @@ public class LoginDAO {
 		}
 		return tk;
 	}
+	
 }
