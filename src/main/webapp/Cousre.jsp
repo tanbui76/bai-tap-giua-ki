@@ -131,10 +131,13 @@
 									<td>${o.tenMonhoc}</td>
 									<td>
 										<div class="col-lg-2">
-											<button type="submit" class="btn btn-light px-5"
+										<!-- 	<button type="submit" class="btn btn-light px-5"
 												data-toggle="modal" data-target="#myModal" onclick="funcDel()">
 												<i class="bi bi-person-x"></i> Xóa
-											</button>
+											</button> -->
+											<button type="submit" class="btn btn-light px-5" onclick="funcDel()">
+								<i class="bi bi-person-x"></i> Xóa
+								</button>
 										</div>
 									</td>
 
@@ -155,5 +158,47 @@
 	</div>
 	</div>
 	<%@include file="includes/script.jsp" %>
+	<script type="text/javascript">
+   function funcIn(){	   
+	   Swal.fire({
+			position : 'center',
+			icon : 'success',
+			title : 'Thêm thành công',
+			showConfirmButton : false,
+			timer : 1500
+		})
+	}
+   function funcUp() {
+	   Swal.fire({
+			position : 'center',
+			icon : 'success',
+			title : 'Cập nhật thành công',
+			showConfirmButton : false,
+			timer : 1500
+		})	
+}
+   function funcDel() {
+		Swal.fire({
+			  title: 'Bạn có chắc chắn muốn xóa?',
+			  text: "Bạn sẽ không thể khôi phục lại dữ liệu!",
+			  icon: 'warning',
+			  showCancelButton: true,
+			  confirmButtonColor: '#3085d6',
+			  cancelButtonColor: '#d33',
+			  confirmButtonText: 'Xóa'
+			}).then((result) => {
+			  if (result.isConfirmed) {
+			    Swal.fire(
+			      'Đã xóa!',
+			      'Xóa thành công',
+			      'success'
+			    )
+			  }
+			})
+		
+	}
+   
+		
+	</script>
 </body>
 </html>

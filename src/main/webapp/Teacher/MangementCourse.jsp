@@ -112,7 +112,7 @@
 							</thead>
 							<tbody>	
 							
-							<c:forEach items="${listMon}" var="o" varStatus="counter">
+							<%-- <c:forEach items="${listMon}" var="o" varStatus="counter">
 							<tr>
 									<td scope="row">${counter.count}</td>							
 									<td>${o.tenMonHoc}</td>
@@ -127,50 +127,9 @@
 
 								</tr>
 							
-							</c:forEach>
+							</c:forEach> --%>
 											
-								<!-- <tr>
-									<th scope="row">1</th>
-									
-									<td>Thiết kế và lập trình</td>
-									<td>
-										<div class="col-lg-2">
-											<button type="submit" class="btn btn-light px-5"
-												data-toggle="modal" data-target="#myModal" onclick="funcDel()">
-												<i class="bi bi-person-x"></i> Xóa
-											</button>
-										</div>
-									</td>
-
-								</tr> -->
-								<!-- <tr>
-									<th scope="row">2</th>
-					
-									<td>Lập trình java căn bản</td>
-									<td>
-										<div class="col-lg-2">
-											<button type="submit" class="btn btn-light px-5"
-												data-toggle="modal" data-target="#myModal">
-												<i class="bi bi-person-x"></i> Xóa
-											</button>
-										</div>
-									</td>
-
-								</tr> -->
-								<!-- <tr>
-									<th scope="row">3</th>
-						
-									<td>Lập trình C++</td>
-									<td>
-										<div class="col-lg-2">
-											<button type="submit" class="btn btn-light px-5"
-												data-toggle="modal" data-target="#myModal">
-												<i class="bi bi-person-x"></i> Xóa
-											</button>
-										</div>
-									</td>
-
-								</tr> -->
+								
 							</tbody>
 						</table>
 					</div>
@@ -179,46 +138,5 @@
 
 		</div>
 	</div>
-	<script type="text/javascript">
-   function funcIn(){	   
-	   Swal.fire({
-			position : 'center',
-			icon : 'success',
-			title : 'Thêm thành công',
-			showConfirmButton : false,
-			timer : 1500
-		})
-	}
-   function funcUp() {
-	   Swal.fire({
-			position : 'center',
-			icon : 'success',
-			title : 'Cập nhật thành công',
-			showConfirmButton : false,
-			timer : 1500
-		})	
-}
-   function funcDel() {
-		Swal.fire({
-			  title: 'Bạn có chắc chắn muốn xóa?',
-			  text: "Bạn sẽ không thể khôi phục lại dữ liệu!",
-			  icon: 'warning',
-			  showCancelButton: true,
-			  confirmButtonColor: '#3085d6',
-			  cancelButtonColor: '#d33',
-			  confirmButtonText: 'Xóa'
-			}).then((result) => {
-			  if (result.isConfirmed) {
-			    Swal.fire(
-			      'Đã xóa!',
-			      'Xóa thành công',
-			      'success'
-			    )
-			  }
-			})
-		
-	}
-   
-		
-	</script>
+	
 </body>
