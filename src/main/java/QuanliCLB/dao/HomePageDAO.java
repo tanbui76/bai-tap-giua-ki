@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 
 import QuanliCLB.dbconnection.dbConnection;
 import QuanliCLB.model.Admin;
+import QuanliCLB.model.SinhVien;
 import QuanliCLB.model.TaiKhoan;
 
 public class HomePageDAO {
@@ -37,5 +38,26 @@ public class HomePageDAO {
 			// TODO: handle exception
 		}
 		return admin;
+	}
+	public SinhVien getSinhVien(TaiKhoan tk) {
+		SinhVien sinhVien = null;
+		String query = "select * from SinhVien where idTaiKhoan = ?";
+		try {
+			connection = dbConnection.getConnection();
+			stm = connection.prepareStatement(query);
+			stm.setString(1,tk.getIdTaiKhoan());
+			rs = stm.executeQuery();
+			if(rs.next()) {
+				
+				String hoVaTen = rs.getString("hoVaTen");
+				String email=rs.getString("email");
+				String idTaiKhoan = rs.getString("idTaiKhoan");
+				sinhVien = new SinhVien();
+				return sinhVien;
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return sinhVien;
 	}
 }

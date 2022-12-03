@@ -29,6 +29,12 @@
 									<c:if test="${tk.phanQuyen == 1 }">
 										<c:out value="${admin.hoVaTen}"></c:out> - Admin
 								</c:if>
+								<c:if test="${tk.phanQuyen == 2 }">
+										<c:out value="${sinhvien.hoVaTen}"></c:out> - Sinh Viên
+								</c:if>
+								<c:if test="${tk.phanQuyen == 3 }">
+										<c:out value="${giaovien.hoVaTen}"></c:out> - Giáo Viên
+								</c:if>
 
 								</h5>
 								<p class="card-text">Sinh viên đang học tại trường sư phạm
@@ -63,7 +69,7 @@
 													và tên</label>
 												<div class="col-lg-9">
 													<input class="form-control" type="text"
-														value="<c:if test="${tk.phanQuyen == 1 }"><c:out value="${admin.hoVaTen}"></c:out></c:if>">
+														value="<c:if test="${tk.phanQuyen == 1 }"><c:out value="${admin.hoVaTen}"></c:out></c:if> <c:if test="${tk.phanQuyen == 2 }"><c:out value="${sinhvien.hoVaTen}"></c:out></c:if> <c:if test="${tk.phanQuyen == 3 }"><c:out value="${giaovien.hoVaTen}"></c:out></c:if>">
 												</div>
 											</div>
 
@@ -74,7 +80,11 @@
 													<input class="form-control" type="email"
 														value="<c:if test="${tk.phanQuyen == 1 }">
 									<c:out value="${admin.email}"></c:out>
-								</c:if>">
+								</c:if> <c:if test="${tk.phanQuyen == 2 }">
+									<c:out value="${sinhvien.email}"></c:out>
+								</c:if> <c:if test="${tk.phanQuyen == 3 }">
+									<c:out value="${giaovien.email}"></c:out>
+								</c:if> ">
 												</div>
 											</div>
 											<div class="form-group row">
@@ -115,8 +125,7 @@
 													đăng nhập</label>
 												<div class="col-lg-9">
 													<input class="form-control" type="text"
-														value="<c:if test="${tk.phanQuyen == 1 }"><c:out value="${tk.tenDangNhap}"></c:out>
-								</c:if>">
+														value="<c:out value="${tk.tenDangNhap}"></c:out>">
 												</div>
 											</div>
 											<div class="form-group row">
@@ -124,8 +133,7 @@
 													khẩu</label>
 												<div class="col-lg-9">
 													<input class="form-control" type="password"
-														value="<c:if test="${tk.phanQuyen == 1 }"><c:out value="${tk.matKhau}"></c:out>
-								</c:if>">
+														value="<c:out value="${tk.matKhau}"></c:out>">
 												</div>
 											</div>
 											<div class="form-group row">
@@ -133,8 +141,7 @@
 													nhận mật khẩu</label>
 												<div class="col-lg-9">
 													<input class="form-control" type="password"
-														value="<c:if test="${tk.phanQuyen == 1 }"><c:out value="${tk.matKhau}"></c:out>
-								</c:if>">
+														value="<c:out value="${tk.matKhau}"></c:out>">
 												</div>
 											</div>
 											<div class="form-group row">
