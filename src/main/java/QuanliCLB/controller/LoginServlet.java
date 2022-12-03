@@ -43,11 +43,11 @@ public class LoginServlet extends HttpServlet {
 			Admin admin = (Admin) homePageDAO.getAdmin(tk);
 			session.setAttribute("admin", admin);
 		}
-		if(tk.getPhanQuyen()== 2) {
+		if(tk.getPhanQuyen()== 3) {
 			SinhVien sinhvien = (SinhVien) homePageDAO.getSinhVien(tk);
 			session.setAttribute("sinhvien", sinhvien);
 		}
-		if(tk.getPhanQuyen()== 3) {
+		if(tk.getPhanQuyen()== 2) {
 			GiaoVien giaoVien = (GiaoVien) homePageDAO.getGiaoVien(tk);
 			session.setAttribute("giaovien", giaoVien);
 		}

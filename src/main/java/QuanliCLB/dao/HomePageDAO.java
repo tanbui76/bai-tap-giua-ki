@@ -56,7 +56,7 @@ public class HomePageDAO {
 				String github = rs.getString("github");
 				String diaChiSinhVien = rs.getNString("diaChiSinhVien");
 				String idTaiKhoan = rs.getString("idTaiKhoan");
-				SinhVien sv = new SinhVien(idSinhVien, hoTenSinhVien, anhDaiDienSinhVien, email, github, diaChiSinhVien,idTaiKhoan );
+				sinhVien = new SinhVien(idSinhVien, hoTenSinhVien, anhDaiDienSinhVien, email, github, diaChiSinhVien,idTaiKhoan );
 				return sinhVien;
 			}
 		} catch (Exception e) {
@@ -80,7 +80,7 @@ public class HomePageDAO {
 				String diaChiGiaoVien = rs.getNString("diachiGiaoVien");
 				String emailGiaoVien = rs.getString("emailGiaoVien");
 				String idTaiKhoan = rs.getString("idTaiKhoan");
-				GiaoVien gv = new GiaoVien(idGiaoVien, hoTenGiaoVien, anhDaiDienGiaoVien, github, diaChiGiaoVien, emailGiaoVien, idTaiKhoan);
+				giaoVien = new GiaoVien(idGiaoVien, hoTenGiaoVien, anhDaiDienGiaoVien, github, diaChiGiaoVien, emailGiaoVien, idTaiKhoan);
 				return giaoVien;
 			}
 		} catch (Exception e) {
