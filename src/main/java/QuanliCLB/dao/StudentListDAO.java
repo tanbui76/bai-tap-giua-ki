@@ -32,7 +32,7 @@ public class StudentListDAO {
 				String idSinhVien = rs.getString("idSinhVien");
 				String hoTenSinhVien = rs.getNString("hoTenSinhVien");
 				String anhDaiDienSinhVien = rs.getString("anhDaiDienSinhVien");
-				String email = rs.getString("email");
+				String email = rs.getString("emailSinhVien");
 				String github = rs.getString("github");
 				String diaChiSinhVien = rs.getNString("diaChiSinhVien");
 				String idTaiKhoan = rs.getString("idTaiKhoan");
