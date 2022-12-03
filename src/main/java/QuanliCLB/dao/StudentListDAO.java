@@ -26,9 +26,7 @@ public class StudentListDAO {
 			connection = dbConnection.getConnection();
 			stm = connection.prepareStatement(query);
 			rs = stm.executeQuery();
-			System.out.println("hi");
 			while (rs.next()) {
-				System.out.println("hi1");
 				String idSinhVien = rs.getString("idSinhVien");
 				String hoTenSinhVien = rs.getNString("hoTenSinhVien");
 				String anhDaiDienSinhVien = rs.getString("anhDaiDienSinhVien");
