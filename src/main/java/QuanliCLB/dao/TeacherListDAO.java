@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mysql.cj.Query;
 
 import QuanliCLB.dbconnection.dbConnection;
 import QuanliCLB.model.GiaoVien;
