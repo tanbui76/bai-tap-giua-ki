@@ -17,6 +17,7 @@ public class dbConnection {
 
 	public static Connection getConnection() throws ClassNotFoundException, SQLException {
 		if (connection == null) {
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			connection=DriverManager.getConnection(url);
 			System.out.print("connected");
 		}

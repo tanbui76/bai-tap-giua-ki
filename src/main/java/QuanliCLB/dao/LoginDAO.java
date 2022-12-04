@@ -3,6 +3,7 @@ package QuanliCLB.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import QuanliCLB.dbconnection.dbConnection;
 import QuanliCLB.model.TaiKhoan;
@@ -19,7 +20,7 @@ public class LoginDAO {
 	
 	public TaiKhoan isLogin(String username,String password) {
 		TaiKhoan tk = null;
-		String query = "Select * from  sql6580911.TaiKhoan where tenDangNhap = ? and matKhau = ?";
+		String query = "Select * from TaiKhoan where tenDangNhap = ? and matKhau = ?";
 		try {
 			connection = dbConnection.getConnection();
 			stm = connection.prepareStatement(query);
@@ -35,7 +36,7 @@ public class LoginDAO {
 				 return tk;
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 		return tk;
 	}
