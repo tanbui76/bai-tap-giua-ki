@@ -39,24 +39,22 @@ public class LoginServlet extends HttpServlet {
 		HomePageDAO homePageDAO = new HomePageDAO();
 		System.out.println("runn1");
 		TaiKhoan tk = loginDao.isLogin(username, password);
-		if(tk.getPhanQuyen()== 1) {
-			Admin admin = (Admin) homePageDAO.getAdmin(tk);
-			session.setAttribute("admin", admin);
-		}
-		if(tk.getPhanQuyen()== 3) {
-			SinhVien sinhvien = (SinhVien) homePageDAO.getSinhVien(tk);
-			session.setAttribute("sinhvien", sinhvien);
-		}
-		if(tk.getPhanQuyen()== 2) {
-			GiaoVien giaoVien = (GiaoVien) homePageDAO.getGiaoVien(tk);
-			session.setAttribute("giaovien", giaoVien);
-		}
-		session.setAttribute("tk", tk);
-		
 		if (tk == null) {
-			RequestDispatcher rd = request.getRequestDispatcher("Login.jsp");
-			rd.forward(request, response);
+			response.sendRedirect("Login.jsp?isError=funcErr()");
 		} else {
+			if (tk.getPhanQuyen() == 1) {
+				Admin admin = (Admin) homePageDAO.getAdmin(tk);
+				session.setAttribute("admin", admin);
+			}
+			if (tk.getPhanQuyen() == 3) {
+				SinhVien sinhvien = (SinhVien) homePageDAO.getSinhVien(tk);
+				session.setAttribute("sinhvien", sinhvien);
+			}
+			if (tk.getPhanQuyen() == 2) {
+				GiaoVien giaoVien = (GiaoVien) homePageDAO.getGiaoVien(tk);
+				session.setAttribute("giaovien", giaoVien);
+			}
+			session.setAttribute("tk", tk);
 			RequestDispatcher rd = request.getRequestDispatcher("AdminHomePage.jsp");
 			rd.forward(request, response);
 		}
