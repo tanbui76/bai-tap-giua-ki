@@ -55,13 +55,23 @@
 								<div class="media-body">
 									<h6 class="mt-2 user-title">
 										<c:if test="${tk.phanQuyen == 1 }">
-											<c:out value="${admin.hoVaTen}"></c:out> - Admin
-										</c:if>
+										<c:out value="${admin.hoVaTen}"></c:out> - Admin
+								</c:if>
+								<c:if test="${tk.phanQuyen == 3 }">
+										<c:out value="${sinhvien.hoTenSinhVien}"></c:out> - Sinh Viên
+								</c:if>
+								<c:if test="${tk.phanQuyen == 2 }">
+										<c:out value="${giaovien.hoTenGiaoVien}"></c:out> - Giáo Viên
+								</c:if>
 									</h6>
 									<p class="user-subtitle">
-									<c:if test="${tk.phanQuyen == 1 }">
-											<c:out value="${admin.email}"></c:out>
-										</c:if>
+								<c:if test="${tk.phanQuyen == 1 }">
+									<c:out value="${admin.email}"></c:out>
+								</c:if> <c:if test="${tk.phanQuyen == 3 }">
+									<c:out value="${sinhvien.email}"></c:out>
+								</c:if> <c:if test="${tk.phanQuyen == 2 }">
+									<c:out value="${giaovien.emailGiaoVien}"></c:out>
+								</c:if>
 									</p>
 								</div>
 							</div>

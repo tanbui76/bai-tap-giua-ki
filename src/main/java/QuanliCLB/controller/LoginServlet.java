@@ -13,6 +13,8 @@ import javax.servlet.http.HttpSession;
 import QuanliCLB.dao.HomePageDAO;
 import QuanliCLB.dao.LoginDAO;
 import QuanliCLB.model.Admin;
+import QuanliCLB.model.GiaoVien;
+import QuanliCLB.model.SinhVien;
 import QuanliCLB.model.TaiKhoan;
 
 /**
@@ -40,7 +42,15 @@ public class LoginServlet extends HttpServlet {
 		if(tk.getPhanQuyen()== 1) {
 			Admin admin = (Admin) homePageDAO.getAdmin(tk);
 			session.setAttribute("admin", admin);
-		}	
+		}
+		if(tk.getPhanQuyen()== 3) {
+			SinhVien sinhvien = (SinhVien) homePageDAO.getSinhVien(tk);
+			session.setAttribute("sinhvien", sinhvien);
+		}
+		if(tk.getPhanQuyen()== 2) {
+			GiaoVien giaoVien = (GiaoVien) homePageDAO.getGiaoVien(tk);
+			session.setAttribute("giaovien", giaoVien);
+		}
 		session.setAttribute("tk", tk);
 		
 		if (tk == null) {
