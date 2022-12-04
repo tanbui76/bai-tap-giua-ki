@@ -42,5 +42,28 @@ public class StudentListDAO {
 		}
 		return list;
 	}
+	public void Insert(String idSinhVien, String hoTenSinhVien,String anhDaiDienSinhVien,String emailSinhVien,String github,String diaChiSinhVien,String idTaiKhoan) {
+		Connection connection = null;
+		PreparedStatement stm =null;
+		ResultSet rSet=null;
+		try {
+			connection = dbConnection.getConnection();
+			String query = "INSERT INTO SinhVien (idSinhVien,hoTenSinhVien,anhDaiDienSinhVien,emailSinhVien,github, diachiSinhVien,idTaiKhoan) "
+					+ "VALUES (?, ?, ?, ?, ?)";
+			stm = connection.prepareStatement(query);
+			stm.setString(1, idSinhVien);
+			stm.setString(2, hoTenSinhVien);;
+			stm.setString(3, anhDaiDienSinhVien);
+			stm.setString(4, emailSinhVien);
+			stm.setString(5, github);
+			stm.setString(6, diaChiSinhVien);;
+			stm.setString(7, idTaiKhoan);
+			stm.executeUpdate();
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
 
 }
