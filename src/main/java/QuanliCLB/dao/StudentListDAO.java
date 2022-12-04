@@ -21,7 +21,7 @@ public class StudentListDAO {
 	}
 	public List<SinhVien> getStudenList(){
 		List<SinhVien> list = new ArrayList<SinhVien>();
-		String query = "SELECT * FROM sql6580911.SinhVien";
+		String query = "SELECT * FROM SinhVien";
 		try {
 			connection = dbConnection.getConnection();
 			stm = connection.prepareStatement(query);
