@@ -5,7 +5,7 @@ public class GiaoVien {
 	private String hoTenGiaoVien;
 	private String anhDaiDienGiaoVien;
 	private String github;
-	private String diaChiGiaoVien;
+	private String diachiGiaoVien;
 	private String emailGiaoVien;
 	private String idTaiKhoan;
 	
@@ -14,12 +14,12 @@ public class GiaoVien {
 	}
 
 	public GiaoVien(String idGiaoVien, String hoTenGiaoVien, String anhDaiDienGiaoVien, String github,
-			String diaChiGiaoVien, String emailGiaoVien, String idTaiKhoan) {
+			String diachiGiaoVien, String emailGiaoVien, String idTaiKhoan) {
 		this.idGiaoVien = idGiaoVien;
 		this.hoTenGiaoVien = hoTenGiaoVien;
 		this.anhDaiDienGiaoVien = anhDaiDienGiaoVien;
 		this.github = github;
-		this.diaChiGiaoVien = diaChiGiaoVien;
+		this.diachiGiaoVien = diachiGiaoVien;
 		this.emailGiaoVien = emailGiaoVien;
 		this.idTaiKhoan = idTaiKhoan;
 	}
@@ -57,11 +57,11 @@ public class GiaoVien {
 	}
 
 	public String getDiaChiGiaoVien() {
-		return diaChiGiaoVien;
+		return diachiGiaoVien;
 	}
 
 	public void setDiaChiGiaoVien(String diaChiGiaoVien) {
-		this.diaChiGiaoVien = diaChiGiaoVien;
+		this.diachiGiaoVien = diaChiGiaoVien;
 	}
 
 	public String getEmailGiaoVien() {

@@ -19,7 +19,10 @@
 								<i class="bi bi-wrench-adjustable-circle"></i> Cập nhật
 							</button>
 						</div>
-
+						<button type="submit" class="btn btn-light px-5"
+												onclick="funcDel()">
+												<i class="bi bi-person-x"></i> Xóa
+											</button>
 						
 						<div class="modal fade" id="myModal2" tabindex="-1" role="dialog"
 							aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -77,12 +80,8 @@
 										<td>${item.hoTenGiaoVien}</td>
 										<td>
 											<button type="submit" class="btn btn-light px-5"
-												data-toggle="modal" data-target="#myModal1">
+												data-toggle="modal" data-target="#myModal3">
 												<i class="bi bi-person-add"></i> Chi tiết
-											</button>
-											<button type="submit" class="btn btn-light px-5"
-												onclick="funcDel()">
-												<i class="bi bi-person-x"></i> Xóa
 											</button>
 										</td>
 									</tr>
@@ -96,7 +95,7 @@
 			</div>
 
 		</div>
-		
+<!-- myModal1: Thêm Giao Vien -->
 		<div class="modal fade" id="myModal1" tabindex="-1" role="dialog"
 							aria-labelledby="exampleModalLabel" aria-hidden="true">
 							<div class="modal-dialog" role="document"
@@ -152,10 +151,58 @@
 								</div>
 							</div>
 						</div>
+	<!-- myModel3: Chi tiết giáo viên -->					
 		
-		
-		
-		
+			<div class="modal fade" id="myModal3" tabindex="-1" role="dialog"
+							aria-labelledby="exampleModalLabel" aria-hidden="true">
+							<div class="modal-dialog" role="document"
+								style="position: relative; top: 10%;">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel"
+											style="font-size: 20px; font-weight: 600; color: #000;">
+											Giáo Viên </h5>
+										<button type="button" class="close" data-dismiss="modal"
+											aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<form action="DetailTeacherServlet" method="post">
+										<c:forEach var="item" items="${list}">
+											
+											<div class="modal-body">
+											<div class="form-group">
+												<label for="message-text" class="col-form-label"
+													style="color: #000;">ID giáo viên: ${item.idGiaoVien} </label> 
+											</div>
+											<div class="form-group">
+												<label for="message-text" class="col-form-label"
+													style="color: #000;">Tên giáo viên:  ${item.hoTenGiaoVien}</label> 
+											</div>
+											<div class="form-group">
+												<label for="message-text" class="col-form-label"
+													style="color: #000;">Link github: ${item.github}</label>
+											</div>
+											<div class="form-group">
+												<label for="message-text" class="col-form-label"
+													style="color: #000;">Email: ${item.emailGiaoVien}</label> 
+											</div>
+											<div class="form-group">
+												<label for="message-text" class="col-form-label"
+													style="color: #000;">Địa chỉ: ${item.diaChiGiaoVien}</label> 
+											</div>
+											<div class="form-group">
+												<label for="message-text" class="col-form-label"
+													style="color: #000;">Mã Tài Khoản: ${item.idTaiKhoan}</label>
+											</div>
+
+										</div>
+										</c:forEach>
+										
+									</form>
+								</div>
+							</div>
+						</div>
 	</div>
 	<script>
 	function funcIn(){	   
