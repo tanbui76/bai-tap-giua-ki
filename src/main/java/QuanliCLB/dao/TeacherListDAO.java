@@ -21,7 +21,7 @@ public class TeacherListDAO {
 	}
 	public List<GiaoVien> getTeacherList() throws SQLException{
 		List<GiaoVien> list = new ArrayList<GiaoVien>();
-		String query = "SELECT * FROM sql6580911.GiaoVien ";
+		String query = "SELECT * FROM GiaoVien ";
 		try {
 			con = dbConnection.getConnection();
 			stm = con.prepareStatement(query);

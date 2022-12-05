@@ -29,7 +29,7 @@
 				<div class="table-responsive">
 					<table class="table">
 						<thead>
-							
+
 							<tr>
 								<th scope="col">#</th>
 								<th scope="col">Mã sinh viên</th>
@@ -39,14 +39,18 @@
 						</thead>
 						<tbody>
 							<c:forEach var="item" items="${list}">
-							<tr>
-								<th scope="row">1</th>
-								<td>${item.idSinhVien}</td>
-								<td>${item.hoTenSinhVien}</td>
-								<td><button type="submit" class="btn btn-light px-5" onclick="funcDel()">
-										<i class="bi bi-person-x"></i> Xóa
-									</button></td>
-							</tr>
+								<tr>
+									<th scope="row"><div class="icheck-material-white" style="margin: 0">
+											<input type="checkbox" id="user-checkbox${item.idSinhVien }" /> <label
+												for="user-checkbox${item.idSinhVien }" name="selectedList"></label>
+										</div></th>
+									<td>${item.idSinhVien}</td>
+									<td>${item.hoTenSinhVien}</td>
+									<td><button type="submit" class="btn btn-light px-5"
+											onclick="funcDel()">
+											<i class="bi bi-person-x"></i> Xóa
+										</button></td>
+								</tr>
 							</c:forEach>
 						</tbody>
 					</table>

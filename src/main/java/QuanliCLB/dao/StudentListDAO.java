@@ -21,7 +21,7 @@ public class StudentListDAO {
 	}
 	public List<SinhVien> getStudenList(){
 		List<SinhVien> list = new ArrayList<SinhVien>();
-		String query = "SELECT * FROM sql6580911.SinhVien";
+		String query = "SELECT * FROM SinhVien";
 		try {
 			connection = dbConnection.getConnection();
 			stm = connection.prepareStatement(query);
@@ -41,6 +41,29 @@ public class StudentListDAO {
 			// TODO: handle exception
 		}
 		return list;
+	}
+	public void Insert(String idSinhVien, String hoTenSinhVien,String anhDaiDienSinhVien,String emailSinhVien,String github,String diaChiSinhVien,String idTaiKhoan) {
+		Connection connection = null;
+		PreparedStatement stm =null;
+		ResultSet rSet=null;
+		try {
+			connection = dbConnection.getConnection();
+			String query = "INSERT INTO SinhVien (idSinhVien,hoTenSinhVien,anhDaiDienSinhVien,emailSinhVien,github, diachiSinhVien,idTaiKhoan) "
+					+ "VALUES (?, ?, ?, ?, ?)";
+			stm = connection.prepareStatement(query);
+			stm.setString(1, idSinhVien);
+			stm.setString(2, hoTenSinhVien);;
+			stm.setString(3, anhDaiDienSinhVien);
+			stm.setString(4, emailSinhVien);
+			stm.setString(5, github);
+			stm.setString(6, diaChiSinhVien);;
+			stm.setString(7, idTaiKhoan);
+			stm.executeUpdate();
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 }
