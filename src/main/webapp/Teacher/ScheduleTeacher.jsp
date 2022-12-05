@@ -26,17 +26,17 @@ h2 {
 							<tr>
 								<td valign="top" style="padding: 0px; height: 300px;">
 									<form action="" method="post">
-										<h2>Thời khóa biểu sinh viên</h2>
+										<h2>Thời khóa biểu giáo viên</h2>
 										<table id="tb_sr_toggle" name="tb_sr_toggle" width="100%"
 											class="soft fixheader">
 											<tbody>
 												<tr>
 													<th align="right" style="padding: 0px;"
-														class="toggle_search"><span title="Ẩn/Hiện bộ lọc">&nbsp;&nbsp;&nbsp;&nbsp;</span></th>
+														class="toggle_search"></th>
 												</tr>
 											</tbody>
 										</table>
-										<form action="" method="get">
+
 										<table name="" width="100%" style="margin: 0 26%;">
 											<tbody>
 												<tr name="tr_sr">
@@ -78,9 +78,6 @@ h2 {
 												</tr>
 											</tbody>
 										</table>
-										</form>
-
-										
 
 										<div class="divp-list" style="overflow: auto; margin: 2% 0;">
 											<table id="tb_index"
@@ -88,53 +85,65 @@ h2 {
 												width="100%" border="1">
 												<thead>
 													<tr style="color: white; font-size: 18px;">
-														
-														<th class="" style="width: 32px; border: 1px solid white;">Thứ</th>														
 														<th align="center"
-															style="width: 218px; border: 1px solid white;">Tên
-															môn học</th>
-															<th align="center"
 															style="width: 32px; border: 1px solid white;">Tiết</th>
+														<th align="center"
+															style="width: 144px; border: 1px solid white;">Thứ hai</th>														
+														<th align="center"
+															style="width: 144px; border: 1px solid white;">Thứ ba
+															</th>
+														<th align="center"
+															style="width: 144px; border: 1px solid white;">Thứ tư</th>
 
 														<th align="center"
-															style="width: 144px; border: 1px solid white;">Tên
-															giáo viên</th>
+															style="width: 144px; border: 1px solid white;">Thứ năm
+														</th>
 														<th align="center"
-															style="width: 144px; border: 1px solid white;">Phòng
-															học</th>
+															style="width: 144px; border: 1px solid white;">Thứ sáu
+														</th>
 														<th align="center"
-															style="width: 153px; border: 1px solid white;">Thời
-															gian</th>
+															style="width: 153px; border: 1px solid white;">Thứ bảy
+														</th>
 
 													</tr>
 												</thead>
 												<tbody>
 													<tr class="alt">
 														
-														<th class="" style="border: 1px solid white;">Thứ 2</th>
+														<td class="" style="border: 1px solid white;">Tiết 1</td>
 														
 														<td class="" style="border: 1px solid white;">Thiết
 															kế và lập trình web</td>
-															<th class="" style="border: 1px solid white;">1</th>
+															<td class="" style="border: 1px solid white;">Lập trình java căn bản</td>
+															<td class="" style="border: 1px solid white;"></td>
+															<td class="" style="border: 1px solid white;">
+															</td>
+															<td class="" style="border: 1px solid white;">
+															</td>
+															<td class="" style="border: 1px solid white;">
+															</td>
+														<!-- <th class="" style="border: 1px solid white;">1</th>
 														<td class="" style="border: 1px solid white;">Mai Hà
 															Thi</td>
-														<td class="" style="border: 1px solid white;">A5-204</td>
-														<td class="" style="border: 1px solid white;">2022-24-11
-															15:30:00</td>
+														<td class="" style="border: 1px solid white;">A5-204</td> -->
+														
 													</tr>
 													<tr class="alt">
 														
-														<th class="" style="border: 1px solid white;">Thứ 3</th>
+														<td class="" style="border: 1px solid white;">Tiết 3</td>
 														
-														<td class="" style="border: 1px solid white;">Thiết
-															kế và lập trình web</td>
-															<th class="" style="border: 1px solid white;">2</th>
-														<td class="" style="border: 1px solid white;">Mai Hà
-															Thi</td>
-														<td class="" style="border: 1px solid white;">A5-204</td>
-														<td class="" style="border: 1px solid white;">2022-24-11
-															15:30:00</td>
+														<td class="" style="border: 1px solid white;">Lập trình C++ căn bản</td>
+															<td class="" style="border: 1px solid white;"></td>
+															<td class="" style="border: 1px solid white;">
+															</td>
+															<td class="" style="border: 1px solid white;">
+															</td>
+															<td class="" style="border: 1px solid white;">Lập trình javascript căn bản</td>
+															<td class="" style="border: 1px solid white;">Lập trình cơ sở dữ liệu căn bản</td>
+														
+														
 													</tr>
+													
 												</tbody>
 											</table>
 

@@ -18,7 +18,7 @@ public class CourseDAO {
 	
 	public List<MonHoc> getMonHoc(){
 		List<MonHoc> listMon = new ArrayList<>();
-		String query = "SELECT * FROM sql6580911.MonHoc";		
+		String query = "SELECT * FROM MonHoc";		
 		try {
 			conn = dbConnection.getConnection();
 			stm = conn.prepareStatement(query);		
@@ -68,6 +68,22 @@ public class CourseDAO {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
+	}
+	public void UpdateMonHoc(String idMonHoc, String tenMonHoc) {
+		String query ="update MonHoc"
+				+ "set tenMonHoc= ? "
+				+ "where idMonHoc = ?";
+		try {
+			conn = dbConnection.getConnection();
+			stm = conn.prepareStatement(query);	
+			stm.setString(1, idMonHoc);
+			stm.setString(1, tenMonHoc);
+			stm.executeUpdate();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
 	}
 	
 }

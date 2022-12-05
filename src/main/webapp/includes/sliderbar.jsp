@@ -27,7 +27,11 @@
 		</a></li>
 
 		<li><a href="schedule.jsp"> <i
-				class="zmdi zmdi-calendar-check"></i> <span>Thời khóa biểu</span> <!-- <small
+				class="zmdi zmdi-calendar-check"></i> <span>Thời khóa biểu sinh viên</span> <!-- <small
+				class="badge float-right badge-light">New</small> -->
+		</a></li>
+		<li><a href="TeacherSchedule.jsp"> <i
+				class="zmdi zmdi-calendar-check"></i> <span>Thời khóa biểu giáo viên</span> <!-- <small
 				class="badge float-right badge-light">New</small> -->
 		</a></li>
 		<!-- 
