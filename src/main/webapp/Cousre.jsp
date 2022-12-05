@@ -29,12 +29,13 @@
 								</button>
 
 							</div>
-							<div class="col-lg-2">
+							
+							<!-- <div class="col-lg-2">
 								<button type="submit" class="btn btn-light px-5"
 									data-toggle="modal" data-target="#myModal2">
 									<i class="bi bi-wrench-adjustable-circle"></i> Sửa
 								</button>
-							</div>
+							</div> -->
 							
 							<!-- <div class="col-lg-2">
 							<a href="DeleteCourseServlet">
@@ -61,6 +62,7 @@
 												<span aria-hidden="true">&times;</span>
 											</button>
 										</div>
+										
 										<form action="AddCourseServlet" method="post">
 											<div class="modal-body">
 												<div class="form-group">
@@ -77,7 +79,8 @@
 												<button class="btn btn-success">Thêm</button>
 
 											</div>
-										</form> 	
+										</form> 
+									
 									</div>
 								</div>
 							</div>
@@ -133,7 +136,8 @@
 									</tr>
 								</thead>
 								<tbody>
-								<form action="DeleteCourseServlet"  method="get">
+								
+								<form action="DeleteCourseServlet" method="get">
 								<c:forEach var="o" items="${listMon}" varStatus="i">
 										<tr>
 											<td>											
@@ -145,13 +149,19 @@
 											    <button type="submit" class="btn btn-light px-5">
 							                    <i class="bi bi-person-x"></i> Xóa</button>
 										    </td>
+										    <td>
+										    <button type="submit" class="btn btn-light px-5"
+									         data-toggle="modal" data-target="#myModal2">
+									         <i class="bi bi-wrench-adjustable-circle"></i> Sửa
+								            </button>
+										    </td>
 										</tr>
 
 									</c:forEach>
 								</form>
-
-									
-
+								
+								
+								
 								</tbody>
 							</table>
 						</div>

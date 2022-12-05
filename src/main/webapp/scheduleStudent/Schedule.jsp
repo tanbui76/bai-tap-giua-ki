@@ -85,12 +85,13 @@ h2 {
 												width="100%" border="1">
 												<thead>
 													<tr style="color: white; font-size: 18px;">
-														<th align="center"
-															style="width: 32px; border: 1px solid white;">STT</th>
+														
 														<th class="" style="width: 32px; border: 1px solid white;">Thứ</th>														
 														<th align="center"
 															style="width: 218px; border: 1px solid white;">Tên
 															môn học</th>
+															<th align="center"
+															style="width: 32px; border: 1px solid white;">Tiết</th>
 
 														<th align="center"
 															style="width: 144px; border: 1px solid white;">Tên
@@ -106,10 +107,12 @@ h2 {
 												</thead>
 												<tbody>
 													<tr class="alt">
-														<th class="" style="border: 1px solid white;">1</th>
+														
 														<th class="" style="border: 1px solid white;">Thứ 2</th>
+														
 														<td class="" style="border: 1px solid white;">Thiết
 															kế và lập trình web</td>
+															<th class="" style="border: 1px solid white;">1</th>
 														<td class="" style="border: 1px solid white;">Mai Hà
 															Thi</td>
 														<td class="" style="border: 1px solid white;">A5-204</td>
@@ -117,10 +120,12 @@ h2 {
 															15:30:00</td>
 													</tr>
 													<tr class="alt">
-														<th class="" style="border: 1px solid white;">2</th>
+														
 														<th class="" style="border: 1px solid white;">Thứ 3</th>
+														
 														<td class="" style="border: 1px solid white;">Thiết
 															kế và lập trình web</td>
+															<th class="" style="border: 1px solid white;">2</th>
 														<td class="" style="border: 1px solid white;">Mai Hà
 															Thi</td>
 														<td class="" style="border: 1px solid white;">A5-204</td>
