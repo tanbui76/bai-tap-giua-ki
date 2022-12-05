@@ -139,7 +139,7 @@ h2 {
 															<td class="" style="border: 1px solid white;">
 															</td>
 															<td class="" style="border: 1px solid white;">Lập trình javascript căn bản</td>
-															<td class="" style="border: 1px solid white;">Lập trình cơ sở dữ liệu </td>
+															<td class="" style="border: 1px solid white;">Lập trình cơ sở dữ liệu căn bản</td>
 														
 														
 													</tr>

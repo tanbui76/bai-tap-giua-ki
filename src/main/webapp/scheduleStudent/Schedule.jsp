@@ -36,7 +36,7 @@ h2 {
 												</tr>
 											</tbody>
 										</table>
-
+										<form action="" method="get">
 										<table name="" width="100%" style="margin: 0 26%;">
 											<tbody>
 												<tr name="tr_sr">
@@ -78,6 +78,9 @@ h2 {
 												</tr>
 											</tbody>
 										</table>
+										</form>
+
+										
 
 										<div class="divp-list" style="overflow: auto; margin: 2% 0;">
 											<table id="tb_index"
