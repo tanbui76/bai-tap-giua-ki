@@ -12,13 +12,13 @@
 								<i class="bi bi-person-add"></i> Thêm
 							</button>
 						</div>
-						<!-- <div class="col-lg-2">									
+						<div class="col-lg-2">									
 		              <input type="file" name="file">
 		              <br>
 		              <button type="submit" class="btn btn-light px-5">
 					  <i class="bi bi-person-x"></i> Upload
 					  </button>
-					  </div> -->
+					  </div>
 						<!-- <div class="col-lg-2">
 
 							<button type="submit" class="btn btn-light px-5"
@@ -54,12 +54,12 @@
 											</div>
 										</form>
 									</div>
-									 <div class="modal-footer">
+									<div class="modal-footer">
 										<button type="button" class="btn btn-secondary"
 											data-dismiss="modal">Close</button>
 										<button type="button" class="btn btn-success"
 											onclick="funcUp()">Cập nhật</button>
-									</div> 
+									</div>
 								</div>
 							</div>
 						</div>
