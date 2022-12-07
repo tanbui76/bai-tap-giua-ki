@@ -7,29 +7,17 @@
 					<div class="row mt-3">
 						<div class="col-lg-2">
 
-							<button type="submit" class="btn btn-light px-5"
+							<!-- <button type="submit" class="btn btn-light px-5"
 								data-toggle="modal" data-target="#myModal1">
 								<i class="bi bi-person-add"></i> Thêm
-							</button>
+							</button> -->
 						</div>
 						<div class="col-lg-2">									
-		              <input type="file" name="file">
-		              <br>
-		              <button type="submit" class="btn btn-light px-5">
-					  <i class="bi bi-person-x"></i> Upload
-					  </button>
+		              <h5>Nếu chưa có mẫu vui lòng tải mẫu excel ở đây
+		              <a href="${pageContext.request.contextPath}">DOWNLOAD</a>
+		              </h5>
 					  </div>
-						<!-- <div class="col-lg-2">
-
-							<button type="submit" class="btn btn-light px-5"
-								data-toggle="modal" data-target="#myModal2">
-								<i class="bi bi-wrench-adjustable-circle"></i> Cập nhật
-							</button>
-						</div> -->
-						<!-- <button type="submit" class="btn btn-light px-5"
-												onclick="funcDel()">
-												<i class="bi bi-person-x"></i> Xóa
-											</button> -->
+						
 						
 						<div class="modal fade" id="myModal2" tabindex="-1" role="dialog"
 							aria-labelledby="exampleModalLabel" aria-hidden="true">
