@@ -1,10 +1,12 @@
 
-
-import java.io.File;
-import java.io.FileInputStream;
+import java.io.BufferedInputStream;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -19,73 +21,31 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/FileDownloadServlet")
 public class FileDownloadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-  
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		try(PrintWriter out = response.getWriter()){
-			out.print("Hello word");
-			/*
-			 * String name = request.getParameter("filename"); String path =
-			 * getServletContext().getRealPath("/"+"File"+File.separator+name);
-			 * out.print(path); ServletContext context = getServletContext();
-			 * 
-			 * String mimeType = context.getMimeType(path); if (mimeType == null) { mimeType
-			 * = ""; } response.setContentType(""); response.setContentLengthLong((int)down
-			 */
-			/*
-			 * OutputStream out1 = response.getOutputStream(); String name =
-			 * request.getParameter("filename"); String path =
-			 * getServletContext().getRealPath("/"+"File"+File.separator+name);
-			 * out.print(path);
-			 * 
-			 * 
-			 * 
-			 * response.setContentType("text/html");
-			 * response.setContentType("APPLICATION/OCTET-STREAM");
-			 * response.setHeader("Content-Disposition", "attachment; filename=test.xlsx");
-			 * FileInputStream in = new FileInputStream(path); byte[] buffer = new
-			 * byte[4096]; int length; while ((length = in.read(buffer)) > 0) {
-			 * out1.write(buffer, 0, length); } in.close(); out1.flush();
-			 */
-			 String fileName = "test.xlsx";
-		        FileInputStream fileInputStream = null;
-		        OutputStream responseOutputStream = null;
-		        try
-		        {
-		            String filePath = request.getServletContext().getRealPath("/File/")+ fileName;
-		            File file = new File(filePath);
-		            
-		            String mimeType = request.getServletContext().getMimeType(filePath);
-		            if (mimeType == null) {        
-		                mimeType = "application/octet-stream";
-		            }
-		            response.setContentType(mimeType);
-		            response.addHeader("Content-Disposition", "attachment; filename=" + fileName);
-		            response.setContentLength((int) file.length());
-		 
-		            fileInputStream = new FileInputStream(file);
-		            responseOutputStream = response.getOutputStream();
-		            int bytes;
-		            while ((bytes = fileInputStream.read()) != -1) {
-		                responseOutputStream.write(bytes);
-		            }
-		        }
-		        catch(Exception ex)
-		        {
-		            ex.printStackTrace();
-		        }
-		        finally
-		        {
-		            fileInputStream.close();
-		            responseOutputStream.close();
-		        }
-		    }
-			
-		}
-	
 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		ServletContext context = getServletContext();
+	    String fullPath = context.getRealPath("/File/test.xlsx");
+	    Path path = Paths.get(fullPath);
+	    byte[] data = Files.readAllBytes(path);
+	    response.setContentType("application/octet-stream");
+	    response.setHeader("Content-disposition", "attachment; filename=test.xlsx");
+	    response.setContentLength(data.length);
+	    InputStream inputStream = new BufferedInputStream(new ByteArrayInputStream(data));
+	    OutputStream outStream = response.getOutputStream();
+	    byte[] buffer = new byte[4096];
+	    int bytesRead = -1;
+	    while ((bytesRead = inputStream.read(buffer)) != -1) {
+	      outStream.write(buffer, 0, bytesRead);
+	    }
+	    inputStream.close();
+	    outStream.close();
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 	}
 
 }
