@@ -57,6 +57,8 @@
 				class="zmdi zmdi-share text-info"></i> <span>Quản lí giáo viên</span></a></li>
 		<li><a href="Mark.jsp"><i
 				class="zmdi zmdi-share text-info"></i> <span>Quản lí điểm của sinh viên</span></a></li>
+					<li><a href="ImportDownload.jsp"><i
+				class="zmdi zmdi-share text-info"></i> <span>Upload File</span></a></li>
 
 	</ul>
 

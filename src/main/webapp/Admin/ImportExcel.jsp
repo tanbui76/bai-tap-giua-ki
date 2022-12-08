@@ -14,7 +14,7 @@
 						</div>
 						<div class="col-lg-2">									
 		              <h5>Nếu chưa có mẫu vui lòng tải mẫu excel ở đây
-		              <a href="${pageContext.request.contextPath}">DOWNLOAD</a>
+		              <a href="FileDownloadServlet">DOWNLOAD</a>
 		              </h5>
 					  </div>
 						
