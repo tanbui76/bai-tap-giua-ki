@@ -1,37 +1,40 @@
 package QuanliCLB.model;
 
 public class BangDiemChiTiet {
-	private int idBangDiemChiTiet;
-	private int idBangDiem;
+	private String idBangDiemChiTiet;
+	private String idBangDiem;
 	private float diemHe1;
 	private float diemHe2;
 	private float diemHe3;
+	private String idMonHoc; 
 	
 	public BangDiemChiTiet() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public BangDiemChiTiet(int idBangDiemChiTiet, int idBangDiem, float diemHe1, float diemHe2, float diemHe3) {
+	public BangDiemChiTiet(String idBangDiemChiTiet, String idBangDiem, float diemHe1, float diemHe2, float diemHe3, String idMonHoc) {
 		this.idBangDiemChiTiet = idBangDiemChiTiet;
 		this.idBangDiem = idBangDiem;
 		this.diemHe1 = diemHe1;
 		this.diemHe2 = diemHe2;
 		this.diemHe3 = diemHe3;
+		this.idMonHoc = idMonHoc;
+		
 	}
 
-	public int getIdBangDiemChiTiet() {
+	public String getIdBangDiemChiTiet() {
 		return idBangDiemChiTiet;
 	}
 
-	public void setIdBangDiemChiTiet(int idBangDiemChiTiet) {
+	public void setIdBangDiemChiTiet(String idBangDiemChiTiet) {
 		this.idBangDiemChiTiet = idBangDiemChiTiet;
 	}
 
-	public int getIdBangDiem() {
+	public String getIdBangDiem() {
 		return idBangDiem;
 	}
 
-	public void setIdBangDiem(int idBangDiem) {
+	public void setIdBangDiem(String idBangDiem) {
 		this.idBangDiem = idBangDiem;
 	}
 
@@ -57,6 +60,12 @@ public class BangDiemChiTiet {
 
 	public void setDiemHe3(float diemHe3) {
 		this.diemHe3 = diemHe3;
+	}
+	public String getIdMonHoc() {
+		return idMonHoc;
+	}
+	public void setIdMonHoc(String idMonHoc) {
+		this.idMonHoc = idMonHoc;
 	}
 	
 }
