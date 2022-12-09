@@ -24,14 +24,11 @@
 									<select>
 											<option value="" selected="">Tất cả</option>
 											<option value="2022">2022-2023</option>
-											<option value="2021">2021-2022</option>
-											<option value="2020">2020-2021</option>
 									</select>
 									 <select "style="width: 120px;">
 											<option value="" selected="">Tất cả</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
-											<option value="3">Hè</option>
 									</select></td>
 								</tr>
 								<tr>
@@ -51,13 +48,13 @@
 									style="border-collapse: collapse;" name="tb_xemketquahoctap_0"
 									width="100%" border="1" class="table-list fixheader">
 									<thead>
+										
 										<tr class="table">
 											<th rowspan="2" align="center" style="width: 55px;">Stt</th>
 											<th rowspan="2" align="center" style="width: 166px;">Mã
 												môn học</th>
 											<th rowspan="2" align="center" style="width: 250px;">Tên
 												môn học</th>
-											<th rowspan="2" align="center" style="width: 80px;">Nhóm</th>
 											<th colspan="2" align="center" style="width: 166px;">Điểm
 												HP hệ 10</th>
 											<th colspan="2" align="center" style="width: 166px;">Điểm
@@ -74,74 +71,19 @@
                                         </tr>
 									</thead>
 									<tbody>
-										<tr class="alt">
-											<th align="center" width="5%" class="">1</th>
-											<td align="left" width="14%" class="">31121994</td>
-											<td align="left" class="">Thiết kế lập trình Web</td>
-											<td align="center" width="7%" class="">20-0102</td>
-											<td align="center" width="7%" class="">8,8</td>
-											<td align="center" width="7%" class=""></td>
-											<td align="center" width="7%" class="">A</td>
-											<td align="center" width="7%" class=""></td>
-											<td align="center" width="7%" class=""><a href="DetailScore.jsp">Chitiet1</a></td>
-										</tr>
-										<tr>
-											<th align="center" width="5%" class="">2</th>
-											<td align="left" width="14%" class="">31131250</td>
-											<td align="left" class="">Lập trình C/C++ căn bản</td>
-											<td align="center" width="7%" class="">20-0102</td>
-											<td align="center" width="7%" class="">9,0</td>
-											<td align="center" width="7%" class=""></td>
-											<td align="center" width="7%" class="">A</td>
-											<td align="center" width="7%" class=""></td>
-											<td align="center" width="7%" class=""><a href="DetailScore2.jsp">Chitiet2</a></td>
-
-										</tr>
-										<tr class="alt">
-											<th align="center" width="5%" class="">3</th>
-											<td align="left" width="14%" class="">31231389</td>
-											<td align="left" class="">Lập trình Java cơ bản</td>
-											<td align="center" width="7%" class="">20-0102</td>
-											<td align="center" width="7%" class="">8,1</td>
-											<td align="center" width="7%" class=""></td>
-											<td align="center" width="7%" class="">B</td>
-											<td align="center" width="7%" class=""></td>
-											<td align="center" width="7%" class=""><a href="./">Chitiet3</a></td>
-										</tr>
-										<tr>
-											<th align="center" width="5%" class="">4</th>
-											<td align="left" width="14%" class="">31231447</td>
-											<td align="left" class="">Lập trình Java nâng cao</td>
-											<td align="center" width="7%" class="">20-0102</td>
-											<td align="center" width="7%" class="">8,7</td>
-											<td align="center" width="7%" class=""></td>
-											<td align="center" width="7%" class="">A</td>
-											<td align="center" width="7%" class=""></td>
-											<td align="center" width="7%" class=""><a href="./">Chitiet4</a></td>
-
-										</tr>
-										<tr class="alt">
-											<th align="center" width="5%" class="">5</th>
-											<td align="left" width="14%" class="">31231905</td>
-											<td align="left" class="">Cấu trúc dữ liệu</td>
-											<td align="center" width="7%" class="">20-0102</td>
-											<td align="center" width="7%" class="">7,0</td>
-											<td align="center" width="7%" class=""></td>
-											<td align="center" width="7%" class="">B</td>
-											<td align="center" width="7%" class=""></td>
-											<td align="center" width="7%" class=""><a href="./">Chitiet5</a></td>
-										</tr>
-										<tr>
-											<th align="center" width="5%" class="">6</th>
-											<td align="left" width="14%" class="">31331980</td>
-											<td align="left" class="">Cơ sở dữ liệu</td>
-											<td align="center" width="7%" class="">20-0101</td>
-											<td align="center" width="7%" class="">9,7</td>
-											<td align="center" width="7%" class=""></td>
-											<td align="center" width="7%" class="">A</td>
-											<td align="center" width="7%" class=""></td>
-											<td align="center" width="7%" class=""><a href="./">Chitiet6</a></td>
-										</tr>
+										<c:forEach var="item" items="${list}">
+											<tr class="alt">
+												<th align="center" width="5%" class="">1</th>
+												<td align="left" width="14%" class="">${item.idMonHoc}</td>
+												<td align="left" class="">${item.tenMonHoc}</td>
+												<td align="center" width="7%" class="">8,8</td>
+												<td align="center" width="7%" class=""></td>
+												<td align="center" width="7%" class="">A</td>
+												<td align="center" width="7%" class=""></td>
+												<td align="center" width="7%" class=""><a href="DetailScore.jsp">Chitiet1</a></td>
+											</tr>
+										</c:forEach>
+											
 									</tbody>
 								</table>
 							</div>
