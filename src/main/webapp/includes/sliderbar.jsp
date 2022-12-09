@@ -23,7 +23,7 @@
 		
 
 		<!-- <li><a href="Score.jsp"> <i class="zmdi zmdi-grid"></i> <span>Quản lí điểm</span> -->
-		<li><a href="Score.jsp"> <i class="zmdi zmdi-grid"></i> <span>Bảng điểm chi tiết</span>
+		<li><a href="ScoreStudentServlet"> <i class="zmdi zmdi-grid"></i> <span>Bảng điểm chi tiết</span>
 		</a></li>
 
 		<li><a href="schedule.jsp"> <i
@@ -57,6 +57,8 @@
 				class="zmdi zmdi-share text-info"></i> <span>Quản lí giáo viên</span></a></li>
 		<li><a href="Mark.jsp"><i
 				class="zmdi zmdi-share text-info"></i> <span>Quản lí điểm của sinh viên</span></a></li>
+					<li><a href="ImportDownload.jsp"><i
+				class="zmdi zmdi-share text-info"></i> <span>Upload File</span></a></li>
 
 	</ul>
 
