@@ -37,7 +37,7 @@ public class LoginServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		LoginDAO loginDao = new LoginDAO();
 		HomePageDAO homePageDAO = new HomePageDAO();
-		System.out.println("runn1");
+		System.out.println(username+password);
 		TaiKhoan tk = loginDao.isLogin(username, password);
 		if (tk == null) {
 			response.sendRedirect("Login.jsp?isError=funcErr()");
