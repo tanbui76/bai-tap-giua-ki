@@ -129,25 +129,25 @@
 											<div class="form-group">
 												<label for="message-text" class="col-form-label"
 													style="color: #000;">ID Tài khoản: </label> <input
-													type="text" id="recipient-name" name="txtIDGiaoVien"
+													type="text" id="recipient-name" name="txtIDTaiKhoan"
 													style="width: 100%;">
 											</div>
 											<div class="form-group">
 												<label for="message-text" class="col-form-label"
 													style="color: #000;">Tên đăng nhập: </label> <input
-													type="text" id="recipient-name" name="txtTenGiaoVien"
+													type="text" id="recipient-name" name="txtTenDangNhap"
 													style="width: 100%;">
 											</div>
 											<div class="form-group">
 												<label for="message-text" class="col-form-label"
 													style="color: #000;">Mật khẩu: </label> <input type="text"
-													id="recipient-name" name="txtEmail" style="width: 100%;">
+													id="recipient-name" name="txtmatkhau" style="width: 100%;">
 											</div>
 
 										</div>
 										<div class="modal-footer">
 
-											<button  class="btn btn-success" onclick="funcIn()">Thêm
+											<button  class="btn btn-success" ">Thêm
 											</button>
 										</div>
 									</form>
