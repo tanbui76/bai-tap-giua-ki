@@ -13,10 +13,10 @@
 							</button>
 						</div>
 						<div class="col-lg-2">
-						<form action="UploadListTeacherServlet" method="post" enctype="application/x-www-form-urlencoded">
+						<form action="UploadListTeacherServlet" method="post" enctype="multipart/form-data"> 
 						<div>
 						
-						Chọn file :<input type="file" name="fileupload">
+						Chọn file :<input type="file" name="file">
 						<button type="submit" class="btn btn-light px-5">
 								<i class="bi bi-person-add"></i> Upload
 							</button>
