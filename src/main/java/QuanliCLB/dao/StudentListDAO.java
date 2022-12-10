@@ -11,6 +11,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import QuanliCLB.dbconnection.dbConnection;
+import QuanliCLB.model.GiaoVien;
 import QuanliCLB.model.SinhVien;
 
 public class StudentListDAO {
@@ -86,12 +87,10 @@ public class StudentListDAO {
 			stm = connection.prepareStatement(query);
 			stm.setString(1, idSinhVien);
 			stm.setString(2, hoTenSinhVien);
-			;
 			stm.setString(3, anhDaiDienSinhVien);
 			stm.setString(4, emailSinhVien);
 			stm.setString(5, github);
 			stm.setString(6, diaChiSinhVien);
-			;
 			stm.setString(7, idTaiKhoan);
 			stm.executeUpdate();
 
@@ -114,8 +113,9 @@ public class StudentListDAO {
 			if (!getString.equals(yearStr)) {
 				s = yearStr + "SV001";
 			} else {
-				int k;
-				k = Integer.parseInt(chuoi.substring(6, 3));
+//				System.out.println(chuoi.substring(6, 9));
+				int k = 0;
+				k = Integer.parseInt(chuoi.substring(6, 9));
 				k = k + 1;
 				if (k < 10) {
 					s = s + "00";
@@ -128,6 +128,31 @@ public class StudentListDAO {
 			}
 		}
 		return s;
+	}
+
+	public int InsertStudent(String idSinhVien, String hoTenSinhVien, String anhDaiDienSinhVien, String email,
+			String github, String diaChiSinhVien, String idTaiKhoan) {
+		Connection connection = null;
+		PreparedStatement stm = null;
+		// ResultSet rset = null;
+		try {
+			connection = dbConnection.getConnection();
+			String query = "insert into SinhVien (idSinhVien,hoTenSinhVien,anhDaiDienSinhVien,emailSinhVien,github, diachiSinhVien,idTaiKhoan) VALUeS (?,?,?,?,?,?,?)";
+			stm = connection.prepareStatement(query);
+			stm.setString(1, idSinhVien);
+			stm.setNString(2, hoTenSinhVien);
+			stm.setString(3, anhDaiDienSinhVien);
+			stm.setString(4, email);
+			stm.setString(5, github);
+			stm.setString(6, diaChiSinhVien);
+			stm.setString(7, idTaiKhoan);
+			stm.executeUpdate();	
+			return 1;
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			return 0;
+		}
 	}
 
 }

@@ -9,15 +9,18 @@ import javax.servlet.http.HttpServletResponse;
 
 import QuanliCLB.dao.TeacherListDAO;
 
-@WebServlet("/AddTeacher")
-public class AddTeacher extends HttpServlet {
+/**
+ * Servlet implementation class AddTeacherServlet
+ */
+@WebServlet("/AddTeacherServlet")
+public class AddTeacherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-   
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
@@ -30,7 +33,6 @@ public class AddTeacher extends HttpServlet {
 		TeacherListDAO tDao = new TeacherListDAO();
 		tDao.Insert(idGV, nameString, emaiString, diachi, maTK);
 		response.sendRedirect("TeacherListServlet");
-		
 	}
 
 }
