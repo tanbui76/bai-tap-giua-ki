@@ -39,4 +39,22 @@ public class AccountDAO {
 			
 			
 		}
+	 public void Insert(String idTaiKhoan, String tenDangNhap, String matKhau, int phanQuyen) {
+		 Connection connection = null;
+		 PreparedStatement stm = null;
+		 ResultSet rs = null;
+		 try {
+			connection = dbConnection.getConnection();
+			String query = "INSERT INTO TaiKhoan (idTaiKhoan,tenDangNhap,matKhau, phanQuyen)"
+					+ "VALUES (?, ?, ?, ?)";
+			stm = connection.prepareStatement(query);
+			stm.setString(1, idTaiKhoan);
+			stm.setString(2, tenDangNhap);
+			stm.setString(3, matKhau);
+			stm.setInt(4, phanQuyen);
+			stm.executeUpdate();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	 }
 }
