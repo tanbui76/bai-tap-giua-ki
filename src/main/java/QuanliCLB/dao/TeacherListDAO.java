@@ -1,11 +1,13 @@
 package QuanliCLB.dao;
 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 
 
 import QuanliCLB.dbconnection.dbConnection;
@@ -62,5 +64,32 @@ public class TeacherListDAO {
 			// TODO: handle exception
 		}
 	}
+
+
+	public void InsertListTeacher(List<GiaoVien> giaovien) {
+		Connection connection = null;
+		PreparedStatement stm = null;
+	//	ResultSet rset = null;
+		try {
+			connection = dbConnection.getConnection();
+			String  query = "INSERT INTO GiaoVien (idGiaoVien,hoTenGiaoVien,emailGiaoVien, diachiGiaoVien,idTaiKhoan)"
+					+ "VALUES (?, ?, ?, ?, ?)";
+			stm = connection.prepareStatement(query);
+			for (GiaoVien gv: giaovien) {
+				stm.setString(1, gv.getIdGiaoVien());
+				stm.setString(2, gv.getHoTenGiaoVien());
+				stm.setString(3, gv.getEmailGiaoVien());
+				stm.setString(4, gv.getDiaChiGiaoVien());
+				stm.setString(5, gv.getIdTaiKhoan());
+				stm.addBatch();
+			
+			}
+			stm.executeBatch();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
 	
 }
