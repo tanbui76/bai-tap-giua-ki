@@ -1,37 +1,24 @@
 package QuanliCLB.controller;
 
-
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
-
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.poifs.filesystem.POIFSFileSystem;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.apache.tomcat.util.descriptor.web.MultipartDef;
-
-import QuanliCLB.dao.TeacherListDAO;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import QuanliCLB.model.GiaoVien;
 
 
@@ -58,23 +45,41 @@ public class UploadListTeacherServlet extends HttpServlet {
 		{
 			Files.createDirectories(Path.of(realPart));
 		}
-		part.write(realPart+"/"+fileName);
-		/*
-		try(PrintWriter out= response.getWriter()){
-			out.print("Luu thanh cong!!");
-		}
-		*/
+		part.write(realPart+"/"+fileName);	
 		
 		FileInputStream inp;
 		
 			List<GiaoVien> list = new ArrayList<>();
-			GiaoVien gv = new GiaoVien();
-		//	inp = new FileInputStream(request.getServletContext().getRealPath("/File/Upload/")+fileName);
-			//Workbook workbook = new HSSFWorkbook(new POIFSFileSystem(inp));
-			Workbook wb = WorkbookFactory.create(new FileInputStream(request.getServletContext().getRealPath("/File/Upload/")+fileName));
-			Sheet sheet = wb.getSheetAt(0);
-			Row row ;
-			for(int i=1; i<=sheet.getLastRowNum(); i++)
+			
+			inp = new FileInputStream(request.getServletContext().getRealPath("/File/Upload/")+fileName);
+			XSSFWorkbook workbook = new XSSFWorkbook(inp);
+			//get sheet
+			XSSFSheet sheet = workbook.getSheetAt(0);
+			//System.out.println("Sheet name"+sheet);
+			DataFormatter dataFormatter = new DataFormatter();
+			// get all row
+			Iterator<Row> iterator = sheet.iterator();
+			while(iterator.hasNext()) {
+				Row row = iterator.next();
+				if(row.getRowNum() ==0) {
+					continue;
+				}
+				Iterator<Cell> cellIterator = row.cellIterator();
+				
+				// Read cells and set value for Teacher object
+				GiaoVien gv = new GiaoVien();
+				while(cellIterator.hasNext()) {
+					// Read cell
+					Cell cell = cellIterator.next();
+					String cellValue = dataFormatter.formatCellValue(cell);
+					System.out.println(cellValue);
+					
+				}
+			}
+			workbook.close();
+			// get all cells
+			
+		/*	for(int i=1; i<=sheet.getLastRowNum(); i++)
 			{
 				row = sheet.getRow(i);
 				gv.setIdGiaoVien(row.getCell(1).getStringCellValue());
@@ -86,15 +91,15 @@ public class UploadListTeacherServlet extends HttpServlet {
 			
 									
 			}
-			TeacherListDAO dao = new TeacherListDAO();
+	    */
+		/*	TeacherListDAO dao = new TeacherListDAO();
 			dao.InsertListTeacher(list);
 			System.out.println(list);
+			*/
 			response.sendRedirect("TeacherList.jsp");
 			
 			
 		
-			// TODO: handle exception
-			//System.out.println("error");
 		
 	}
 	
