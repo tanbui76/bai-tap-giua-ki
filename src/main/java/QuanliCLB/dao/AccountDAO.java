@@ -27,6 +27,7 @@ public class AccountDAO {
 					String matKhau = rs.getString("matKhau");
 					int phanQuyen = rs.getInt("phanQuyen");
 					TaiKhoan tk = new TaiKhoan(idTaiKhoan, tenDangNhap, matKhau, phanQuyen);
+					System.out.println(tenDangNhap);
 					listtk.add(tk);			
 				}			
 				
