@@ -74,7 +74,7 @@
 			<div class="modal-header">
 				<h5 class="modal-title" id="exampleModalLabel"
 					style="font-size: 20px; font-weight: 600; color: #000;">Thêm
-					Giáo Viên</h5>
+					Sinh Viên</h5>
 				<button type="button" class="close" data-dismiss="modal"
 					aria-label="Close">
 					<span aria-hidden="true">&times;</span>
