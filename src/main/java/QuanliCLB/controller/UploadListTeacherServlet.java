@@ -99,8 +99,6 @@ public class UploadListTeacherServlet extends HttpServlet {
 					default:
 						break;
 					}
-					// Add Teacher object to list
-					
 
 				}	
 				// Add Teacher object to list
@@ -134,6 +132,7 @@ public class UploadListTeacherServlet extends HttpServlet {
 									
 			}
 			workbook.close();
+			//inp.close();
 			response.sendRedirect("TeacherList.jsp");
 			// get all cells
 			
