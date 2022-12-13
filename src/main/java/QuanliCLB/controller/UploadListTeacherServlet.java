@@ -77,8 +77,7 @@ public class UploadListTeacherServlet extends HttpServlet {
 					//	System.out.println(cellValue);
 					if(cellValue.equals("") || cellValue == null) {
 						continue;
-					}
-					
+					}	
 					// Set value for Teacher object
 					switch (cell.getColumnIndex()) {
 					case 0:
@@ -115,21 +114,6 @@ public class UploadListTeacherServlet extends HttpServlet {
 //					
 //				}
 			
-				// Cell cellidGiaoVien =row.getCell(1);
-				// String idGiaoVien = cellidGiaoVien.toString();	
-				// System.out.println(idGiaoVien);
-				// Cell cellHoTenGiaoVien = row.getCell(2);
-				// String HoTenGiaoVien = cellHoTenGiaoVien.toString();
-				// System.out.println(HoTenGiaoVien);
-				// Cell cellEmailGiaoVien = row.getCell(3);
-				// String EmailGiaoVien = cellEmailGiaoVien.toString();
-				// System.out.println(EmailGiaoVien);
-				// Cell cellDiaChiGiaoVien = row.getCell(4);
-				// String DiaChiGiaoVien = cellDiaChiGiaoVien.toString();
-				// Cell cellIdTaiKhoan = row.getCell(5);
-				// String IdTaiKhoan = cellIdTaiKhoan.toString();
-				// System.out.println(IdTaiKhoan);
-									
 			}
 			workbook.close();
 			//inp.close();
@@ -146,9 +130,7 @@ public class UploadListTeacherServlet extends HttpServlet {
 				gv.setIdTaiKhoan(row.getCell(7).getStringCellValue());
 				list.add(gv);						
 			}
-	    */
-		
-			
+	    */		
 		
 	}
 		 
