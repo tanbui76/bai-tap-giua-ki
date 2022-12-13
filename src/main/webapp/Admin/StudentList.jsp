@@ -13,7 +13,7 @@
 						</button>
 					</div>
 					<div class="col-lg-2">
-						<button type="submit" class="btn btn-light px-5" onclick="">
+						<button type="submit" class="btn btn-light px-5" data-toggle="modal" data-target="#myModalUpdate">
 							<i class="bi bi-wrench-adjustable-circle"></i> Sửa
 						</button>
 					</div>
@@ -44,7 +44,7 @@
 								<tr>
 									<th scope="row">
 									<div class="icheck-material-white" style="margin: 0">
-											<input class="form-check-input" type="radio" name="selectSinhVien" id="user-checkbox${item.idSinhVien }" value="${item.idSinhVien}"  aria-label="..." onclick="GetDataUpdate()">
+											<input class="form-check-input" type="radio" name="selectSinhVien" id="user-checkbox${item.idSinhVien }" value="${item.idSinhVien}"  aria-label="..." onclick="GetDataUpdate('${item.idSinhVien}')" >
 							<!--  			<input type="checkbox" id="user-checkbox${item.idSinhVien }" />-->
 											<label for="user-checkbox${item.idSinhVien }" name="selectedList"></label>	
 									</div>
@@ -52,10 +52,10 @@
 									<td>${item.idSinhVien}
 									</td>
 									<td>${item.hoTenSinhVien}
-									<input type="text" id="HOTENSV" value="${item.hoTenSinhVien}">
-									<input type="text" id="EMAILSV" value="${item.email}">
-									<input type="text" id="DIACHISV" value=${item.diaChiSinhVien }>
-									<input type="text" id="IDTAIKHOAN" value="${item.idTaiKhoan }">
+									<input type="text" id="hotensvdata${item.idSinhVien }" value="${item.hoTenSinhVien}">
+									<input type="text" id="emailsvdata${item.idSinhVien }" value="${item.email}">
+									<input type="text" id="diachisvdata${item.idSinhVien }" value=${item.diaChiSinhVien }>
+									<input type="text" id="idtaikhoandata${item.idSinhVien }" value="${item.idTaiKhoan }">
 									</td>
 									<td><button type="submit" class="btn btn-light px-5"
 											onclick="funcDel()">
@@ -79,12 +79,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title" id="exampleModalLabel"
-<<<<<<< HEAD
 					style="font-size: 20px; font-weight: 600; color: #000;">Thêm Sinh Viên</h5>
-=======
-					style="font-size: 20px; font-weight: 600; color: #000;">Thêm
-					Sinh Viên</h5>
->>>>>>> branch 'master' of https://github.com/tanbui76/bai-tap-giua-ki.git
 				<button type="button" class="close" data-dismiss="modal"
 					aria-label="Close">
 					<span aria-hidden="true">&times;</span>
@@ -215,12 +210,26 @@
 	</div>
 </div>
 <script>
-	function GetDataUpdate(string id){
-		var idSinhvien = ;
-		var hotensv;
-		var email;
-		var diachi;
-		var idtaikhoan;
+	function GetDataUpdate(id){
+		/*
+		<input type="text" id="hotensvdata" value="${item.hoTenSinhVien}">
+		<input type="text" id="emailsvdata" value="${item.email}">
+		<input type="text" id="diachisvdata" value=${item.diaChiSinhVien }>
+		<input type="text" id="idtaikhoandata" value="${item.idTaiKhoan }">
+		*/
+		var getidsv = "user-checkbox"+id;
+		var idSinhvien = document.getElementById(getidsv).value;
+		var hotensv = document.getElementById("hotensvdata"+id).value;
+		var email = document.getElementById("emailsvdata"+id).value;
+		var diachi = document.getElementById("diachisvdata"+id).value;
+		var idtaikhoan = document.getElementById("idtaikhoandata"+id).value;
+
+		document.getElementById("idsv1").value = idSinhvien;
+		document.getElementById("hotensvUpdate").value = hotensv;
+		document.getElementById("emailsvUpdate").value = email;
+		document.getElementById("diachisvUpdate").value = diachi;
+		document.getElementById("idtksvUpdate").value = idtaikhoan;
+
 	}
 </script>
 
