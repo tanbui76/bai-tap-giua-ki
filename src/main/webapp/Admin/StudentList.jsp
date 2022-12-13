@@ -18,9 +18,12 @@
 						</button>
 					</div>
 					<div class="col-lg-2">
+						<form action="DeleteStudent" method="post">
 						<button type="submit" class="btn btn-light px-5">
 							<i class="bi bi-person-x"></i> Xóa
 						</button>
+						<input type="text" id="txtIDSinhVienDelete" style="display: none;"/>
+					</form>
 					</div>
 				</div>
 			</div>
@@ -52,10 +55,10 @@
 									<td>${item.idSinhVien}
 									</td>
 									<td>${item.hoTenSinhVien}
-									<input type="text" id="hotensvdata${item.idSinhVien }" value="${item.hoTenSinhVien}">
-									<input type="text" id="emailsvdata${item.idSinhVien }" value="${item.email}">
-									<input type="text" id="diachisvdata${item.idSinhVien }" value=${item.diaChiSinhVien }>
-									<input type="text" id="idtaikhoandata${item.idSinhVien }" value="${item.idTaiKhoan }">
+									<input style="display: none;" type="text" id="hotensvdata${item.idSinhVien }" value="${item.hoTenSinhVien}">
+									<input style="display: none;" type="text" id="emailsvdata${item.idSinhVien }" value="${item.email}">
+									<input style="display: none;" type="text" id="diachisvdata${item.idSinhVien }" value=${item.diaChiSinhVien }>
+									<input style="display: none;" type="text" id="idtaikhoandata${item.idSinhVien }" value="${item.idTaiKhoan }">
 									</td>
 									<td><button type="submit" class="btn btn-light px-5"
 											onclick="funcDel()">
@@ -163,7 +166,7 @@
 					<div class="form-group">
 						<label for="message-text" class="col-form-label"
 							style="color: #000;">ID sinh viên: </label> <input type="text" readonly 
-							id="idsv1" name="txtIDSinhVienUpdate" style="width: 100%;" value="" >
+							id="idsvUpdate" name="txtIDSinhVienUpdate" style="width: 100%;" value="" >
 					</div>
 					<div class="form-group">
 						<label for="message-text" class="col-form-label"
@@ -174,12 +177,12 @@
 					<div class="form-group">
 						<label for="message-text" class="col-form-label"
 							style="color: #000;">Email: </label> <input type="text"
-							id="emailsvUpdate" name="txtEmailUpdate" style="width: 100%;">
+							id="emailsvUpdate" name="txtEmailSinhVienUpdate" style="width: 100%;">
 					</div>
 					<div class="form-group">
 						<label for="message-text" class="col-form-label"
 							style="color: #000;">Địa chỉ: </label> <input type="text"
-							id="diachisvUpdate" name="txtDiachiUpdate" style="width: 100%;">
+							id="diachisvUpdate" name="txtDiaChiSinhVienUpdate" style="width: 100%;">
 					</div>
 					<!--  	<div class="form-group">
 						<label for="message-text" class="col-form-label"
@@ -225,6 +228,7 @@
 		var idtaikhoan = document.getElementById("idtaikhoandata"+id).value;
 
 		document.getElementById("idsv1").value = idSinhvien;
+		document.getElementById("idSinhVienDelete").value = idSinhvien;
 		document.getElementById("hotensvUpdate").value = hotensv;
 		document.getElementById("emailsvUpdate").value = email;
 		document.getElementById("diachisvUpdate").value = diachi;

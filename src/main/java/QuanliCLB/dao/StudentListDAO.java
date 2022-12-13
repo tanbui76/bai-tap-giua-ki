@@ -25,7 +25,7 @@ public class StudentListDAO {
 
 	public List<SinhVien> getStudenList() {
 		List<SinhVien> list = new ArrayList<SinhVien>();
-		String query = "SELECT * FROM SinhVien";
+		String query = "SELECT * FROM SinhVien where hidden is not true";
 		try {
 			connection = dbConnection.getConnection();
 			stm = connection.prepareStatement(query);
@@ -151,6 +151,45 @@ public class StudentListDAO {
 
 		} catch (Exception e) {
 			// TODO: handle exception
+			return 0;
+		}
+	}
+	
+	public int UpdateStudent(String idSinhVien, String hoTenSinhVien, String anhDaiDienSinhVien, String email,
+			String github, String diaChiSinhVien, String idTaiKhoan){
+		Connection connection = null;
+		PreparedStatement stm = null;
+		// ResultSet rset = null;
+		try {
+			connection = dbConnection.getConnection();
+			String query = "update SinhVien set hoTenSinhVien = ?,anhDaiDienSinhVien = ?,emailSinhVien = ?,github = ?, diachiSinhVien = ?,idTaiKhoan = ? where idSinhVien = ?";
+			stm = connection.prepareStatement(query);
+			stm.setNString(1, hoTenSinhVien);
+			stm.setString(2, anhDaiDienSinhVien);
+			stm.setString(3, email);
+			stm.setString(4, github);
+			stm.setString(5, diaChiSinhVien);
+			stm.setString(6, idTaiKhoan);
+			stm.setString(7, idSinhVien);
+			stm.executeUpdate();
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
+	}
+	
+	public int DeleteStudent(String idSinhVien){
+		Connection connection = null;
+		PreparedStatement stm = null;
+		// ResultSet rset = null;
+		try {
+			connection = dbConnection.getConnection();
+			String query = "update SinhVien set hidden = 1 where idSinhVien = ?";
+			stm = connection.prepareStatement(query);
+			stm.setString(1, idSinhVien);
+			stm.executeUpdate();
+			return 1;
+		} catch (Exception e) {
 			return 0;
 		}
 	}
