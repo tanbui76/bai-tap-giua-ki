@@ -83,60 +83,113 @@ h2 {
 										
 
 										<div class="divp-list" style="overflow: auto; margin: 2% 0;">
-											<table id="tb_index"
-												style="border-collapse: collapse; display: table;"
-												width="100%" border="1">
-												<thead>
-													<tr style="color: white; font-size: 18px;">
-														
-														<th class="" style="width: 32px; border: 1px solid white;">Thứ</th>														
-														<th align="center"
-															style="width: 218px; border: 1px solid white;">Tên
-															môn học</th>
-															<th align="center"
-															style="width: 32px; border: 1px solid white;">Tiết</th>
-
-														<th align="center"
-															style="width: 144px; border: 1px solid white;">Tên
-															giáo viên</th>
-														<th align="center"
-															style="width: 144px; border: 1px solid white;">Phòng
-															học</th>
-														<th align="center"
-															style="width: 153px; border: 1px solid white;">Thời
-															gian</th>
-
-													</tr>
-												</thead>
-												<tbody>
-													<tr class="alt">
-														
-														<th class="" style="border: 1px solid white;">Thứ 2</th>
-														
-														<td class="" style="border: 1px solid white;">Thiết
-															kế và lập trình web</td>
-															<th class="" style="border: 1px solid white;">1</th>
-														<td class="" style="border: 1px solid white;">Mai Hà
-															Thi</td>
-														<td class="" style="border: 1px solid white;">A5-204</td>
-														<td class="" style="border: 1px solid white;">2022-24-11
-															15:30:00</td>
-													</tr>
-													<tr class="alt">
-														
-														<th class="" style="border: 1px solid white;">Thứ 3</th>
-														
-														<td class="" style="border: 1px solid white;">Thiết
-															kế và lập trình web</td>
-															<th class="" style="border: 1px solid white;">2</th>
-														<td class="" style="border: 1px solid white;">Mai Hà
-															Thi</td>
-														<td class="" style="border: 1px solid white;">A5-204</td>
-														<td class="" style="border: 1px solid white;">2022-24-11
-															15:30:00</td>
-													</tr>
-												</tbody>
-											</table>
+											 <table id="">
+        <thead>
+        <tr>
+        <th width="2%" align="center" style="border: 1px solid gray;">Tiết</th>
+        <th width="14%" align="center" style="border: 1px solid gray;">Thứ 2</th>
+        <th width="14%" align="center" style="border: 1px solid gray;">Thứ 3</th>
+        <th width="14%" align="center" style="border: 1px solid gray;">Thứ 4</th>
+        <th width="14%" align="center" style="border: 1px solid gray;">Thứ 5</th>
+        <th width="14%" align="center" style="border: 1px solid gray;">Thứ 6</th>
+        <th width="14%" align="center" style="border: 1px solid gray;">Thứ 7</th>
+        <th width="14%" align="center" style="border: 1px solid gray;">Chủ nhật</th>
+        </tr>
+        </thead><tbody><tr class="body">
+        <td align="left" style="border: 1px solid gray;">1</td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;" rowspan="3">31231755 - 20-0103<br>Thiết kế và lập trình web<br>Phòng: B3-405</td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;" rowspan="3">31231398 - 20-0101<br>Lập trình mạng<br>Phòng: B3-201</td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        </tr>
+        <tr class="body">
+        <td align="left" style="border: 1px solid gray;">2</td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        </tr>
+        <tr class="body">
+        <td align="left" style="border: 1px solid gray;">3</td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;" rowspan="2">31121101 - 20-0102<br>Công nghệ phần mềm<br>Phòng: A5-206</td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        </tr>
+        <tr class="body">
+        <td align="left" style="border: 1px solid gray;">4</td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        </tr>
+        <tr class="body">
+        <td align="left" style="border: 1px solid gray;">5</td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        </tr>
+        <tr class="body">
+        <td colspan="8" style="border: 1px solid gray;">&nbsp;</td>
+        </tr>
+        <tr class="body">
+        <td align="left" style="border: 1px solid gray;">6</td>
+        <td align="left" style="border: 1px solid gray;" rowspan="4">31241283 - 20-0103<br>Hệ quản trị cơ sở dữ liệu<br>Phòng: C3.201</td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;" rowspan="2">21221904 - 20-0113<br>Lịch sử Đảng Cộng sản Việt Nam<br>Phòng: B3-202</td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        </tr>
+        <tr class="body">
+        <td align="left" style="border: 1px solid gray;">7</td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        </tr>
+        <tr class="body">
+        <td align="left" style="border: 1px solid gray;">8</td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        </tr>
+        <tr class="body">
+        <td align="left" style="border: 1px solid gray;">9</td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;" rowspan="2">31221010 - 20-0103<br>An toàn thông tin<br>Phòng: A5-207</td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        </tr>
+        <tr class="body">
+        <td align="left" style="border: 1px solid gray;">10</td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        <td align="left" style="border: 1px solid gray;"></td>
+        </tr>
+        </tbody>
+        </table>
 
 										</div>
 										
