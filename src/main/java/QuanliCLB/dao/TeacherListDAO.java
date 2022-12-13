@@ -66,7 +66,7 @@ public class TeacherListDAO {
 	}
 
 
-	public void InsertListTeacher(List<GiaoVien> giaovien) {
+	public void InsertExceltTeacher(List<GiaoVien> giaovien) {
 		Connection connection = null;
 		PreparedStatement stm = null;
 	//	ResultSet rset = null;
@@ -75,7 +75,7 @@ public class TeacherListDAO {
 			String  query = "INSERT INTO GiaoVien (idGiaoVien,hoTenGiaoVien,emailGiaoVien, diachiGiaoVien,idTaiKhoan)"
 					+ "VALUES (?, ?, ?, ?, ?)";
 			stm = connection.prepareStatement(query);
-			for (GiaoVien gv: giaovien) {
+			for (GiaoVien gv: giaovien) { 
 				stm.setString(1, gv.getIdGiaoVien());
 				stm.setString(2, gv.getHoTenGiaoVien());
 				stm.setString(3, gv.getEmailGiaoVien());
@@ -85,11 +85,34 @@ public class TeacherListDAO {
 			
 			}
 			stm.executeBatch();
+			System.out.println("Thêm thành công!");
 			
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 	}
+	
+	
+//	public void InsertExcel(String idGiaoVien, String hoTenGiaoVien, String emailGiaoVien, String diachiGiaoVien, String idTaiKhoan) throws ClassNotFoundException, SQLException {
+//		Connection connection = null;
+//		PreparedStatement stm = null;
+//		ResultSet rs = null;
+//		try {
+//			connection = dbConnection.getConnection();
+//			String  query = "INSERT INTO GiaoVien (idGiaoVien,hoTenGiaoVien,emailGiaoVien, diachiGiaoVien,idTaiKhoan)"
+//					+ "VALUES (?, ?, ?, ?, ?)";
+//			stm = connection.prepareStatement(query);
+//			stm.setString(1, idGiaoVien);
+//			stm.setString(2, hoTenGiaoVien);
+//			stm.setString(3, emailGiaoVien);
+//			stm.setString(4, diachiGiaoVien);
+//			stm.setString(5, idTaiKhoan);
+//			stm.executeUpdate();
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//		}
+//	}
+	
 	
 	
 }

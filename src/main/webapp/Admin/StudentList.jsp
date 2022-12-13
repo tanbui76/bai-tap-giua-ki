@@ -79,7 +79,12 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title" id="exampleModalLabel"
+<<<<<<< HEAD
 					style="font-size: 20px; font-weight: 600; color: #000;">Thêm Sinh Viên</h5>
+=======
+					style="font-size: 20px; font-weight: 600; color: #000;">Thêm
+					Sinh Viên</h5>
+>>>>>>> branch 'master' of https://github.com/tanbui76/bai-tap-giua-ki.git
 				<button type="button" class="close" data-dismiss="modal"
 					aria-label="Close">
 					<span aria-hidden="true">&times;</span>

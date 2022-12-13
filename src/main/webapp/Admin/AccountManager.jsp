@@ -1,3 +1,4 @@
+<%@page import="QuanliCLB.dao.AccountDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<div class="content-wrapper">
@@ -124,30 +125,47 @@
 											<span aria-hidden="true">&times;</span>
 										</button>
 									</div>
-									<form action="" method="post">
+									<%
+										AccountDAO aDao = new AccountDAO ();
+									%>
+									<form action="AddAccountServlet" method="post">
 										<div class="modal-body">
 											<div class="form-group">
 												<label for="message-text" class="col-form-label"
 													style="color: #000;">ID Tài khoản: </label> <input
-													type="text" id="recipient-name" name="txtIDGiaoVien"
-													style="width: 100%;">
+													type="text" id="recipient-name" name="txtIDTaiKhoan"
+													style="width: 100%;" value ="<%= aDao.Matutang() %>" >
 											</div>
 											<div class="form-group">
 												<label for="message-text" class="col-form-label"
 													style="color: #000;">Tên đăng nhập: </label> <input
-													type="text" id="recipient-name" name="txtTenGiaoVien"
+													type="text" id="recipient-name" name="txtTenDangNhap"
 													style="width: 100%;">
 											</div>
 											<div class="form-group">
 												<label for="message-text" class="col-form-label"
 													style="color: #000;">Mật khẩu: </label> <input type="text"
-													id="recipient-name" name="txtEmail" style="width: 100%;">
+													id="recipient-name" name="txtmatkhau" style="width: 100%;">
+											</div>
+											<div class="form-group">
+												<label for="message-text" class="col-form-label"
+													style="color: #000;">Phân quyền: </label> 
+													<select style="height: 4vh;"
+														class="form-select" name="txtphanQuyen">
+														<option style="background: #fff !important;" selected>--Chọn--</option>
+															<option style="background: #fff !important;"
+																value="1">Admin</option>
+																<option style="background: #fff !important;"
+																value="2">Giáo Viên</option><option style="background: #fff !important;"
+																value="3">Sinh Viên</option>
+							
+						</select>
 											</div>
 
 										</div>
 										<div class="modal-footer">
 
-											<button  class="btn btn-success" onclick="funcIn()">Thêm
+											<button  class="btn btn-success" ">Thêm
 											</button>
 										</div>
 									</form>
