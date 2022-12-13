@@ -9,8 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import QuanliCLB.dao.StudentListDAO;
 
-@WebServlet("/DeleteStudent")
-public class DeleteStudent extends HttpServlet {
+
+@WebServlet("/DeleteStudentServlet")
+public class DeleteStudentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
@@ -18,19 +19,20 @@ public class DeleteStudent extends HttpServlet {
 
 	}
 
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html; charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		String idSinhvien = request.getParameter("txtIDSinhVienDelete");
-
+		System.out.println(idSinhvien);
+		
 		StudentListDAO dao = new StudentListDAO();
 
 		if(dao.DeleteStudent(idSinhvien)==1) {
-			response.sendRedirect("StudentList.jsp?msg=success");
+			response.sendRedirect("StudentListServlet?msg=success");
 		}
 		else {
-			response.sendRedirect("StudentList.jsp?msg=fail");
+			response.sendRedirect("StudentListServlet?msg=fail");
 		}
-
 	}
 
 }

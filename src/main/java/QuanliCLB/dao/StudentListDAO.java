@@ -25,7 +25,7 @@ public class StudentListDAO {
 
 	public List<SinhVien> getStudenList() {
 		List<SinhVien> list = new ArrayList<SinhVien>();
-		String query = "SELECT * FROM SinhVien where hidden is not true";
+		String query = "SELECT * FROM SinhVien where hidden is null";
 		try {
 			connection = dbConnection.getConnection();
 			stm = connection.prepareStatement(query);
@@ -192,6 +192,7 @@ public class StudentListDAO {
 		} catch (Exception e) {
 			return 0;
 		}
+		
 	}
-
+	
 }

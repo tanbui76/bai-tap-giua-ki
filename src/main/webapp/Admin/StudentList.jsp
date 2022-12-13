@@ -18,11 +18,11 @@
 						</button>
 					</div>
 					<div class="col-lg-2">
-						<form action="DeleteStudent" method="post">
+						<form action="DeleteStudentServlet" method="post">
 						<button type="submit" class="btn btn-light px-5">
 							<i class="bi bi-person-x"></i> Xóa
 						</button>
-						<input type="text" id="txtIDSinhVienDelete" style="display: none;"/>
+						<input type="text" name="txtIDSinhVienDelete" id="txtIDSinhVienDelete" style="display: block;"/>
 					</form>
 					</div>
 				</div>
@@ -227,8 +227,8 @@
 		var diachi = document.getElementById("diachisvdata"+id).value;
 		var idtaikhoan = document.getElementById("idtaikhoandata"+id).value;
 
-		document.getElementById("idsv1").value = idSinhvien;
-		document.getElementById("idSinhVienDelete").value = idSinhvien;
+		document.getElementById("idsvUpdate").value = idSinhvien;
+		document.getElementById("txtIDSinhVienDelete").value = idSinhvien;
 		document.getElementById("hotensvUpdate").value = hotensv;
 		document.getElementById("emailsvUpdate").value = email;
 		document.getElementById("diachisvUpdate").value = diachi;

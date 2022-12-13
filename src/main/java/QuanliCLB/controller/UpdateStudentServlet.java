@@ -21,6 +21,8 @@ public class UpdateStudentServlet extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html; charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		String idSinhvien = request.getParameter("txtIDSinhVienUpdate");
 		String tenSinhvien = request.getParameter("txtTenSinhVienUpdate");
 		String emailSinhvien = request.getParameter("txtEmailSinhVienUpdate");
@@ -29,11 +31,11 @@ public class UpdateStudentServlet extends HttpServlet {
 
 		StudentListDAO dao = new StudentListDAO();
 
-		if(dao.UpdateStudent(idSinhvien, tenSinhvien, tenSinhvien, emailSinhvien, emailSinhvien, diachiSinhvien, maTaiKhoan)==1) {
-			response.sendRedirect("StudentList.jsp?msg=success");
+		if(dao.UpdateStudent(idSinhvien, tenSinhvien, "", emailSinhvien, emailSinhvien, diachiSinhvien, maTaiKhoan)==1) {
+			response.sendRedirect("StudentListServlet?msg=success");
 		}
 		else {
-			response.sendRedirect("StudentList.jsp?msg=fail");
+			response.sendRedirect("StudentListServlet?msg=fail");
 		}
 
 	}
