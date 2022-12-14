@@ -25,9 +25,9 @@ public class AddAccountServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
-		String idTaiKhoan = request.getParameter("txtidTaiKhoan");
+		String idTaiKhoan = request.getParameter("txtIDTaiKhoan");
 		String tenDangNhap =request.getParameter("txtTenDangNhap");
-		String matKhau = request.getParameter("txtMatkhau");
+		String matKhau = request.getParameter("txtmatkhau");
 		String phanQuyen = request.getParameter("txtphanQuyen");
 		
 		AccountDAO accountDAO = new AccountDAO();
