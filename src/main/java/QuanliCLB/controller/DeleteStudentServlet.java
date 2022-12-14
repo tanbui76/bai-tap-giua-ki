@@ -28,10 +28,10 @@ public class DeleteStudentServlet extends HttpServlet {
 		StudentListDAO dao = new StudentListDAO();
 
 		if(dao.DeleteStudent(idSinhvien)==1) {
-			response.sendRedirect("StudentListServlet?msg=success");
+			response.sendRedirect("StudentListServlet?msg=successDelete()");
 		}
 		else {
-			response.sendRedirect("StudentListServlet?msg=fail");
+			response.sendRedirect("StudentListServlet?msg=failDelete()");
 		}
 	}
 

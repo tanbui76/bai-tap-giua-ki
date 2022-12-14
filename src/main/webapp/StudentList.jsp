@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Danh sách sinh viên</title>
 </head>
-<body>
+<body onload="<%= request.getParameter("msg")%>">
 	<%@include file="includes/includeAdminStyle.jsp"%>
 
 	<div id="wrapper">
@@ -28,16 +28,57 @@
 			  confirmButtonText: 'Xóa'
 			}).then((result) => {
 			  if (result.isConfirmed) {
-			    Swal.fire(
-			      'Đã xóa!',
-			      'Xóa thành công',
-			      'success'
-			    )
+				document.getElementById("deleteAction").click();
 			  }
 			})
 		
 	}
 	</script>
+	<script type="text/javascript">
 	
+	function failUpdate() {
+		Swal.fire({
+			  
+			  icon: 'error',
+			  title: 'Cập nhật thất bại',
+			  showConfirmButton: false,
+			  timer: 1500
+			})
+		
+	}
+	function failDelete() {
+		Swal.fire({
+			  
+			  icon: 'error',
+			  title: 'Xóa thất bại',
+			  showConfirmButton: false,
+			  timer: 1500
+			})
+		
+	}
+	function successDelete() {
+		Swal.fire({
+			  
+			  icon: 'success',
+			  title: 'Xóa thành công',
+			  showConfirmButton: false,
+			  timer: 1500
+			})
+		
+	}
+	</script>
+	<script type="text/javascript">
+	
+	function successUpdate() {
+		Swal.fire({
+			  
+			  icon: 'success',
+			  title: 'Cập nhật thành công',
+			  showConfirmButton: false,
+			  timer: 1500
+			})
+		
+	}
+	</script>
 </body>
 </html>

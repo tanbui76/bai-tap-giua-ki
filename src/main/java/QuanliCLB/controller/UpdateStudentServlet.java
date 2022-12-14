@@ -31,11 +31,11 @@ public class UpdateStudentServlet extends HttpServlet {
 
 		StudentListDAO dao = new StudentListDAO();
 
-		if(dao.UpdateStudent(idSinhvien, tenSinhvien, "", emailSinhvien, emailSinhvien, diachiSinhvien, maTaiKhoan)==1) {
-			response.sendRedirect("StudentListServlet?msg=success");
+		if(dao.UpdateStudent(idSinhvien, tenSinhvien, "", emailSinhvien, "", diachiSinhvien, maTaiKhoan)==1) {
+			response.sendRedirect("StudentListServlet?msg=successUpdate()");
 		}
 		else {
-			response.sendRedirect("StudentListServlet?msg=fail");
+			response.sendRedirect("StudentListServlet?msg=failUpdate()");
 		}
 
 	}

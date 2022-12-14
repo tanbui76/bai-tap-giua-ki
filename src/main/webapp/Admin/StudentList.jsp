@@ -19,10 +19,13 @@
 					</div>
 					<div class="col-lg-2">
 						<form action="DeleteStudentServlet" method="post">
-						<button type="submit" class="btn btn-light px-5">
+						<button style="display:none;" type="submit" class="btn btn-light px-5" id="deleteAction">
 							<i class="bi bi-person-x"></i> Xóa
 						</button>
-						<input type="text" name="txtIDSinhVienDelete" id="txtIDSinhVienDelete" style="display: block;"/>
+						<a  class="btn btn-light px-5" onclick="funcDel()">
+							<i class="bi bi-person-x"></i> Xóa
+						</a>
+						<input style="display: none;" type="text" name="txtIDSinhVienDelete" id="txtIDSinhVienDelete" style="display: block;"/>
 					</form>
 					</div>
 				</div>
@@ -39,7 +42,6 @@
 								<th scope="col">#</th>
 								<th scope="col">Mã sinh viên</th>
 								<th scope="col">Họ và tên</th>
-								<th scope="col">Hành động</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -52,7 +54,8 @@
 											<label for="user-checkbox${item.idSinhVien }" name="selectedList"></label>	
 									</div>
 									</th>
-									<td>${item.idSinhVien}
+									<td>
+									${item.idSinhVien}
 									</td>
 									<td>${item.hoTenSinhVien}
 									<input style="display: none;" type="text" id="hotensvdata${item.idSinhVien }" value="${item.hoTenSinhVien}">
@@ -60,10 +63,6 @@
 									<input style="display: none;" type="text" id="diachisvdata${item.idSinhVien }" value=${item.diaChiSinhVien }>
 									<input style="display: none;" type="text" id="idtaikhoandata${item.idSinhVien }" value="${item.idTaiKhoan }">
 									</td>
-									<td><button type="submit" class="btn btn-light px-5"
-											onclick="funcDel()">
-											<i class="bi bi-person-x"></i> Xóa
-										</button></td>
 								</tr>
 							</c:forEach>
 						</tbody>
