@@ -205,7 +205,7 @@
 				</div>
 				<div class="modal-footer">
 
-					<button class="btn btn-success">Thêm</button>
+					<button class="btn btn-success">Cập nhật</button>
 				</div>
 			</form>
 		</div>

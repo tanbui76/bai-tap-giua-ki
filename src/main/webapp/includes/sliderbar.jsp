@@ -49,7 +49,7 @@
 		
 
 		<li class="sidebar-header">THÔNG TIN TÀI KHOẢN</li>
-		<li><a href="Cousre.jsp"><i
+		<li><a href="CourseListServlet"><i
 				class="zmdi zmdi-coffee text-danger"></i> <span>Quản lý môn  học</span></a></li>
 		<li><a href="StudentListServlet"><i
 				class="zmdi zmdi-chart-donut text-success"></i> <span>Quản lí sinh viên</span></a></li>
