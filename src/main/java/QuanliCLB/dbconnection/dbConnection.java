@@ -20,6 +20,11 @@ public class dbConnection {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			connection=DriverManager.getConnection(url);
 			System.out.print("connected");
+		} else {
+			connection.close();
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			connection=DriverManager.getConnection(url);
+			System.out.print("connected but have a another connection before and we had close the connect");
 		}
 		return connection;
 	}
