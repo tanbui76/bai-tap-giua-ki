@@ -34,6 +34,7 @@ public class LoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String username = request.getParameter("txtEmail");
 		String password = request.getParameter("txtPass");
+		
 		HttpSession session = request.getSession();
 		LoginDAO loginDao = new LoginDAO();
 		HomePageDAO homePageDAO = new HomePageDAO();
