@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -34,15 +35,25 @@ public class LoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String username = request.getParameter("txtEmail");
 		String password = request.getParameter("txtPass");
+		String cbRemember = request.getParameter("cbRemember");
+		
 		
 		HttpSession session = request.getSession();
 		LoginDAO loginDao = new LoginDAO();
 		HomePageDAO homePageDAO = new HomePageDAO();
 		System.out.println(username+password);
 		TaiKhoan tk = loginDao.isLogin(username, password);
+		
 		if (tk == null) {
 			response.sendRedirect("Login.jsp?isError=funcErr()");
+			
 		} else {
+			Cookie user = new Cookie("username", username);
+			Cookie passCookie = new Cookie("password",password);
+			user.setMaxAge(60 * 60 * 24);
+	        passCookie.setMaxAge(60 * 60 * 24);
+	        response.addCookie(user);
+	        response.addCookie(passCookie);
 			if (tk.getPhanQuyen() == 1) {
 				Admin admin = (Admin) homePageDAO.getAdmin(tk);
 				session.setAttribute("admin", admin);

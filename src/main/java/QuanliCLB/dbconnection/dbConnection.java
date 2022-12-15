@@ -24,7 +24,7 @@ public class dbConnection {
 			connection.close();
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			connection=DriverManager.getConnection(url);
-			System.out.print("connected but have a another connection before and we had close the connect");
+			System.out.println("connected but have a another connection before and we had close the connect");
 		}
 		return connection;
 	}

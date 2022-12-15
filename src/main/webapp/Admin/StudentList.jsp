@@ -102,7 +102,7 @@
 						<label for="message-text" class="col-form-label"
 							style="color: #000;">Họ tên sinh viên: </label> <input
 							type="text" id="hotensv" name="txtTenSinhVien"
-							style="width: 100%;">
+							style="width: 100%;" required="required">
 					</div>
 					<div class="form-group">
 						<label for="message-text" class="col-form-label"
