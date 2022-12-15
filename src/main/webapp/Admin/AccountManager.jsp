@@ -32,7 +32,7 @@
 									<th scope="col">#</th>
 									<th scope="col">ID Tài khoản</th>
 									<th scope="col">Tên đăng nhập</th>
-									 <th scope="col">Mật khẩu</th>
+									<!--  <th scope="col">Mật khẩu</th> -->
 									<th scope="col">Phân quyền</th>
 								</tr>
 							</thead>
@@ -48,9 +48,9 @@
 										 </th>
 										<td>${item.idTaiKhoan}</td>
 										<td>${item.tenDangNhap}
-									<%-- 	<input type="text" id="txtDataIdTaiKhoan${item.idTaiKhoan}" value="${item.idTaiKhoan}">
+									    <input type="text" id="txtDataIdTaiKhoan${item.idTaiKhoan}" value="${item.idTaiKhoan}">
 										<input type="text" id="txtDataTenDangNhap${item.idTaiKhoan}" value="${item.tenDangNhap}">
-										<input type="text" id="txtDataMatKhau${item.idTaiKhoan}" value="${item.matKhau}"> --%>
+										<input type="text" id="txtDataMatKhau${item.idTaiKhoan}" value="${item.matKhau}"> 
 										<%-- <input type="text" id="txtDataPhanQuyen${item.idTaiKhoan}" value="${item.phanQuyen}"> --%>
 										<%-- <input type="text" id="txtDataPhanQuyen${item.idTaiKhoan}"> --%>
 										
@@ -141,7 +141,7 @@
 						
 <!-- sua tai khoan  -->
 
-<%-- <div class="modal fade" id="myModalUpdate" tabindex="-1" role="dialog"
+ <div class="modal fade" id="myModalUpdate" tabindex="-1" role="dialog"
 	aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document"
 		style="position: relative; top: 10%;">
@@ -198,7 +198,7 @@
 			</form>
 		</div>
 	</div>
-</div> --%>
+</div> 
 						
 	
 	</div>
@@ -242,7 +242,7 @@
 		
 	}
 	
-	/* function GetDataUpdate(id) {
+	 function GetDataUpdate(id) {
 		var idTaiKhoan = document.getElementById("txtDataIdTaiKhoan" + id).value;
 		var tenDangNhap = document.getElementById("txtDataTenDangNhap" + id).value;
 		var matKhau = document.getElementById("txtDataMatKhau" + id).value;
@@ -253,5 +253,5 @@
 		document.getElementById("matkhautkUpdate").value = email;
 	
 		
-	} */
+	} 
 	</script>
