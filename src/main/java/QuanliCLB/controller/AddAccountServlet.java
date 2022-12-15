@@ -28,10 +28,8 @@ public class AddAccountServlet extends HttpServlet {
 		String idTaiKhoan = request.getParameter("txtIDTaiKhoan");
 		String tenDangNhap =request.getParameter("txtTenDangNhap");
 		String matKhau = request.getParameter("txtmatkhau");
-		String phanQuyen = request.getParameter("txtphanQuyen");
-		
-		AccountDAO accountDAO = new AccountDAO();
-		
+		String phanQuyen = request.getParameter("txtphanQuyen");	
+		AccountDAO accountDAO = new AccountDAO();		
 		accountDAO.Insert(idTaiKhoan, tenDangNhap, matKhau, Integer.parseInt(phanQuyen));
 		RequestDispatcher rDispatcher = request.getRequestDispatcher("AccountServlet");
 		rDispatcher.forward(request, response);

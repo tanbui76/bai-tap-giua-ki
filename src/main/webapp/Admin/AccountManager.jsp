@@ -13,57 +13,12 @@
 								<i class="bi bi-person-add"></i> Thêm
 							</button>
 						</div>
-						<!-- <div class="col-lg-2">									
-		              <input type="file" name="file">
-		              <br>
-		              <button type="submit" class="btn btn-light px-5">
-					  <i class="bi bi-person-x"></i> Upload
-					  </button>
-					  </div> -->
-						<!-- <div class="col-lg-2">
-
-							<button type="submit" class="btn btn-light px-5"
-								data-toggle="modal" data-target="#myModal2">
-								<i class="bi bi-wrench-adjustable-circle"></i> Cập nhật
-							</button>
-						</div> -->
-						<!-- <button type="submit" class="btn btn-light px-5"
-												onclick="funcDel()">
-												<i class="bi bi-person-x"></i> Xóa
-											</button> -->
+						<div class="col-lg-2">
+						<button type="submit" class="btn btn-light px-5" data-toggle="modal" data-target="#myModalUpdate">
+							<i class="bi bi-wrench-adjustable-circle"></i> Sửa
+						</button>
+					    </div>
 						
-						<div class="modal fade" id="myModal2" tabindex="-1" role="dialog"
-							aria-labelledby="exampleModalLabel" aria-hidden="true">
-							<div class="modal-dialog" role="document"
-								style="position: relative; top: 10%;">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h5 class="modal-title" id="exampleModalLabel"
-											style="font-size: 20px; font-weight: 600; color: #000;">Cập
-											nhật môn học</h5>
-										<button type="button" class="close" data-dismiss="modal"
-											aria-label="Close">
-											<span aria-hidden="true">&times;</span>
-										</button>
-									</div>
-									<div class="modal-body">
-										<form>
-											<div class="form-group">
-												<label for="message-text" class="col-form-label"
-													style="color: #000;">Tên môn học</label> <input type="text"
-													id="recipient-name" style="width: 100%;">
-											</div>
-										</form>
-									</div>
-									 <div class="modal-footer">
-										<button type="button" class="btn btn-secondary"
-											data-dismiss="modal">Close</button>
-										<button type="button" class="btn btn-success"
-											onclick="funcUp()">Cập nhật</button>
-									</div> 
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -77,17 +32,30 @@
 									<th scope="col">#</th>
 									<th scope="col">ID Tài khoản</th>
 									<th scope="col">Tên đăng nhập</th>
-									<th scope="col">Mật khẩu</th>
+									 <th scope="col">Mật khẩu</th>
 									<th scope="col">Phân quyền</th>
 								</tr>
 							</thead>
 							<tbody>
 								<c:forEach var="item" items="${list}">
 									<tr>
-										 <th scope="row">1</th>
+										 <th scope="row">
+										 <div class="icheck-material-white" style="margin: 0">
+											<input class="form-check-input" type="radio" name="selectSinhVien" id="user-checkbox${item.idTaiKhoan }" value="${item.idTaiKhoan}"  aria-label="..." onclick="GetDataUpdate('${item.idTaiKhoan}')" >				
+											<label for="user-checkbox${item.idTaiKhoan}" name="selectedList"></label>	
+									</div>
+										 
+										 </th>
 										<td>${item.idTaiKhoan}</td>
-										<td>${item.tenDangNhap}</td>
-										<td>${item.matKhau}</td>
+										<td>${item.tenDangNhap}
+									<%-- 	<input type="text" id="txtDataIdTaiKhoan${item.idTaiKhoan}" value="${item.idTaiKhoan}">
+										<input type="text" id="txtDataTenDangNhap${item.idTaiKhoan}" value="${item.tenDangNhap}">
+										<input type="text" id="txtDataMatKhau${item.idTaiKhoan}" value="${item.matKhau}"> --%>
+										<%-- <input type="text" id="txtDataPhanQuyen${item.idTaiKhoan}" value="${item.phanQuyen}"> --%>
+										<%-- <input type="text" id="txtDataPhanQuyen${item.idTaiKhoan}"> --%>
+										
+										</td>
+									    <td>${item.matKhau}</td>
 										<td>
 											<c:if test="${item.phanQuyen == 1 }">
 												Admin
@@ -108,7 +76,6 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
 <!-- myModal1: Thêm Tài Khoản -->
 		<div class="modal fade" id="myModal1" tabindex="-1" role="dialog"
@@ -133,7 +100,7 @@
 											<div class="form-group">
 												<label for="message-text" class="col-form-label"
 													style="color: #000;">ID Tài khoản: </label> <input
-													type="text" id="recipient-name" name="txtIDTaiKhoan"
+													type="text" readonly="readonly" id="recipient-name" name="txtIDTaiKhoan"
 													style="width: 100%;" value ="<%= aDao.Matutang() %>" >
 											</div>
 											<div class="form-group">
@@ -144,7 +111,7 @@
 											</div>
 											<div class="form-group">
 												<label for="message-text" class="col-form-label"
-													style="color: #000;">Mật khẩu: </label> <input type="text"
+													style="color: #000;">Mật khẩu: </label> <input type="text" readonly="readonly"
 													id="recipient-name" name="txtmatkhau" style="width: 100%;">
 											</div>
 											<div class="form-group">
@@ -158,8 +125,7 @@
 																<option style="background: #fff !important;"
 																value="2">Giáo Viên</option><option style="background: #fff !important;"
 																value="3">Sinh Viên</option>
-							
-						</select>
+						                            </select>
 											</div>
 
 										</div>
@@ -172,6 +138,69 @@
 								</div>
 							</div>
 						</div>
+						
+<!-- sua tai khoan  -->
+
+<%-- <div class="modal fade" id="myModalUpdate" tabindex="-1" role="dialog"
+	aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document"
+		style="position: relative; top: 10%;">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel"
+					style="font-size: 20px; font-weight: 600; color: #000;">Cập nhật tài khoản</h5>
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<form action="UpdateTeacherServlet" method="post">
+										
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="message-text" class="col-form-label"
+							style="color: #000;">ID Tài khoản: </label> <input type="text" readonly 
+							id="idsvUpdate" name="txtIDSinhVienUpdate" style="width: 100%;" value="" >
+					</div>
+					<div class="form-group">
+						<label for="message-text" class="col-form-label"
+							style="color: #000;">Tên đăng nhập: </label> <input
+							type="text" id="hotensvUpdate" name="txtTenSinhVienUpdate"
+							style="width: 100%;">
+					</div>
+					<div class="form-group">
+						<label for="message-text" class="col-form-label"
+							style="color: #000;">Mật khẩu: </label> <input type="text"
+							id="emailsvUpdate" name="txtEmailSinhVienUpdate" style="width: 100%;">
+					</div>
+					
+					
+					<div class="form-group" style="display: flex; flex-direction: column;">
+						<label for="message-text" class="col-form-label"
+							style="color: #000;">Phân Quyền: </label> 
+							<select style="height: 4vh;" id="idtksvUpdate"
+							class="form-select" name="txtMaTaiKhoanUpdate">
+							<option style="background: #fff !important;" selected>Chọn
+								tài khoản</option>
+							<c:forEach var="tk" items="${tklist}">
+								<option style="background: #fff !important;"
+									value="${tk.idTaiKhoan}">${tk.tenDangNhap}</option>
+							</c:forEach>
+						</select>
+					</div>
+
+
+				</div>
+				<div class="modal-footer">
+
+					<button class="btn btn-success">Cập nhật</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div> --%>
+						
+	
 	</div>
 	<script>
 	function funcIn(){	   
@@ -212,4 +241,17 @@
 			})
 		
 	}
+	
+	/* function GetDataUpdate(id) {
+		var idTaiKhoan = document.getElementById("txtDataIdTaiKhoan" + id).value;
+		var tenDangNhap = document.getElementById("txtDataTenDangNhap" + id).value;
+		var matKhau = document.getElementById("txtDataMatKhau" + id).value;
+		
+		
+		document.getElementById("idtkUpdate").value = idSinhvien;
+		document.getElementById("tenDangNhaptkUpdate").value = hotensv;
+		document.getElementById("matkhautkUpdate").value = email;
+	
+		
+	} */
 	</script>
