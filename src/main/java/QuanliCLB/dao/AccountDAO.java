@@ -117,7 +117,7 @@ public class AccountDAO {
 		 PreparedStatement stm = null;
 		 try {
 		     connection = dbConnection.getConnection();
-			 String query = "update TaiKhoan set tenDangNhap = ?, phanQuyen= ? where idTaiKhoan = ?";
+			 String query = "update TaiKhoan set tenDangNhap ='?' , phanQuyen= ? where idTaiKhoan = '?'";
 			 System.out.println("vô");
 			 stm = connection.prepareStatement(query);
 			 stm.setNString(1, idTaiKhoan);
@@ -132,16 +132,29 @@ public class AccountDAO {
 			// TODO: handle exception
 			return 0;
 		}
-		
-		
 		 
 		 
-				
-				
+	 }
+	 
+	 public int DeleteAccount(String idTaiKhoan) {
+		 Connection connection = null;
+		 PreparedStatement stm = null;
+		 try {
+			 connection = dbConnection.getConnection();
+			 String query ="update TaiKhoan set HIDDEN = 1  where idTaiKhoan = '?'";
+			 stm = connection.prepareStatement(query);
+			 stm.setNString(1, idTaiKhoan);
+			 stm.executeUpdate();
+			 return 1;
+			 
 			
+		} catch (Exception e) {
+			return 0;
+			// TODO: handle exception
+		}
+		 
+		 
 		
-		 
-		 
 		 
 	 }
 }

@@ -15,6 +15,24 @@
 		<%@include file="Admin/AccountManager.jsp"%>
 	</div>
 	<%@include file="includes/script.jsp"%>
+	<script>
+	function funcDel() {
+		Swal.fire({
+			  title: 'Bạn có chắc chắn muốn xóa?',
+			  text: "Bạn sẽ không thể khôi phục lại dữ liệu!",
+			  icon: 'warning',
+			  showCancelButton: true,
+			  confirmButtonColor: '#3085d6',
+			  cancelButtonColor: '#d33',
+			  confirmButtonText: 'Xóa'
+			}).then((result) => {
+			  if (result.isConfirmed) {
+				document.getElementById("checkDel").click();
+			  }
+			})
+	}
+		
+	</script>
 	<script type="text/javascript">
 
 	function successUpdate() {
@@ -32,6 +50,26 @@
 			  
 			  icon: 'error',
 			  title: 'Cập nhật thất bại',
+			  showConfirmButton: false,
+			  timer: 1500
+			})
+		
+	}
+	function failDelete() {
+		Swal.fire({
+			  
+			  icon: 'error',
+			  title: 'Xóa thất bại',
+			  showConfirmButton: false,
+			  timer: 1500
+			})
+		
+	}
+	function successDelete() {
+		Swal.fire({
+			  
+			  icon: 'success',
+			  title: 'Xóa thành công',
 			  showConfirmButton: false,
 			  timer: 1500
 			})

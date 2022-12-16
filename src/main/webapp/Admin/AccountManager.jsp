@@ -19,6 +19,18 @@
 							<i class="bi bi-wrench-adjustable-circle"></i> Sửa
 						</button>
 					</div>
+					
+					<div class="col-lg-2">
+						<form action="DeleteAccountServlet" method="post">
+						<button style="display:none;" type="submit" class="btn btn-light px-5" id="checkDel">
+							<i class="bi bi-person-x"></i> Xóa
+						</button> 
+						<a  class="btn btn-light px-5" onclick="funcDel()">
+							<i class="bi bi-person-x"></i> Xóa
+						</a>
+						<input style="display: block;" type="text" name="txtIDTaiKhoanDelete" id="txtIDTaiKhoanDelete"/>
+					</form>
+					</div>
 
 				</div>
 			</div>
@@ -224,7 +236,8 @@
 				timer : 1500
 			})	
 	}
-	function funcDel() {
+	
+/* 	function funcDel() {
 		Swal.fire({
 			  title: 'Bạn có chắc chắn muốn xóa?',
 			  text: "Bạn sẽ không thể khôi phục lại dữ liệu!",
@@ -235,19 +248,23 @@
 			  confirmButtonText: 'Xóa'
 			}).then((result) => {
 			  if (result.isConfirmed) {
-			    Swal.fire(
-			      'Đã xóa!',
-			      'Xóa thành công',
-			      'success'
-			    )
+				// check xem có click vào nút xóa hay không
+			var check = document.getElementById("checkDel").value;
+				if(check==true){
+					alert("Hello");
+					check.click();
+				}
+					
+					
+				//document.getElementById("deleteAction").click();
 			  }
 			})
 		
-	}
+	} */
 	
 	 function GetDataUpdate(id) {
 		var getIdtk = document.getElementById("user-checkbox" + id).value;
-		 alert(getIdtk);
+	//	 alert(getIdtk);
 		var idTaiKhoan = document.getElementById("txtDataIdTaiKhoan" + id).value;
 		var tenDangNhap = document.getElementById("txtDataTenDangNhap" + id).value;
 		var matKhau = document.getElementById("txtDataMatKhau" + id).value;
@@ -257,6 +274,7 @@
 		document.getElementById("tenDangNhaptkUpdate").value = tenDangNhap;
 		document.getElementById("matkhautkUpdate").value = matKhau;
 		document.getElementById("txtphanQuyenUp").value = phanquyen;
+		document.getElementById("txtIDTaiKhoanDelete").value = idTaiKhoan;
 	
 		
 	} 
