@@ -11,7 +11,7 @@
 	<div id="wrapper">
 		<%@include file="includes/sliderbar.jsp" %>
 		<%@include file="includes/Topbar.jsp" %>
-		<%@include file="Admin/PermissionManager.jspc" %>
+		<%@include file="Admin/PermissionManager.jsp" %>
 	</div>
 	<%@include file="includes/script.jsp" %>
 </body>
