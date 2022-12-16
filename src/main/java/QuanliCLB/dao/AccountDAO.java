@@ -3,6 +3,7 @@ package QuanliCLB.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -109,5 +110,51 @@ public class AccountDAO {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
+	 }
+	 
+	 public int UpdateAccount(String idTaiKhoan, String tenDangNhap, int phanQuyen){
+		 Connection connection = null;
+		 PreparedStatement stm = null;
+		 try {
+		     connection = dbConnection.getConnection();
+			 String query = "update TaiKhoan set tenDangNhap ='?' , phanQuyen= ? where idTaiKhoan = '?'";
+			 System.out.println("vô");
+			 stm = connection.prepareStatement(query);
+			 stm.setNString(1, idTaiKhoan);
+			 System.out.println("vô");
+			 stm.setString(2, tenDangNhap);
+			 stm.setInt(3, phanQuyen);			
+			 stm.executeUpdate();
+			 return 1;
+			 
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			return 0;
+		}
+		 
+		 
+	 }
+	 
+	 public int DeleteAccount(String idTaiKhoan) {
+		 Connection connection = null;
+		 PreparedStatement stm = null;
+		 try {
+			 connection = dbConnection.getConnection();
+			 String query ="update TaiKhoan set HIDDEN = 1  where idTaiKhoan = '?'";
+			 stm = connection.prepareStatement(query);
+			 stm.setNString(1, idTaiKhoan);
+			 stm.executeUpdate();
+			 return 1;
+			 
+			
+		} catch (Exception e) {
+			return 0;
+			// TODO: handle exception
+		}
+		 
+		 
+		
+		 
 	 }
 }

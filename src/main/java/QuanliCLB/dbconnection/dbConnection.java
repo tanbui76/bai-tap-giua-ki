@@ -19,7 +19,7 @@ public class dbConnection {
 		if (connection == null) {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			connection=DriverManager.getConnection(url);
-			System.out.print("connected");
+			System.out.println("connected");
 		} else {
 			connection.close();
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
