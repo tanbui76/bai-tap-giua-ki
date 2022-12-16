@@ -86,7 +86,8 @@
 					<li class="dropdown-item"><i class="icon-settings mr-2"></i>
 						Setting</li>
 					<li class="dropdown-divider"></li>-->
-					<li class="dropdown-item"><a href="Login.jsp"><i
+					<li class="dropdown-item">
+					<a href="LogoutServlet"><i
 							class="icon-power mr-2"></i> Đăng xuất</li>
 					</a>
 				</ul></li>

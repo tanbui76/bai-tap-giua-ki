@@ -12,10 +12,5 @@
 		<welcome-file>default.jsp</welcome-file>
 		<welcome-file>default.htm</welcome-file>
 	</welcome-file-list>
-
-	<servlet>
-		<servlet-name>FirstRun</servlet-name>
-		<servlet-class>QuanliCLB.controller</servlet-class>
-	</servlet>
 	
 </web-app>

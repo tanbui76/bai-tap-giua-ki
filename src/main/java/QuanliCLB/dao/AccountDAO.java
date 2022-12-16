@@ -117,19 +117,19 @@ public class AccountDAO {
 		 PreparedStatement stm = null;
 		 try {
 		     connection = dbConnection.getConnection();
-			 String query = "update TaiKhoan set tenDangNhap ='?' , phanQuyen= ? where idTaiKhoan = '?'";
+			 String query = "update TaiKhoan set tenDangNhap =? , phanQuyen= ? where idTaiKhoan = ?";
 			 System.out.println("vô");
 			 stm = connection.prepareStatement(query);
 			 stm.setNString(1, idTaiKhoan);
 			 System.out.println("vô");
-			 stm.setString(2, tenDangNhap);
-			 stm.setInt(3, phanQuyen);			
+			 stm.setString(3, tenDangNhap);
+			 stm.setInt(2, phanQuyen);			
 			 stm.executeUpdate();
 			 return 1;
 			 
 			
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 			return 0;
 		}
 		 
@@ -141,7 +141,7 @@ public class AccountDAO {
 		 PreparedStatement stm = null;
 		 try {
 			 connection = dbConnection.getConnection();
-			 String query ="update TaiKhoan set HIDDEN = 1  where idTaiKhoan = '?'";
+			 String query ="update TaiKhoan set HIDDEN = 1  where idTaiKhoan = ?";
 			 stm = connection.prepareStatement(query);
 			 stm.setNString(1, idTaiKhoan);
 			 stm.executeUpdate();
@@ -149,8 +149,8 @@ public class AccountDAO {
 			 
 			
 		} catch (Exception e) {
+			e.printStackTrace();
 			return 0;
-			// TODO: handle exception
 		}
 		 
 		 
