@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>BẢNG ĐIỂM CHI TIẾT</title>
+<title>QUẢN LÍ PHÂN QUYỀN</title>
 </head>
 <%@include file="includes/includeAdminStyle.jsp"%>
 <body>
