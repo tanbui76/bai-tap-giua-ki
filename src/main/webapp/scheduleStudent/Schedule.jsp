@@ -50,14 +50,11 @@ h2 {
 													<td align="left">
 														<div id="div_sr_1">
 															<select name="selNamHoc">
-																<option value="1">Chọn năm học</option>
+																<option style="background: #fff !important" selected="selected">Chọn năm học</option>
 																<c:forEach var="item" items="${listNienKhoa}">
-																	<option value="${item.idNienKhoa}">${item.namNienKhoa}</option>
+																	<option style="background: #fff !important" value="${item.idNienKhoa}">${item.namNienKhoa}</option>
 																</c:forEach>
 															</select>
-															
-														
-
 														</div>
 													</td>
 
@@ -67,13 +64,13 @@ h2 {
 													<td align="left">
 														<div id="div_sr_2">
 															<select name="selHocKi">
-																<option value="1">Chọn học kỳ</option>
-																<option value="1">1</option>
-																<option value="2">2</option>
+																<option style="background: #fff !important" selected="selected">Chọn học kỳ</option>
+																<c:forEach var="item" items="${listHocKi}">
+																	<option style="background: #fff !important" value="${item.idHocKi}">${item.tenHocKi}</option>
+																</c:forEach>
 															</select>
 														</div>
 													</td>
-
 												</tr>
 												<tr id="">
 													<th align="right"><span>Tuần:</span></th>
