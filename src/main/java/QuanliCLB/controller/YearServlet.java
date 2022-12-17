@@ -35,6 +35,10 @@ public class YearServlet extends HttpServlet {
 		 YearDao yearDao = new YearDao();
 		  List<NienKhoa> nienKhoa = yearDao.getListNienKhoa();  
 		  request.setAttribute("listNienKhoa", nienKhoa);
+		  for (NienKhoa nienKhoa2 : nienKhoa) {
+			  System.out.println(nienKhoa2.getNamNienKhoa());
+			
+		}
 		  RequestDispatcher rDispatcher = request.getRequestDispatcher("Schedule.jsp");
 		 rDispatcher.forward(request, response);
 	}

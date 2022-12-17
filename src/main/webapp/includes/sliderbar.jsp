@@ -26,7 +26,7 @@
 		<li><a href="ScoreStudentServlet"> <i class="zmdi zmdi-grid"></i> <span>Bảng điểm chi tiết</span>
 		</a></li>
 
-		<li><a href="Schedule.jsp"> <i
+		<li><a href="YearServlet"> <i
 				class="zmdi zmdi-calendar-check"></i> <span>Thời khóa biểu sinh viên</span> <!-- <small
 				class="badge float-right badge-light">New</small> -->
 		</a></li>
