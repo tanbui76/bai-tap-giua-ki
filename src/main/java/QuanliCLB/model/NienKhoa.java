@@ -1,23 +1,23 @@
 package QuanliCLB.model;
 
 public class NienKhoa {
-	private int idNienKhoa;
+	private String idNienKhoa;
 	private String namNienKhoa;
 	
 	public NienKhoa() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public NienKhoa(int idNienKhoa, String namNienKhoa) {
+	public NienKhoa(String idNienKhoa, String namNienKhoa) {
 		this.idNienKhoa = idNienKhoa;
 		this.namNienKhoa = namNienKhoa;
 	}
 
-	public int getIdNienKhoa() {
+	public String getIdNienKhoa() {
 		return idNienKhoa;
 	}
 
-	public void setIdNienKhoa(int idNienKhoa) {
+	public void setIdNienKhoa(String idNienKhoa) {
 		this.idNienKhoa = idNienKhoa;
 	}
 
@@ -28,5 +28,7 @@ public class NienKhoa {
 	public void setNamNienKhoa(String namNienKhoa) {
 		this.namNienKhoa = namNienKhoa;
 	}
+
+	
 	
 }
