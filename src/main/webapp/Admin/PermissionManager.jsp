@@ -43,39 +43,39 @@
 							<tr>
 								<th scope="col">#</th>
 								<th scope="col">ID Phân quyền</th>
-								<th scope="col">Tên  module</th>
+								<th scope="col">Tên module</th>
 								<th scope="col">Path</th>
 							</tr>
 						</thead>
 						<tbody>
-						
+							<c:forEach var="listSt" items="${listSt}">
 								<tr>
 									<th scope="row">
 										<div class="icheck-material-white" style="margin: 0">
 											<input class="form-check-input" type="radio"
-												name="selectSinhVien" id="user-checkbox${item.idTaiKhoan }"
-												value="${item.idTaiKhoan}" aria-label="..."
-												onclick="GetDataUpdate('${item.idTaiKhoan}')"> <label
-												for="user-checkbox${item.idTaiKhoan}" name="selectedList"></label>
+												name="selectSinhVien" id="user-checkbox${listSt.idPhanQuyen }"
+												value="${listSt.idPhanQuyen}" aria-label="..."
+												onclick="GetDataUpdate('${listSt.idPhanQuyen}')"> <label
+												for="user-checkbox${listSt.idPhanQuyen}" name="selectedList"></label>
 										</div>
 
 									</th>
-									<td>${item.idTaiKhoan}</td>
-									<td>${item.tenDangNhap}<input hidden="hidden" type="text"
-										id="txtDataIdTaiKhoan${item.idTaiKhoan}"
-										value="${item.idTaiKhoan}"> <input hidden="hidden" type="text"
-										id="txtDataTenDangNhap${item.idTaiKhoan}"
-										value="${item.tenDangNhap}"> <input hidden="hidden" type="text"
-										id="txtDataMatKhau${item.idTaiKhoan}" value="${item.matKhau}">
-										 <input hidden="hidden" type="text" id="txtDataPhanQuyen${item.idTaiKhoan}" value="${item.phanQuyen}">
-										<%-- <input type="text" id="txtDataPhanQuyen${item.idTaiKhoan}"> --%>
+									<td>${listSt.idPhanQuyen}</td>
+									<td>${listSt.tenModule}<input hidden="hidden" type="text"
+										id="txtDataIdPhanQuyen${idPhanQuyen}"
+										value="${idPhanQuyen}"> <input hidden="hidden" type="text"
+										id="txtDataLinkForm${idPhanQuyen}"
+										value="${listSt.linkForm}"> <input hidden="hidden" type="text"
+										id="txtDataIcon${idPhanQuyen}" value="${listSt.icon}">
+										 <input hidden="hidden" type="text" id="txtDataPhanQuyen${idPhanQuyen}" value="${listSt.phanQuyen}">
+									<%-- <input type="text" id="txtDataPath${idPhanQuyen}" value="${listSt. }"> --%>	
 
 									</td>
 									
-									<td></td>
+									<td>${listSt.linkForm}</td>
 								</tr>
 
-							
+							</c:forEach>
 
 						</tbody>
 					</table>
