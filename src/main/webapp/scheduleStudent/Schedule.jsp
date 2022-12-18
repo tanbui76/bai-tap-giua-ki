@@ -77,9 +77,10 @@ h2 {
 													<td align="left">
 														<div id="div_sr_2">
 															<select name="selTuan">
-																<option value="1">Chọn tuần học</option>
-																<option value="1">1</option>
-																<option value="2">2</option>
+																<option style="background: #fff !important" selected="selected">Chọn tuần học</option>
+																<c:forEach var="item" items="${listTuanHoc}">
+																	<option style="background: #fff !important" value="${item.tuanId}">${item.tuanName}</option>
+																</c:forEach>
 															</select>
 														</div>
 													</td>
@@ -87,14 +88,11 @@ h2 {
 												</tr>
 												<tr name="tr_sr" id="tr_sr_3">
 
-													<td align="left" colspan="2"></td>
+													<td align="left" >
+													<button type="button" class="btn btn-info">Tìm</button>
+													</td>
 												</tr>
-												<tr>
-													<th align="left" width="30%"></th>
-													<td align="left" width="20%"></td>
-													<td align="left" width="50%"></td>
-
-												</tr>
+												
 											</tbody>
 										</table>
 
