@@ -1,9 +1,6 @@
-<%@page import="QuanliCLB.model.NienKhoa"%>
-<%@page import="java.util.List"%>
-<%@page import="QuanliCLB.dao.YearDao"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%-- <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,10 +49,10 @@ h2 {
 															<select name="cbbNamHoc">
 																<option style="background: #fff !important"
 																	selected="selected">Chọn năm học</option>
-																<c:forEach var="item" items="${listNienKhoa}">
+																<%-- <c:forEach var="item" items="${listNienKhoa}">
 																	<option style="background: #fff !important"
 																		value="${item.idNienKhoa}">${item.namNienKhoa}</option>
-																</c:forEach>
+																</c:forEach> --%>
 															</select>
 														</div>
 													</td>
@@ -68,10 +65,10 @@ h2 {
 															<select name="cbbHocKi">
 																<option style="background: #fff !important"
 																	selected="selected">Chọn học kỳ</option>
-																<c:forEach var="item" items="${listHocKi}">
+																<%-- <c:forEach var="item" items="${listHocKi}">
 																	<option style="background: #fff !important"
 																		value="${item.idHocKi}">${item.tenHocKi}</option>
-																</c:forEach>
+																</c:forEach> --%>
 															</select>
 														</div>
 													</td>
@@ -83,10 +80,10 @@ h2 {
 															<select name="cbbTuan">
 																<option style="background: #fff !important"
 																	selected="selected">Chọn tuần học</option>
-																<c:forEach var="item" items="${listTuanHoc}">
+																<%-- <c:forEach var="item" items="${listTuanHoc}">
 																	<option style="background: #fff !important"
 																		value="${item.tuanId}">${item.tuanName}</option>
-																</c:forEach>
+																</c:forEach> --%>
 															</select>
 														</div>
 													</td>
@@ -102,11 +99,8 @@ h2 {
 											</tbody>
 										</table>
 
-										<c:if test="${listlenght == 0 }">
-											<p>Không có dữ liệu</p>
-
-										</c:if>
-										<c:if test="${listlenght != 0 }">
+										
+									
 											<div class="divp-list" style="overflow: auto; margin: 2% 0;">
 												<table id="">
 													<thead>
@@ -246,7 +240,7 @@ h2 {
 
 											</div>
 
-										</c:if>
+									
 
 
 
