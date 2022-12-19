@@ -37,9 +37,9 @@ public class AddStudentServlet extends HttpServlet {
 		 StudentListDAO studentListDAO = new StudentListDAO();
 		 
 		 if(studentListDAO.InsertStudent(idSinhVien, hoTenSinhVien, anhDaiDienSinhVien, email, github, diaChiSinhVien, idTaiKhoan) == 1) {
-			 response.sendRedirect("StudentListServlet");
+			 response.sendRedirect("StudentListServlet?msg=AddSucc()");
 		 }else {
-			 response.sendRedirect("StudentListServlet?isError=functErr()");
+			 response.sendRedirect("StudentListServlet?msg=AddErr()");
 		 }
 		 
 		 

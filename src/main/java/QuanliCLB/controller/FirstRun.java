@@ -37,7 +37,7 @@ public class FirstRun extends HttpServlet {
         	System.out.println(cookie.getName() + " " + cookie.getValue());
         	if (cookies[i].getName().equals("username") || cookies[i].getName().equals("password")) {
 				getCookies.add(cookie);
-			}
+			} 
         }
         
         LoginDAO dao = new LoginDAO();

@@ -125,7 +125,7 @@
 						<div class="form-group">
 							<label for="message-text" class="col-form-label"
 								style="color: #000;">Mật khẩu: </label> <input type="text"
-								readonly="readonly" id="recipient-name" name="txtmatkhau"
+								id="recipient-name" name="txtmatkhau"
 								style="width: 100%;">
 						</div>
 						<div class="form-group">
