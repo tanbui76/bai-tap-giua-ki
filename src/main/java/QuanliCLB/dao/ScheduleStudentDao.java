@@ -23,6 +23,7 @@ public class ScheduleStudentDao {
 			stm = conn.prepareStatement(query);		
 			rs = stm.executeQuery();
 			while (rs.next()) {
+				String idPhanCong = rs.get
 				
 				
 			}
