@@ -27,7 +27,7 @@ h2 {
 						<tbody>
 							<tr>
 								<td valign="top" style="padding: 0px; height: 300px;">
-									<form action="" method="post">
+									
 										<h2>Thời khóa biểu sinh viên</h2>
 										<table id="tb_sr_toggle" name="tb_sr_toggle" width="100%"
 											class="soft fixheader">
@@ -39,7 +39,7 @@ h2 {
 											</tbody>
 										</table>
 
-
+                                          <form action="" method="post">
 										<table name="" width="100%" style="margin: 0 26%;">
 											<tbody>
 												<tr name="tr_sr">
@@ -49,10 +49,10 @@ h2 {
 															<select name="cbbNamHoc">
 																<option style="background: #fff !important"
 																	selected="selected">Chọn năm học</option>
-																<%-- <c:forEach var="item" items="${listNienKhoa}">
+																 <c:forEach var="item" items="${listNienKhoa}">
 																	<option style="background: #fff !important"
 																		value="${item.idNienKhoa}">${item.namNienKhoa}</option>
-																</c:forEach> --%>
+																</c:forEach>
 															</select>
 														</div>
 													</td>
@@ -65,10 +65,10 @@ h2 {
 															<select name="cbbHocKi">
 																<option style="background: #fff !important"
 																	selected="selected">Chọn học kỳ</option>
-																<%-- <c:forEach var="item" items="${listHocKi}">
+																<c:forEach var="item" items="${listHocKi}">
 																	<option style="background: #fff !important"
 																		value="${item.idHocKi}">${item.tenHocKi}</option>
-																</c:forEach> --%>
+																</c:forEach>
 															</select>
 														</div>
 													</td>
@@ -80,10 +80,10 @@ h2 {
 															<select name="cbbTuan">
 																<option style="background: #fff !important"
 																	selected="selected">Chọn tuần học</option>
-																<%-- <c:forEach var="item" items="${listTuanHoc}">
+																<c:forEach var="item" items="${listTuanHoc}">
 																	<option style="background: #fff !important"
 																		value="${item.tuanId}">${item.tuanName}</option>
-																</c:forEach> --%>
+																</c:forEach>
 															</select>
 														</div>
 													</td>
@@ -98,10 +98,14 @@ h2 {
 
 											</tbody>
 										</table>
-
+										</form>
+				
+										<c:if test="${listlenght ==0}">
+									<p>No record</p>
+										</c:if>
 										
-									
-											<div class="divp-list" style="overflow: auto; margin: 2% 0;">
+										<c:if test="${listlenght !=0}">
+										<div class="divp-list" style="overflow: auto; margin: 2% 0;">
 												<table id="">
 													<thead>
 														<tr>
@@ -239,6 +243,13 @@ h2 {
 												</table>
 
 											</div>
+										
+										</c:if>
+										
+
+										
+									
+											
 
 									
 
@@ -247,7 +258,7 @@ h2 {
 										<button type="button" class="btn btn-light">
 											<i class="fa-solid fa-print"></i>In thời khóa biểu
 										</button>
-									</form>
+									
 								</td>
 							</tr>
 						</tbody>
