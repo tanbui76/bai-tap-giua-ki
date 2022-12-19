@@ -49,7 +49,7 @@ h2 {
 													<th align="right"><span>Năm Học:</span></th>
 													<td align="left">
 														<div id="div_sr_1">
-															<select name="selNamHoc">
+															<select name="cbbNamHoc">
 																<option style="background: #fff !important"
 																	selected="selected">Chọn năm học</option>
 																<c:forEach var="item" items="${listNienKhoa}">
@@ -65,7 +65,7 @@ h2 {
 													<th align="right"><span>Học Kỳ:</span></th>
 													<td align="left">
 														<div id="div_sr_2">
-															<select name="selHocKi">
+															<select name="cbbHocKi">
 																<option style="background: #fff !important"
 																	selected="selected">Chọn học kỳ</option>
 																<c:forEach var="item" items="${listHocKi}">
@@ -80,7 +80,7 @@ h2 {
 													<th align="right"><span>Tuần:</span></th>
 													<td align="left">
 														<div id="div_sr_2">
-															<select name="selTuan">
+															<select name="cbbTuan">
 																<option style="background: #fff !important"
 																	selected="selected">Chọn tuần học</option>
 																<c:forEach var="item" items="${listTuanHoc}">

@@ -1,7 +1,6 @@
 package QuanliCLB.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -25,15 +24,16 @@ import QuanliCLB.model.TuanHoc;
 public class YearServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-  
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
     public YearServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		  YearDao yearDao = new YearDao();
+		 YearDao yearDao = new YearDao();
 		  SemesterDao semesterDao = new SemesterDao();
 		  WeekDao weekDao = new WeekDao();
 		  List<NienKhoa> nienKhoa = yearDao.getListNienKhoa();
@@ -52,7 +52,8 @@ public class YearServlet extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }
