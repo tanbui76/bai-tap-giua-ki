@@ -26,8 +26,18 @@
 							<a  class="btn btn-light px-5" onclick="funcDel()">
 								<i class="bi bi-person-x"></i> Xóa
 							</a>
-						<input style="display: block;" type="text" name="txtIDGiaoVienDelete" id="txtIDGiaoVienDelete" style="display: block;"/>
+						<input style="display: none;" type="text" name="txtIDGiaoVienDelete" id="txtIDGiaoVienDelete" style="display: block;"/>
 						</form>
+					</div>
+					<div class="col-lg-2" style="margin-left: 10px;">
+						<form action="UploadListTeacherServlet" method="post" enctype="multipart/form-data"> 
+						<div>
+						
+						Chọn file :<input type="file" name="file">
+						<button type="submit" class="btn btn-light px-5">
+								<i class="bi bi-person-add"></i> Upload
+							</button>
+						
 					</div>
 						
 <!-- Capnhat -->			
