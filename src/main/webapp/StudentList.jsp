@@ -17,6 +17,7 @@
 	</div>
 	<%@include file="includes/script.jsp"%>
 	<script>
+	
 	function funcDel() {
 		Swal.fire({
 			  title: 'Bạn có chắc chắn muốn xóa?',
@@ -76,6 +77,26 @@
 			  title: 'Cập nhật thành công',
 			  showConfirmButton: false,
 			  timer: 1500
+			})
+		
+	}
+	function AddSucc() {
+		Swal.fire({
+			  
+			  icon: 'success',
+			  title: 'Thêm thành công',
+			  showConfirmButton: false,
+			  timer: 4000
+			})
+		
+	}
+	function AddErr() {
+		Swal.fire({
+			  
+			  icon: 'error',
+			  title: 'Thêm thất bại',
+			  showConfirmButton: false,
+			  timer: 4000
 			})
 		
 	}

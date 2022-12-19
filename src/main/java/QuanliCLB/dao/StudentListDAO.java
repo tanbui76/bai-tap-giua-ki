@@ -146,6 +146,7 @@ public class StudentListDAO {
 			stm.setString(5, github);
 			stm.setString(6, diaChiSinhVien);
 			stm.setString(7, idTaiKhoan);
+			StudentListDAO aDao = new StudentListDAO();
 			stm.executeUpdate();	
 			return 1;
 
