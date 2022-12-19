@@ -19,6 +19,7 @@ h2 {
 <body>
 <%@include file="includes/includeAdminStyle.jsp" %>
 
+
 <div id="wrapper">
 		<%@include file="includes/sliderbar.jsp" %>
 		<%@include file="includes/Topbar.jsp" %>
