@@ -1,3 +1,4 @@
+<%@page import="QuanliCLB.dao.TeacherListDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<div class="content-wrapper">
@@ -13,56 +14,83 @@
 							</button>
 						</div>
 						<div class="col-lg-2">
-						<form action="UploadListTeacherServlet" method="post" enctype="multipart/form-data"> 
-						<div>
-						
-						Chọn file :<input type="file" name="file">
-						<button type="submit" class="btn btn-light px-5">
-								<i class="bi bi-person-add"></i> Upload
+							<button type="submit" class="btn btn-light px-5" data-toggle="modal" data-target="#myModalUpdate">
+								<i class="bi bi-wrench-adjustable-circle"></i> Sửa
 							</button>
-						
 						</div>
+						<div class="col-lg-2">
+							<form action="DeleteTeacherServlet" method="post">
+							<button style="display:none;" type="submit" class="btn btn-light px-5" id="deleteAction">
+							<i class="bi bi-person-x"></i> Xóa
+							</button>
+							<a  class="btn btn-light px-5" onclick="funcDel()">
+								<i class="bi bi-person-x"></i> Xóa
+							</a>
+						<input style="display: block;" type="text" name="txtIDGiaoVienDelete" id="txtIDGiaoVienDelete" style="display: block;"/>
 						</form>
+					</div>
+						
+<!-- Capnhat -->			
+<div class="modal fade" id="myModalUpdate" tabindex="-1" role="dialog"
+	aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document"
+		style="position: relative; top: 10%;">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel"
+					style="font-size: 20px; font-weight: 600; color: #000;">Cập nhật giáo viên</h5>
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<form action="UpdateTeacherServlet" method="post">
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="message-text" class="col-form-label"
+							style="color: #000;">ID giáo viên: </label> <input type="text" readonly 
+							id="idgvUpdate" name="txtIDGiaoVienUpdate" style="width: 100%;" value="" >
+					</div>
+					<div class="form-group">
+						<label for="message-text" class="col-form-label"
+							style="color: #000;">Họ tên giáo viên: </label> <input
+							type="text" id="hotengvUpdate" name="txtTenGiaoVienUpdate"
+							style="width: 100%;">
+					</div>
+					<div class="form-group">
+						<label for="message-text" class="col-form-label"
+							style="color: #000;">Email: </label> <input type="text"
+							id="emailgvUpdate" name="txtEmailGiaoVienUpdate" style="width: 100%;">
+					</div>
+					<div class="form-group">
+						<label for="message-text" class="col-form-label"
+							style="color: #000;">Địa chỉ: </label> <input type="text"
+							id="diachigvUpdate" name="txtDiaChiGiaoVienUpdate" style="width: 100%;">
+					</div>
+					
+					<div class="form-group" style="display: flex; flex-direction: column;">
+						<label for="message-text" class="col-form-label"
+							style="color: #000;">Tài Khoản: </label> <select style="height: 4vh;" id="idtkgvUpdate"
+							class="form-select" name="txtMaTaiKhoanUpdate">
+							<option style="background: #fff !important;" selected>Chọn
+								tài khoản</option>
+							<c:forEach var="tk" items="${tklist}">
+								<option style="background: #fff !important;"
+									value="${tk.idTaiKhoan}">${tk.tenDangNhap}</option>
+							</c:forEach>
+						</select>
+					</div>
 
-							<!-- <button type="submit" class="btn btn-light px-5"
-								data-toggle="modal" data-target="#myModal1">
-								<i class="bi bi-person-add"></i> Thêm
-							</button> -->
-						</div>
-						
-						
-						<div class="modal fade" id="myModal2" tabindex="-1" role="dialog"
-							aria-labelledby="exampleModalLabel" aria-hidden="true">
-							<div class="modal-dialog" role="document"
-								style="position: relative; top: 10%;">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h5 class="modal-title" id="exampleModalLabel"
-											style="font-size: 20px; font-weight: 600; color: #000;">Cập
-											nhật môn học</h5>
-										<button type="button" class="close" data-dismiss="modal"
-											aria-label="Close">
-											<span aria-hidden="true">&times;</span>
-										</button>
-									</div>
-									<div class="modal-body">
-										<form>
-											<div class="form-group">
-												<label for="message-text" class="col-form-label"
-													style="color: #000;">Tên môn học</label> <input type="text"
-													id="recipient-name" style="width: 100%;">
-											</div>
-										</form>
-									</div>
-									 <div class="modal-footer">
-										<button type="button" class="btn btn-secondary"
-											data-dismiss="modal">Close</button>
-										<button type="button" class="btn btn-success"
-											onclick="funcUp()">Cập nhật</button>
-									</div> 
-								</div>
-							</div>
-						</div>
+
+				</div>
+				<div class="modal-footer">
+
+					<button class="btn btn-success">Cập nhật</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
 					</div>
 				</div>
 			</div>
@@ -82,9 +110,19 @@
 							<tbody>
 								<c:forEach var="item" items="${list}">
 									<tr>
-										 <th scope="row">1</th>
+										 <th scope="row">
+										 	<div class="icheck-material-white" style="margin: 0">
+											<input class="form-check-input" type="radio" name="selectGiaoVien" id="user-checkbox${item.idGiaoVien }" value="${item.idGiaoVien}"  aria-label="..." onclick="GetDataUpdate('${item.idGiaoVien}')" >
+											<label for="user-checkbox${item.idGiaoVien }" name="selectedList"></label>	
+									</div>
+										 </th>
 										<td>${item.idGiaoVien}</td>
-										<td>${item.hoTenGiaoVien}</td>
+										<td>${item.hoTenGiaoVien}
+											<input style="display: none;" type="text" id="hotengvdata${item.idGiaoVien }" value="${item.hoTenGiaoVien}">
+											<input style="display: none;" type="text" id="emailgvdata${item.idGiaoVien }" value="${item.emailGiaoVien}">
+											<input style="display: none;" type="text" id="diachigvdata${item.idGiaoVien }" value=${item.diaChiGiaoVien }>
+											<input style="display: none;" type="text" id="idtaikhoandata${item.idGiaoVien }" value="${item.idTaiKhoan }">
+										</td>
 										<td>
 											<button type="submit" class="btn btn-light px-5"
 												data-toggle="modal" data-target="#myModal3">
@@ -117,12 +155,15 @@
 											<span aria-hidden="true">&times;</span>
 										</button>
 									</div>
+									<%
+										TeacherListDAO sDao = new TeacherListDAO();
+									%>
 									<form action="AddTeacherServlet" method="post">
 										<div class="modal-body">
 											<div class="form-group">
 												<label for="message-text" class="col-form-label"
 													style="color: #000;">ID giáo viên: </label> <input
-													type="text" id="recipient-name" name="txtIDGiaoVien"
+													type="text" id="recipient-name" name="txtIDGiaoVien" value="<%= sDao.Matutang()%>"
 													style="width: 100%;">
 											</div>
 											<div class="form-group">
@@ -141,12 +182,18 @@
 													style="color: #000;">Địa chỉ: </label> <input type="text"
 													id="recipient-name" name="txtDiachi" style="width: 100%;">
 											</div>
-											<div class="form-group">
+											<div class="form-group" style="display: flex; flex-direction: column;">
 												<label for="message-text" class="col-form-label"
-													style="color: #000;">Mã Tài Khoản: </label> <input
-													type="text" id="recipient-name" name="txtMaTaiKhoan"
-													style="width: 100%;">
-											</div>
+													style="color: #000;">Tài Khoản: </label> <select style="height: 4vh;" id="idtksv"
+													class="form-select" name="txtMaTaiKhoan">
+													<option style="background: #fff !important;" selected>Chọn
+														tài khoản</option>
+														<c:forEach var="tk" items="${tklist}">
+															<option style="background: #fff !important;"
+																value="${tk.idTaiKhoan}">${tk.tenDangNhap}</option>
+														</c:forEach>
+						</select>
+					</div>
 
 										</div>
 										<div class="modal-footer">
@@ -241,13 +288,79 @@
 			  confirmButtonText: 'Xóa'
 			}).then((result) => {
 			  if (result.isConfirmed) {
-			    Swal.fire(
-			      'Đã xóa!',
-			      'Xóa thành công',
-			      'success'
-			    )
+				document.getElementById("deleteAction").click();
 			  }
+			})
+	}
+	
+	function GetDataUpdate(id){
+		/*
+		<input type="text" id="hotengvdata" value="${item.hoTenGiaoVien}">
+		<input type="text" id="emailgvdata" value="${item.email}">
+		<input type="text" id="diachigvdata" value=${item.diaChiGiaoVien }>
+		<input type="text" id="idtaikhoandata" value="${item.idTaiKhoan }">
+		*/
+		var getidgv = "user-checkbox"+id;
+		var idGiaoVien = document.getElementById(getidgv).value;
+		var hotengv = document.getElementById("hotengvdata"+id).value;
+		var emailGiaoVien= document.getElementById("emailgvdata"+id).value;
+		var diachi = document.getElementById("diachigvdata"+id).value;
+		var idtaikhoan = document.getElementById("idtaikhoandata"+id).value;
+
+		document.getElementById("idgvUpdate").value = idGiaoVien;
+		document.getElementById("txtIDGiaoVienDelete").value = idGiaoVien;
+		document.getElementById("hotengvUpdate").value = hotengv;
+		document.getElementById("emailgvUpdate").value = emailGiaoVien;
+		document.getElementById("diachigvUpdate").value = diachi;
+		document.getElementById("idtkgvUpdate").value = idtaikhoan;
+
+	}
+</script>
+<script type="text/javascript">
+	
+	function failUpdate() {
+		Swal.fire({
+			  
+			  icon: 'error',
+			  title: 'Cập nhật thất bại',
+			  showConfirmButton: false,
+			  timer: 1500
+			})
+		
+	}
+	function failDelete() {
+		Swal.fire({
+			  
+			  icon: 'error',
+			  title: 'Xóa thất bại',
+			  showConfirmButton: false,
+			  timer: 1500
+			})
+		
+	}
+	function successDelete() {
+		Swal.fire({
+			  
+			  icon: 'success',
+			  title: 'Xóa thành công',
+			  showConfirmButton: false,
+			  timer: 1500
 			})
 		
 	}
 	</script>
+	<script type="text/javascript">
+	
+	function successUpdate() {
+		Swal.fire({
+			  
+			  icon: 'success',
+			  title: 'Cập nhật thành công',
+			  showConfirmButton: false,
+			  timer: 1500
+			})
+		
+	}
+	</script>
+
+

@@ -26,7 +26,7 @@
 							<i class="bi bi-person-x"></i> Xóa
 						</a>
 						<input style="display: none;" type="text" name="txtIDSinhVienDelete" id="txtIDSinhVienDelete" style="display: block;"/>
-					</form>
+						</form>
 					</div>
 				</div>
 			</div>
