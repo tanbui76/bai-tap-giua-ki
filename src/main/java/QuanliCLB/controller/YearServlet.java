@@ -36,12 +36,15 @@ public class YearServlet extends HttpServlet {
 		  YearDao yearDao = new YearDao();
 		  SemesterDao semesterDao = new SemesterDao();
 		  WeekDao weekDao = new WeekDao();
-		  List<NienKhoa> nienKhoa = yearDao.getListNienKhoa();  
+		  List<NienKhoa> nienKhoa = yearDao.getListNienKhoa();
+		  int listlenght = 0;
 		  request.setAttribute("listNienKhoa", nienKhoa);
 		  List<HocKi> hocKi = semesterDao.getHocKi();
 		  request.setAttribute("listHocKi", hocKi);
 		  List<TuanHoc> tuanHoc = weekDao.getTuanHoc();
 		  request.setAttribute("listTuanHoc", tuanHoc);
+		  request.setAttribute("listlenght", listlenght);
+		  
 	 		 
 		  RequestDispatcher rDispatcher = request.getRequestDispatcher("Schedule.jsp");
 		 rDispatcher.forward(request, response);
@@ -49,8 +52,7 @@ public class YearServlet extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
 	}
 
 }
