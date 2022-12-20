@@ -1,5 +1,6 @@
 package QuanliCLB.controller;
 
+
 import java.io.IOException;
 import java.util.List;
 
@@ -18,16 +19,13 @@ import QuanliCLB.model.NienKhoa;
 import QuanliCLB.model.TuanHoc;
 
 /**
- * Servlet implementation class LoadDataScheduleStudentServlet
+ * Servlet implementation class LoadDataScheduleServlet
  */
-@WebServlet("/LoadDataScheduleStudentServlet")
-public class LoadDataScheduleStudentServlet extends HttpServlet {
+@WebServlet("/LoadDataScheduleServlet")
+public class LoadDataScheduleServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public LoadDataScheduleStudentServlet() {
+    
+    public LoadDataScheduleServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

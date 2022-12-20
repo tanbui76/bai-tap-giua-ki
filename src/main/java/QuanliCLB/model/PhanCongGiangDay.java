@@ -1,32 +1,34 @@
 package QuanliCLB.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class PhanCongGiangDay {
-	private String idPhanCongday;
+	private String idPhanCongGiangDay;
 	private String idGiaoVien;
 	private String idLop;
 	private String idMonHoc;
 	private Date ngayGiangDay;
-	private String soTiet;
+	private String soTietDay;
 	public PhanCongGiangDay() {
-		super();
+		
 	}
-	public PhanCongGiangDay(String idPhanCongday, String idGiaoVien, String idLop, String idMonHoc, Date ngayGiangDay,
-			String soTiet) {
+
+	public PhanCongGiangDay(String idPhanCongGiangDay, String idGiaoVien, String idLop, String idMonHoc,
+			Date ngayGiangDay, String soTietDay) {
 		super();
-		this.idPhanCongday = idPhanCongday;
+		this.idPhanCongGiangDay = idPhanCongGiangDay;
 		this.idGiaoVien = idGiaoVien;
 		this.idLop = idLop;
 		this.idMonHoc = idMonHoc;
 		this.ngayGiangDay = ngayGiangDay;
-		this.soTiet = soTiet;
+		this.soTietDay = soTietDay;
 	}
-	public String getIdPhanCongday() {
-		return idPhanCongday;
+
+	public String getIdPhanCongGiangDay() {
+		return idPhanCongGiangDay;
 	}
-	public void setIdPhanCongday(String idPhanCongday) {
-		this.idPhanCongday = idPhanCongday;
+	public void setIdPhanCongGiangDay(String idPhanCongGiangDay) {
+		this.idPhanCongGiangDay = idPhanCongGiangDay;
 	}
 	public String getIdGiaoVien() {
 		return idGiaoVien;
@@ -46,18 +48,22 @@ public class PhanCongGiangDay {
 	public void setIdMonHoc(String idMonHoc) {
 		this.idMonHoc = idMonHoc;
 	}
+	public String getSoTietDay() {
+		return soTietDay;
+	}
+	public void setSoTietDay(String soTietDay) {
+		this.soTietDay = soTietDay;
+	}
 	public Date getNgayGiangDay() {
 		return ngayGiangDay;
 	}
 	public void setNgayGiangDay(Date ngayGiangDay) {
 		this.ngayGiangDay = ngayGiangDay;
 	}
-	public String getSoTiet() {
-		return soTiet;
-	}
-	public void setSoTiet(String soTiet) {
-		this.soTiet = soTiet;
-	}
+	
+	
+	
+	
 	
 	
 	

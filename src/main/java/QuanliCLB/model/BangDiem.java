@@ -1,29 +1,30 @@
 package QuanliCLB.model;
 
 public class BangDiem {
-	private int idBangDiem;
-	private int idHocKi;
+	private String idBangDiem;
+	private String idHocKi;
 	private String idSinhVien;
 	private String idGiaoVien;
 	public BangDiem() {
 		// TODO Auto-generated constructor stub
 	}
-	public BangDiem(int idBangDiem, int idHocKi, String idSinhVien, String idGiaoVien) {
+	public BangDiem(String idBangDiem, String idHocKi, String idSinhVien, String idGiaoVien) {
+		super();
 		this.idBangDiem = idBangDiem;
 		this.idHocKi = idHocKi;
 		this.idSinhVien = idSinhVien;
 		this.idGiaoVien = idGiaoVien;
 	}
-	public int getIdBangDiem() {
+	public String getIdBangDiem() {
 		return idBangDiem;
 	}
-	public void setIdBangDiem(int idBangDiem) {
+	public void setIdBangDiem(String idBangDiem) {
 		this.idBangDiem = idBangDiem;
 	}
-	public int getIdHocKi() {
+	public String getIdHocKi() {
 		return idHocKi;
 	}
-	public void setIdHocKi(int idHocKi) {
+	public void setIdHocKi(String idHocKi) {
 		this.idHocKi = idHocKi;
 	}
 	public String getIdSinhVien() {
@@ -38,5 +39,6 @@ public class BangDiem {
 	public void setIdGiaoVien(String idGiaoVien) {
 		this.idGiaoVien = idGiaoVien;
 	}
+	
 	
 }

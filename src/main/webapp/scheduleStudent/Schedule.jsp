@@ -92,7 +92,7 @@ h2 {
 												<tr name="tr_sr" id="tr_sr_3">
 
 													<td align="left">
-														<button type="button" class="btn btn-info">Tìm</button>
+														<button type="submit" class="btn btn-info">Tìm</button>
 													</td>
 												</tr>
 
