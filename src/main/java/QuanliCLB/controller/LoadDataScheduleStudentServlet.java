@@ -1,7 +1,6 @@
 package QuanliCLB.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -19,29 +18,34 @@ import QuanliCLB.model.NienKhoa;
 import QuanliCLB.model.TuanHoc;
 
 /**
- * Servlet implementation class YearServlet
+ * Servlet implementation class LoadDataScheduleStudentServlet
  */
-@WebServlet("/YearServlet")
-public class YearServlet extends HttpServlet {
+@WebServlet("/LoadDataScheduleStudentServlet")
+public class LoadDataScheduleStudentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-  
-    public YearServlet() {
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public LoadDataScheduleStudentServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		  YearDao yearDao = new YearDao();
+		YearDao yearDao = new YearDao();
 		  SemesterDao semesterDao = new SemesterDao();
 		  WeekDao weekDao = new WeekDao();
-		  List<NienKhoa> nienKhoa = yearDao.getListNienKhoa();  
+		  List<NienKhoa> nienKhoa = yearDao.getListNienKhoa();
+		  int listlenght = 0;
 		  request.setAttribute("listNienKhoa", nienKhoa);
 		  List<HocKi> hocKi = semesterDao.getHocKi();
 		  request.setAttribute("listHocKi", hocKi);
 		  List<TuanHoc> tuanHoc = weekDao.getTuanHoc();
 		  request.setAttribute("listTuanHoc", tuanHoc);
+		  request.setAttribute("listlenght", listlenght);
+		  
 	 		 
 		  RequestDispatcher rDispatcher = request.getRequestDispatcher("Schedule.jsp");
 		 rDispatcher.forward(request, response);
