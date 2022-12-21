@@ -17,15 +17,21 @@ public class DeleteCourseServlet extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		    String idMonHoc = request.getParameter("cbMaMonHoc");
-			CourseDAO  courseDAO = new CourseDAO();
-			courseDAO.DeleteMonHoc(idMonHoc);
-			response.sendRedirect("CourseListServlet");
 	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	   
+		response.setContentType("text/html; charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
+		String idMonHoc = request.getParameter("txtIDMonHocDelete");
+		
+		CourseDAO courseDAO = new CourseDAO();
+		if (courseDAO.DeleteMonHoc(idMonHoc)==1) {
+			response.sendRedirect("CourseListServlet?msg=successDelete()");
+		}
+		else {
+			response.sendRedirect("CourseListServlet?msg=failDelete()");
+		}
 	    
 	}
 

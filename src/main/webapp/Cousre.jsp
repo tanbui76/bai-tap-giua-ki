@@ -32,19 +32,19 @@
 							<i class="bi bi-wrench-adjustable-circle"></i> Sửa
 						</button>
 					</div>
-					<!--  
 					<div class="col-lg-2">
-						<form action="DeleteStudentServlet" method="post">
+						<form action="DeleteCourseServlet" method="post">
 						<button style="display:none;" type="submit" class="btn btn-light px-5" id="deleteAction">
 							<i class="bi bi-person-x"></i> Xóa
 						</button>
 						<a  class="btn btn-light px-5" onclick="funcDel()">
 							<i class="bi bi-person-x"></i> Xóa
 						</a>
-						<input style="display: none;" type="text" name="txtIDSinhVienDelete" id="txtIDSinhVienDelete" style="display: block;"/>
+						<input style="display: block;" type="text" name="txtIDMonHocDelete" id="txtIDMonHocDelete" "/>
 						</form>
 					</div>
-					-->
+					
+					
 				</div>
 						<!-- THEM MON HOC -->
 							<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
@@ -177,7 +177,7 @@
 		
 
 		document.getElementById("idmhUpdate").value = idMonHoc;
-		//document.getElementById("txtIDGiaoVienDelete").value = idGiaoVien;
+		document.getElementById("txtIDMonHocDelete").value = idMonHoc;
 		document.getElementById("tenmhUpdate").value = tenMonHoc;
 
 	}

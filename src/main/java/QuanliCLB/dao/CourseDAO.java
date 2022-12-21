@@ -18,7 +18,7 @@ public class CourseDAO {
 
 	public List<MonHoc> getMonHoc() {
 		List<MonHoc> listMon = new ArrayList<>();
-		String query = "SELECT * FROM MonHoc";
+		String query = "SELECT * FROM MonHoc where HIDDEN is null ";
 		try {
 			conn = dbConnection.getConnection();
 			stm = conn.prepareStatement(query);
@@ -62,16 +62,19 @@ public class CourseDAO {
 
 	}
 
-	public void DeleteMonHoc(String idMonHoc) {
-		String query = "delete from MonHoc where idMonHoc=?";
+	public int DeleteMonHoc(String idMonHoc) {
+		String query = "update MonHoc set HIDDEN = 1  where idMonHoc = ?";
 		try {
 			conn = dbConnection.getConnection();
 			stm = conn.prepareStatement(query);
 			stm.setString(1, idMonHoc);
 			stm.executeUpdate();
+			
+			return 1;
 
 		} catch (Exception e) {
 			// TODO: handle exception
+			return 0;
 		}
 	}
 
