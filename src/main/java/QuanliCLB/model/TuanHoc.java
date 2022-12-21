@@ -1,17 +1,19 @@
 package QuanliCLB.model;
 
+import java.util.Date;
+
 public class TuanHoc {
 	private String tuanId;
 	private String tuanName;
-	private String idNienKhoa;
-	private String tuanTuNgay;
-	private String tuanDenNgay;
+	private String idHocKi;
+	private Date tuanTuNgay;
+	private Date tuanDenNgay;
 	public TuanHoc() {
 	}
-	public TuanHoc(String tuanId, String tuanName, String idNienKhoa, String tuanTuNgay, String tuanDenNgay) {
+	public TuanHoc(String tuanId, String tuanName, String idHocKi, Date tuanTuNgay, Date tuanDenNgay) {
 		this.tuanId = tuanId;
 		this.tuanName = tuanName;
-		this.idNienKhoa = idNienKhoa;
+		this.idHocKi = idHocKi;
 		this.tuanTuNgay = tuanTuNgay;
 		this.tuanDenNgay = tuanDenNgay;
 	}
@@ -27,24 +29,26 @@ public class TuanHoc {
 	public void setTuanName(String tuanName) {
 		this.tuanName = tuanName;
 	}
-	public String getIdNienKhoa() {
-		return idNienKhoa;
+	public String getIdHocKi() {
+		return idHocKi;
 	}
-	public void setIdNienKhoa(String idNienKhoa) {
-		this.idNienKhoa = idNienKhoa;
+	public void setIdHocKi(String idHocKi) {
+		this.idHocKi = idHocKi;
 	}
-	public String getTuanTuNgay() {
+	public Date getTuanTuNgay() {
 		return tuanTuNgay;
 	}
-	public void setTuanTuNgay(String tuanTuNgay) {
+	public void setTuanTuNgay(Date tuanTuNgay) {
 		this.tuanTuNgay = tuanTuNgay;
 	}
-	public String getTuanDenNgay() {
+	public Date getTuanDenNgay() {
 		return tuanDenNgay;
 	}
-	public void setTuanDenNgay(String tuanDenNgay) {
+	public void setTuanDenNgay(Date tuanDenNgay) {
 		this.tuanDenNgay = tuanDenNgay;
 	}
+	
+	
 	
 	
 
