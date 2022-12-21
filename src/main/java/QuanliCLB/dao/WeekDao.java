@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import QuanliCLB.dbconnection.dbConnection;
@@ -25,9 +26,9 @@ public class WeekDao {
 			while (rs.next()) {
 				String tuanId = rs.getString("tuanId");
 				String tuanName = rs.getString("tuanName");
-				String idNienKhoa = rs.getString("idNienKhoa");
-				String tuanTuNgay = rs.getString("tuanTuNgay");
-				String tuanDenNgay = rs.getString("tuanDenNgay");
+				String idNienKhoa = rs.getString("idHocKi");
+				Date tuanTuNgay = rs.getDate("tuanTuNgay");
+				Date tuanDenNgay = rs.getDate("tuanDenNgay");
 				TuanHoc tuanHoc = new TuanHoc(tuanId,tuanName,idNienKhoa,tuanTuNgay,tuanDenNgay);
 				listTuanHoc.add(tuanHoc);
 				
