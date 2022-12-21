@@ -26,9 +26,11 @@ public class UpdateCourseServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String idMonHoc = request.getParameter("txtIDMonHocUpdate");
 		String tenMonHoc = request.getParameter("txtTenMonHocUpdate");
+		System.out.println(idMonHoc);
+		System.out.println(tenMonHoc);
 		CourseDAO courseDAO = new CourseDAO();
 		
-		if (courseDAO.UpdateMonHoc(idMonHoc, tenMonHoc)==1) {
+		if (courseDAO.UpdateMonHoc(idMonHoc, tenMonHoc) == 1) {
 			response.sendRedirect("CourseListServlet?msg=successUpdate()");
 		}
 		else {

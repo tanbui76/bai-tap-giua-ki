@@ -79,13 +79,12 @@ public class CourseDAO {
 		Connection connection = null;
 		PreparedStatement stm = null;
 		try {
-			conn = dbConnection.getConnection();
-			String query = "update MonHoc set tenMonHoc= ?  where idMonHoc = ?";
-			stm = conn.prepareStatement(query);
-			stm.setString(1, idMonHoc);
-			stm.setString(2, tenMonHoc);
+			connection = dbConnection.getConnection();
+			String query = "update MonHoc set tenMonHoc = ?  where idMonHoc = ?";
+			stm = connection.prepareStatement(query);
+			stm.setString(2, idMonHoc);
+			stm.setNString(1, tenMonHoc);
 			stm.executeUpdate();
-			
 			return 1;
 		} catch (Exception e) {
 			// TODO: handle exception

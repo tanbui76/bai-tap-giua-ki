@@ -9,7 +9,7 @@
 	</div>
 	<ul class="sidebar-menu do-nicescrol">
 		<li class="sidebar-header">CHỨC NĂNG QUẢN LÍ</li>
-		<li><a href="AdminHomePage.jsp"> <i class="zmdi zmdi-view-dashboard"></i>
+		<li><a href="FirstRun"> <i class="zmdi zmdi-view-dashboard"></i>
 				<span>Trang chủ</span>
 		</a></li>
 		<!--  <li><a href="icons.html"> <i class="zmdi zmdi-invert-colors"></i>
