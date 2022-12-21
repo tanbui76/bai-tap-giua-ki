@@ -31,6 +31,7 @@ h2 {
 									
 										<h2>Thời khóa biểu sinh viên</h2>
 										<c:out value="${getId}">
+										
 										</c:out>
 										<table id="tb_sr_toggle" name="tb_sr_toggle" width="100%"
 											class="soft fixheader">
