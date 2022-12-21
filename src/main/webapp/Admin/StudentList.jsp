@@ -40,12 +40,13 @@
 
 							<tr>
 								<th scope="col">#</th>
+								<th scope="col">STT</th>
 								<th scope="col">Mã sinh viên</th>
 								<th scope="col">Họ và tên</th>
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach var="item" items="${list}">
+							<c:forEach var="item" items="${list}" varStatus="i">
 								<tr>
 									<th scope="row">
 									<div class="icheck-material-white" style="margin: 0">
@@ -54,6 +55,7 @@
 											<label for="user-checkbox${item.idSinhVien }" name="selectedList"></label>	
 									</div>
 									</th>
+									<td>${i.index+1}</td>
 									<td>
 									${item.idSinhVien}
 									</td>
