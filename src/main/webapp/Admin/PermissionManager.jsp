@@ -27,7 +27,7 @@
 						<a  class="btn btn-light px-5" onclick="funcDel()">
 							<i class="bi bi-person-x"></i> Xóa
 						</a>
-						<input style="display: block;" type="text" name="txtIDTaiKhoanDelete" id="txtIDTaiKhoanDelete"/>
+						<input style="display: block;" type="text" name="txtIDPhanQuyenDelete" id="txtIDTaiKhoanDelete"/>
 					</form>
 					</div>
 
@@ -93,39 +93,39 @@
 							<tr>
 								<th scope="col">#</th>
 								<th scope="col">ID Phân quyền</th>
-								<th scope="col">Tên  module</th>
+								<th scope="col">Tên module</th>
 								<th scope="col">Path</th>
 							</tr>
 						</thead>
 						<tbody>
-					
+							<c:forEach var="listTc" items="${listTc}">
 								<tr>
 									<th scope="row">
 										<div class="icheck-material-white" style="margin: 0">
 											<input class="form-check-input" type="radio"
-												name="selectPhanQuyen" id="user-checkbox${item.idTaiKhoan }"
-												value="${item.idTaiKhoan}" aria-label="..."
-												onclick="GetDataUpdate('${item.idTaiKhoan}')"> <label
-												for="user-checkbox${item.idTaiKhoan}" name="selectedList"></label>
+												name="selectSinhVien" id="user-checkbox${listTc.idPhanQuyen }"
+												value="${listTc.idPhanQuyen}" aria-label="..."
+												onclick="GetDataUpdate('${listTc.idPhanQuyen}')"> <label
+												for="user-checkbox${listTc.idPhanQuyen}" name="selectedList"></label>
 										</div>
 
 									</th>
-									<td>${item.idTaiKhoan}</td>
-									<td>${item.tenDangNhap}<input hidden="hidden" type="text"
-										id="txtDataIdTaiKhoan${item.idTaiKhoan}"
-										value="${item.idTaiKhoan}"> <input hidden="hidden" type="text"
-										id="txtDataTenDangNhap${item.idTaiKhoan}"
-										value="${item.tenDangNhap}"> <input hidden="hidden" type="text"
-										id="txtDataMatKhau${item.idTaiKhoan}" value="${item.matKhau}">
-										 <input hidden="hidden" type="text" id="txtDataPhanQuyen${item.idTaiKhoan}" value="${item.phanQuyen}">
-										<%-- <input type="text" id="txtDataPhanQuyen${item.idTaiKhoan}"> --%>
+									<td>${listTc.idPhanQuyen}</td>
+									<td>${listTc.tenModule}<input hidden="hidden" type="text"
+										id="txtDataIdPhanQuyen${idPhanQuyen}"
+										value="${idPhanQuyen}"> <input hidden="hidden" type="text"
+										id="txtDataLinkForm${idPhanQuyen}"
+										value="${listTc.linkForm}"> <input hidden="hidden" type="text"
+										id="txtDataIcon${idPhanQuyen}" value="${listTc.icon}">
+										 <input hidden="hidden" type="text" id="txtDataPhanQuyen${idPhanQuyen}" value="${listTc.phanQuyen}">
+									<%-- <input type="text" id="txtDataPath${idPhanQuyen}" value="${listTc. }"> --%>	
 
 									</td>
 									
-									<td></td>
+									<td>${listTc.linkForm}</td>
 								</tr>
 
-							
+							</c:forEach>
 
 						</tbody>
 					</table>
@@ -142,7 +142,7 @@
 				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalLabel"
 						style="font-size: 20px; font-weight: 600; color: #000;">Thêm
-						Tài khoản</h5>
+						Phân quyền</h5>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -152,25 +152,25 @@
 					<div class="modal-body">
 						<div class="form-group">
 							<label for="message-text" class="col-form-label"
-								style="color: #000;">ID Tài khoản: </label> <input type="text"
-								readonly="readonly" id="recipient-name" name="txtIDTaiKhoan"
-								style="width: 100%;" value="">
+								style="color: #000;">ID Phân quyền: </label> <input type="text"
+								readonly="readonly" id="recipient-name" name="txtIDPhanQuyen"
+								style="width: 100%;" value="" readonly >
 						</div>
 						<div class="form-group">
 							<label for="message-text" class="col-form-label"
-								style="color: #000;">Tên đăng nhập: </label> <input type="text"
-								id="recipient-name" name="txtTenDangNhap" style="width: 100%;">
+								style="color: #000;">Tên module: </label> <input type="text"
+								id="recipient-name" name="txtTenModule" style="width: 100%;">
 						</div>
 						<div class="form-group">
 							<label for="message-text" class="col-form-label"
-								style="color: #000;">Mật khẩu: </label> <input type="text"
-								readonly="readonly" id="recipient-name" name="txtmatkhau"
+								style="color: #000;">Đường dẫn: </label> <input type="text"
+								readonly="readonly" id="recipient-name" name="txtDuongDan"
 								style="width: 100%;">
 						</div>
 						<div class="form-group">
 							<label for="message-text" class="col-form-label"
 								style="color: #000;">Phân quyền: </label> <select id="txtphanquyen${item.idTaiKhoan}"
-								style="height: 4vh;" class="form-select" name="txtphanQuyen">
+								style="height: 4vh;" class="form-select" name="txtPhanQuyen">
 								<option style="background: #fff !important;" selected>--Chọn--</option>
 								<option style="background: #fff !important;" value="1">Admin</option>
 								<option style="background: #fff !important;" value="2">Giáo
@@ -200,7 +200,7 @@
 				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalLabel"
 						style="font-size: 20px; font-weight: 600; color: #000;">Cập
-						nhật tài khoản</h5>
+						nhật phân quyền</h5>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -211,19 +211,19 @@
 					<div class="modal-body">
 						<div class="form-group">
 							<label for="message-text" class="col-form-label"
-								style="color: #000;">ID Tài khoản: </label> <input type="text"
+								style="color: #000;">ID phân quyền: </label> <input type="text"
 								readonly id="idtkUpdate" name="txtIDTaiKhoanUpdate"
 								style="width: 100%;" value="">
 						</div>
 						<div class="form-group">
 							<label for="message-text" class="col-form-label"
-								style="color: #000;">Tên đăng nhập: </label> <input type="text"
+								style="color: #000;">Tên module: </label> <input type="text"
 								id="tenDangNhaptkUpdate" name="txtTenDangNhapUpdate"
 								style="width: 100%;">
 						</div>
 						<div class="form-group">
 							<label for="message-text" class="col-form-label"
-								style="color: #000;">Mật khẩu: </label> <input type="text"
+								style="color: #000;">Đường dẫn: </label> <input type="text"
 								readonly="readonly" id="matkhautkUpdate"
 								name="txtPassTaiKhoanUpdate" style="width: 100%;">
 						</div>
