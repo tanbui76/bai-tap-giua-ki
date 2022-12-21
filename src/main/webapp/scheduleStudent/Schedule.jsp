@@ -27,8 +27,11 @@ h2 {
 						<tbody>
 							<tr>
 								<td valign="top" style="padding: 0px; height: 300px;">
+								
 									
 										<h2>Thời khóa biểu sinh viên</h2>
+										<c:out value="${getId}">
+										</c:out>
 										<table id="tb_sr_toggle" name="tb_sr_toggle" width="100%"
 											class="soft fixheader">
 											<tbody>
@@ -39,7 +42,7 @@ h2 {
 											</tbody>
 										</table>
 
-                                          <form action="" method="post">
+                                          <form action="GetScheduleStudentServlet" method="post">
 										<table name="" width="100%" style="margin: 0 26%;">
 											<tbody>
 												<tr name="tr_sr">
@@ -92,7 +95,7 @@ h2 {
 												<tr name="tr_sr" id="tr_sr_3">
 
 													<td align="left">
-														<button type="button" class="btn btn-info">Tìm</button>
+														<button type="submit" class="btn btn-info">Tìm</button>
 													</td>
 												</tr>
 

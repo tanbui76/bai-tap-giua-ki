@@ -104,7 +104,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="card">
+
+		</div>
+		<div class="card">
 				<div class="card-body">
 					<h5 class="card-title">Danh sách giáo viên</h5>
 					<div class="table-responsive">
@@ -112,20 +114,22 @@
 							<thead>
 								<tr>
 									<th scope="col">#</th>
+									<th scope="col">STT</th>
 									<th scope="col">Mã giáo viên</th>
 									<th scope="col">Họ và tên</th>
 									<th scope="col">Hành Động</th>
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach var="item" items="${list}">
+								<c:forEach var="item" items="${list}" varStatus="i">
 									<tr>
 										 <th scope="row">
 										 	<div class="icheck-material-white" style="margin: 0">
 											<input class="form-check-input" type="radio" name="selectGiaoVien" id="user-checkbox${item.idGiaoVien }" value="${item.idGiaoVien}"  aria-label="..." onclick="GetDataUpdate('${item.idGiaoVien}')" >
 											<label for="user-checkbox${item.idGiaoVien }" name="selectedList"></label>	
-									</div>
+											</div>
 										 </th>
+										 <td>${i.index+1}</td>
 										<td>${item.idGiaoVien}</td>
 										<td>${item.hoTenGiaoVien}
 											<input style="display: none;" type="text" id="hotengvdata${item.idGiaoVien }" value="${item.hoTenGiaoVien}">
@@ -148,8 +152,6 @@
 					</div>
 				</div>
 			</div>
-
-		</div>
 <!-- myModal1: Thêm Giao Vien -->
 		<div class="modal fade" id="myModal1" tabindex="-1" role="dialog"
 							aria-labelledby="exampleModalLabel" aria-hidden="true">
