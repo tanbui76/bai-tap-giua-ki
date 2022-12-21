@@ -87,7 +87,7 @@ public class TeacherListDAO {
 			
 			}
 			stm.executeBatch();
-			System.out.println("Thêm thành công!");
+			
 			
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -136,8 +136,8 @@ public class TeacherListDAO {
 			return 0;
 		}
 	}
-	public List<SinhVien> getTeacherListAutoGenID() {
-		List<SinhVien> list = new ArrayList<SinhVien>();
+	public List<GiaoVien> getTeacherListAutoGenID() {
+		List<GiaoVien> list = new ArrayList<GiaoVien>();
 		// String query = "Select * from TaiKhoan ORDER BY idTaiKhoan DESC";
 		String query = "Select * from GiaoVien order by idGiaoVien desc";
 		
@@ -153,9 +153,9 @@ public class TeacherListDAO {
 				String github = rs.getString("github");
 				String diaChiGiaoVien = rs.getNString("diaChiGiaoVien");
 				String idTaiKhoan = rs.getString("idTaiKhoan");
-				SinhVien sv = new SinhVien(idGiaoVien, hoTenGiaoVien, anhDaiDienGiaoVien, email, github, diaChiGiaoVien,
+				GiaoVien gv = new GiaoVien(idGiaoVien, hoTenGiaoVien, anhDaiDienGiaoVien, email, github, diaChiGiaoVien,
 						idTaiKhoan);
-				list.add(sv);
+				list.add(gv);
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -167,12 +167,12 @@ public class TeacherListDAO {
 		LocalDate localDate = LocalDate.now();
 		int year = localDate.getYear();
 		String yearStr = String.valueOf(year);
-		List<SinhVien> list = getTeacherListAutoGenID();
+		List<GiaoVien> list = getTeacherListAutoGenID();
 		String s = "GV";
 		if (list.size() <= 0) {
 			s = yearStr + "GV001";
 		} else {
-			String chuoi = list.get(0).getIdSinhVien().toString();
+			String chuoi = list.get(0).getIdGiaoVien().toString();
 			String getString = chuoi.substring(0, 4);
 			if (!getString.equals(yearStr)) {
 				s = yearStr + "GV001";
