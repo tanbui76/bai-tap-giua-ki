@@ -62,6 +62,8 @@
 		</li>
 		<li><a href="AccountServlet"><i
 				class="zmdi zmdi-chart-donut text-success"></i> <span>Quản lí tài khoản</span></a></li>
+		<li><a href="PermissionDataServlet"><i
+				class="zmdi zmdi-chart-donut text-success"></i> <span>Quản lí phân quyền</span></a></li>
 				
 
 	</ul>

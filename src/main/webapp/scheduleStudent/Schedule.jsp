@@ -27,8 +27,12 @@ h2 {
 						<tbody>
 							<tr>
 								<td valign="top" style="padding: 0px; height: 300px;">
+								
 									
 										<h2>Thời khóa biểu sinh viên</h2>
+										<c:out value="${getId}">
+										
+										</c:out>
 										<table id="tb_sr_toggle" name="tb_sr_toggle" width="100%"
 											class="soft fixheader">
 											<tbody>
@@ -39,7 +43,7 @@ h2 {
 											</tbody>
 										</table>
 
-                                          <form action="" method="post">
+                                          <form action="GetScheduleStudentServlet" method="post">
 										<table name="" width="100%" style="margin: 0 26%;">
 											<tbody>
 												<tr name="tr_sr">
