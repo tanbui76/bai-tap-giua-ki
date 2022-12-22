@@ -25,11 +25,17 @@ public class AddCourseServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
-		String idMonHoc = request.getParameter("txtMaMonHoc");
+		String idMonHoc = request.getParameter("txtIDMonHoc");
 		String tenMonHoc = request.getParameter("txtTenMonHoc");
+//		String tongSoTiet = request.getParameter("txtTongSoTiet");
+		
 		CourseDAO dao = new CourseDAO();
-		dao.InsertMonHoc(idMonHoc, tenMonHoc);
-		response.sendRedirect("CourseListServlet");
+		if (dao.InsertMonHoc(idMonHoc, tenMonHoc, 0)==1) {
+			response.sendRedirect("CourseListServlet?msg=AddSucc()");
+		 }else {
+			 response.sendRedirect("CourseListServlet?msg=AddErr()");
+
+		}
 	}
 
 }
