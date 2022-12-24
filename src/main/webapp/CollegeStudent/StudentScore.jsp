@@ -12,79 +12,88 @@
 		<div class="container-fluid">
 			<div class="card">
 				<div class="card-body">
-					<form id="frmMain" name="frmMain" method="post">
+				
 						<h3 class="result" style="text-align: center; color: white">Kết
 							quả học tập sinh viên</h3>
+							
+							<form action="ShowScoreStudentServlet" method="post">
 						<table width="100%" class="soft">
 							<tbody>
 								<tr>
 									<td align="right" width="40%" style="font-size: 20px;">Năm
 										học - Học kỳ:</td>
 									<td align="left">
-									<select>
-											<option value="" selected="">Tất cả</option>
-												
-											<option value="2022">2022-2023</option>
+									<select id="cbbNienKhoa" name="cbbNienKhoa" onchange="funcNienKhoa()">
+											<option style="background: #fff !important"
+												selected disabled="disabled">Chọn năm học</option>
+											<c:forEach var="item" items="${listNienKhoa}">
+												<option style="background: #fff !important"
+													value="${item.idNienKhoa}">${item.namNienKhoa}
+													
+													</option>
+													
+											</c:forEach>
+
+									</select> 
+									<input hidden="hidden" style="width: 8%;" type="text" id="ipIdNienKhoa" name="idNienKhoa">
+									<select id="cbbHocKi" name="cbbHocKi"style="width: 120px;" onchange="funcHocKi()">
+											<option style="background: #fff !important"
+												selected disabled="disabled">Chọn học kỳ</option>
+											<c:forEach var="item" items="${listHocKi}">
+												<option style="background: #fff !important"
+													value="${item.idHocKi}">${item.tenHocKi}</option>
+											</c:forEach>
 									</select>
-									 <select "style="width: 120px;">
-											<option value="" selected="">Tất cả</option>
-											<option value="1">1</option>
-											<option value="2">2</option>
-									</select></td>
+									<input hidden="hidden" style="width: 8%;" type="text" id="ipIdHocKi" name="idHocKi">
+									</td>
 								</tr>
 								<tr>
-									<td align="center" colspan="2"><input type="button"
-										name="btnSave" id="btnSave" value="Xem" onclick="xem()">
+									<td align="center" colspan="2">
+									<input type="submit"
+										name="btnXem" id="btnXem" value="Xem" onclick="funcXem()">
 									</td>
 								</tr>
 							</tbody>
 						</table>
+						
 						<fieldset class="list">
 							<legend>
 								<h4>Học kỳ: 1 - Năm học: 2022 - 2023</h4>
+							
 							</legend>
 							<div class="divp-list" style="overflow: auto"
 								id="divp_xemketquahoctap_0">
-								<table id="tb_xemketquahoctap_0"
-									style="border-collapse: collapse;" name="tb_xemketquahoctap_0"
-									width="100%" border="1" class="table-list fixheader">
+								<table class="table table-bordered">
 									<thead>
-										
-										<tr class="table">
-											<th rowspan="2" align="center" style="width: 55px;">Stt</th>
-											<th rowspan="2" align="center" style="width: 166px;">Mã
-												môn học</th>
-											<th rowspan="2" align="center" style="width: 250px;">Tên
-												môn học</th>
-											<th colspan="2" align="center" style="width: 166px;">Điểm
-												HP hệ 10</th>
-											<th colspan="2" align="center" style="width: 166px;">Điểm
-												HP hệ 4</th>
-											<th rowspan="2" align="center" style="width: 62px;">Chi
-												tiết
-											</th>
+										<tr>
+											<th scope="col">STT</th>
+											<th scope="col">Mã môn học</th>
+										    <th scope="col">Tên môn học</th>
+											<th scope="col">Điểm HP hệ 10</th>
+											<th scope="col">Chi tiết</th>
 										</tr>
-										<tr class="alt">
-                                            <th align="center" style="width: 80px;">Lần 1</th>
-                                            <th align="center" style="width: 80px;">Lần 2</th>
-                                            <th align="center" style="width: 80px;">Lần 1</th>
-                                            <th align="center" style="width: 80px;">Lần 2</th>
-                                        </tr>
 									</thead>
 									<tbody>
-										<c:forEach var="item" items="${list}">
-											<tr class="alt">
-												<th align="center" width="5%" class="">1</th>
-												<td align="left" width="14%" class="">${item.idMonHoc}</td>
-												<td align="left" class="">${item.tenMonHoc}</td>
-												<td align="center" width="7%" class="">8,8</td>
-												<td align="center" width="7%" class=""></td>
-												<td align="center" width="7%" class="">A</td>
-												<td align="center" width="7%" class=""></td>
-												<td align="center" width="7%" class=""><a href="DetailScore.jsp">Chitiet1</a></td>
-											</tr>
-										</c:forEach>
-											
+									<c:forEach items="${listBangDiemChiTiet}" var="item">
+									<tr>
+										     <th scope="row">${i.index+1}</th>											
+											<td>${item.idMonHoc }</td>
+											<td></td>
+											<td></td>
+											<td>
+											<button type="button" class="btn btn-light px-5" data-toggle="modal" data-target="#myModalChiTiet" onclick="funcChiTiet('${item.idBangDiemChiTiet}')">
+							               <i class="bi bi-wrench-adjustable-circle"></i>
+						                   </button>
+						                   <input style=" width: 8%;" type="text" id="dataHe1_${item.idBangDiemChiTiet}" value="${item.diemHe1}">
+						                   <input style=" width: 8%;" type="text" id="dataHe2_${item.idBangDiemChiTiet}" value="${item.diemHe2}">
+						                   <input style=" width: 8%;" type="text" id="dataHe3_${item.idBangDiemChiTiet}" value="${item.diemHe3}">
+						                   <input style=" width: 10%;" type="text" name="dataIdChiTiet" id="dataId_${item.idBangDiemChiTiet}" value="${item.idBangDiemChiTiet}">
+						                   </td>
+									</tr>
+									</c:forEach>
+									
+									
+																	
 									</tbody>
 								</table>
 							</div>
@@ -107,5 +116,94 @@
 
 		</div>
 	</div>
+	
+	
+	
+	<!-- sua  -->
+
+<div class="modal fade" id="myModalChiTiet" tabindex="-1" role="dialog"
+	aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document"
+		style="position: relative; top: 10%;">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel"
+					style="font-size: 20px; font-weight: 600; color: #000;">Chi tiết môn học </h5>
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="message-text" class="col-form-label"
+							style="color: #000;">Điểm hệ 1: </label> <input type="text" readonly 
+							id="txtDiemHe1" name="txtDiemHe1" style="width: 100%;">
+					</div>
+					<div class="form-group">
+						<label for="message-text" class="col-form-label"
+							style="color: #000;">Điểm hệ 2: </label> <input
+							type="text" id="txtDiemHe2" name="txtDiemHe2"
+							style="width: 100%;">
+					</div>
+					<div class="form-group">
+						<label for="message-text" class="col-form-label"
+							style="color: #000;">Điểm hệ 3: </label> <input type="text"
+							id="txtDiemHe3" name="txtDiemHe3" style="width: 100%;">
+					</div>
+					<div class="form-group">
+						<label for="message-text" class="col-form-label"
+							style="color: #000;">Điểm HP hệ 10: </label> <input type="text"
+							id="txtDiemHe10" name="txtDiemHe10" style="width: 100%;">
+					</div>
+					
+					<div class="form-group" style="display: flex; flex-direction: column;">
+						<label for="message-text" class="col-form-label"
+							style="color: #000;"></label> 
+					</div>
+
+
+				</div>
+				<!-- <div class="modal-footer">
+
+					<button class="btn btn-success">Cập nhật</button>
+				</div> -->
+			
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+function funcNienKhoa() {
+	var idNienKhoa = document.getElementById("cbbNienKhoa").value;
+	// gán giá trị cho input ipIdNienKhoa
+	document.getElementById("ipIdNienKhoa").value = idNienKhoa;
+	
+}
+function funcHocKi(){
+	var idHocKi = document.getElementById("cbbHocKi").value;
+	// gán giá trị cho input ipIdNienKhoa
+	document.getElementById("ipIdHocKi").value = idHocKi;
+	
+	
+}
+function funcChiTiet(id) {
+	//alert("Hello");
+	var diemHe1 = document.getElementById("dataHe1_"+ id).value;
+	document.getElementById("txtDiemHe1").value = diemHe1;
+	var diemHe2 = document.getElementById("dataHe2_"+ id).value;
+	document.getElementById("txtDiemHe2").value = diemHe2;
+	var diemHe3 = document.getElementById("dataHe3_"+ id).value;
+	document.getElementById("txtDiemHe3").value = diemHe3;
+	// 
+	var idChiTietDiem = document.getElementById("dataId_"+ id).value;
+
+}
+
+function funcXem() {
+	alert("hello");
+	
+}
+</script>
 </body>
 </html>

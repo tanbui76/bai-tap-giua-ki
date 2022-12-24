@@ -166,6 +166,7 @@
 											aria-label="Close">
 											<span aria-hidden="true">&times;</span>
 										</button>
+										
 									</div>
 									<%
 										TeacherListDAO sDao = new TeacherListDAO();

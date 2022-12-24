@@ -8,78 +8,217 @@ import java.util.List;
 
 import QuanliCLB.dbconnection.dbConnection;
 import QuanliCLB.model.BangDiem;
+import QuanliCLB.model.BangDiemChiTiet;
 import QuanliCLB.model.BangDiemPhu;
+import QuanliCLB.model.HocKi;
+import QuanliCLB.model.MonHoc;
+import QuanliCLB.model.NienKhoa;
+import QuanliCLB.model.TuanHoc;
 
 public class ScoreStudentDAO {
-	Connection connection = null;
+	Connection conn = null;
 	PreparedStatement stm = null;
 	ResultSet rs = null;
 	
-	public ScoreStudentDAO() {
-		// TODO Auto-generated constructor stub
-	}
-	public List<BangDiemPhu> getBangDiemPhu() {
-		List<BangDiemPhu> list =  new ArrayList<BangDiemPhu>();
-		
-		String query = "select distinct f.namNienKhoa, e.tenHocKi, d.idMonHoc,d.tenMonhoc\r\n"
-				+ "from BangDiemChiTiet  a\r\n"
-				+ "inner join BangDiem b on a.idBangDiem = b.idBangDiem\r\n"
-				+ "join SinhVien c on c.idSinhVien = b.idSinhVien\r\n"
-				+ "join MonHoc d on d.idMonHoc = a.idMonHoc\r\n"
-				+ "join HocKi e on e.idHocKi = b.idHocKi\r\n"
-				+ "join NienKhoa f on f.idNienKhoa = e.idNienKhoa";
-		try {
-			connection =dbConnection.getConnection();
-			stm = connection.prepareStatement(query);
-			rs = stm.executeQuery();
-			while (rs.next()) {
-				System.out.println("h1");
-				String namNienKhoa = rs.getString("namNienKhoa");
-				String tenHocKi = rs.getNString("tenHocKi");
-				String idMonHoc = rs.getString("idMonHoc");
-				String tenMonhoc = rs.getNString("tenMonHoc");
-				BangDiemPhu bd = new BangDiemPhu(namNienKhoa,tenHocKi,idMonHoc,tenMonhoc);
-				System.out.println("h2");
-				System.out.println(tenMonhoc);
-				list.add(bd);
-			}
+    public NienKhoa getIdNienKhoa(String idNienKhoa) {
+    	NienKhoa  nienKhoa = null;
+    	String query ="select * from NienKhoa where idNienKhoa=?";
+    	 try {
+				conn = dbConnection.getConnection();
+				stm = conn.prepareStatement(query);
+				stm.setString(1, idNienKhoa);
+				rs = stm.executeQuery();
+				if(rs.next()) {
+					 String idNienKh =rs.getString("idNienKhoa");
+					 String namNienKhoa = rs.getString("namNienKhoa");
+					
+					  nienKhoa = new NienKhoa(idNienKh,namNienKhoa);
+					  return nienKhoa;
+
+					 
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} 
+    	
+    	
+		return nienKhoa;
+    }
+    
+    
+    public HocKi getIdKi(String idNienKhoa) {
+    	HocKi hocKi = null;
+    	String query ="select * from HocKi where idNienKhoa=?";
+    	 try {
+				conn = dbConnection.getConnection();
+				stm = conn.prepareStatement(query);
+				stm.setString(1, idNienKhoa);
+				rs = stm.executeQuery();
+				if(rs.next()) {
+					 String idHocki =rs.getString("idHocKi");
+					 String idNienKhoas = rs.getString("idNienKhoa");
+					 String tenHocKi = rs.getString("tenHocKi");
+					
+					  hocKi = new HocKi(idHocki,idNienKhoas,tenHocKi);
+					  return hocKi;
+					 
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} 
+    	
+    	
+    	 return hocKi;
+    }
+    
+    public BangDiem getIdBangDiem(String idHocKi, String idSinhVien) {
+    	BangDiem bangDiem = null;
+    	String query ="select *from BangDiem where idHocKi=? and idSinhVien=?";
+    	try {
+    		conn = dbConnection.getConnection();
+    		stm =conn.prepareStatement(query);   		
+    		stm.setString(1, idHocKi);
+    		stm.setString(2, idSinhVien);
+    		rs= stm.executeQuery();
+    		if(rs.next()) {
+    			String idBangDiem = rs.getString("idBangDiem");
+    			String idHocK = rs.getString("idHocKi");
+    			String idSV = rs.getString("idSinhVien");
+    			String idGiaoVien = rs.getString("idGiaoVien");
+    			bangDiem = new BangDiem(idBangDiem,idHocK,idSV,idGiaoVien);
+    			return bangDiem;
+    			
+    			
+    		}
+    		
+    		
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			// TODO: handle exception
+		}
+    	return bangDiem;
+    	
+    }
+    
+    public List<BangDiemChiTiet> getIdMonHoc(String idBangDiem) {
+    	List<BangDiemChiTiet> listBangDiemChiTiets = new ArrayList<>();
+    
+    	String query = "select * from BangDiemChiTiet where idBangDiem=?";
+    	try {
+    		conn = dbConnection.getConnection();
+    		stm =conn.prepareStatement(query); 
+    		stm.setString(1, idBangDiem);
+    		rs = stm.executeQuery();
+    		if(rs.next()) {
+    			
+    			String idBangDiemChiTiet = rs.getString("idBangDiemChiTiet");
+    			String idBangD = rs.getString("idBangDiem");
+    			
+    			float diemHe1 = rs.getFloat("diemHe1");
+    		    float diemHe2 = rs.getFloat("diemHe2");
+    			float diemHe3 = rs.getFloat("diemHe3");
+    			String idMonHoc = rs.getString("idMonHoc");
+    			BangDiemChiTiet bangDiemChiTiet = new BangDiemChiTiet(idBangDiemChiTiet,idBangD,diemHe1,diemHe2,diemHe3,idMonHoc);
+    		    listBangDiemChiTiets.add(bangDiemChiTiet);
+    		}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			// TODO: handle exception
+		}
+    	return listBangDiemChiTiets;
+    	
+    }
+    
+    
+    public MonHoc getTenMon(String tenMonHoc) {
+    	MonHoc monHoc = null;
+    	String query ="select *from MonHoc where idMonHoc=?";
+    	
+    	try {
+    		conn = dbConnection.getConnection();
+    		stm =conn.prepareStatement(query); 
+    		stm.setString(1, tenMonHoc);
+    		rs = stm.executeQuery();
+    		if(rs.next()) {
+    			String idMonHoc = rs.getString("idMonHoc");
+    			String tenMH = rs.getNString("tenMonHoc");
+    			int tongSoTiet = rs.getInt("tongSoTiet");
+    			monHoc = new MonHoc(idMonHoc,tenMH,tongSoTiet);
+    			return monHoc;
+    		}
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
-		return list;
-	}
+		return monHoc;
+    	
+    }
+    
+    
+    // xu ly he 10
+    
+    
+    public BangDiemChiTiet getIdChiTietDiem(String idBangDiem, String idMonHoc) {
+    	BangDiemChiTiet bangDiemChiTiet = null;
+    	String query = "select * from BangDiemChiTiet where idBangDiem=? and idMonHoc=?";
+    	try {
+    		conn= dbConnection.getConnection();
+    		stm= conn.prepareStatement(query);
+    		stm.setString(1, idBangDiem);
+    		stm.setString(2, idMonHoc);
+    		rs= stm.executeQuery();
+    		if(rs.next()) {
+    			String idChiTietDiem = rs.getString("idBangDiemChiTiet");
+    			String idBangD = rs.getString("idBangDiem");    			
+    			float diemHe1 = rs.getFloat("diemHe1");
+    		    float diemHe2 = rs.getFloat("diemHe2");
+    			float diemHe3 = rs.getFloat("diemHe3");
+    			String idMon = rs.getString("idMonHoc");
+    			bangDiemChiTiet = new BangDiemChiTiet(idChiTietDiem,idBangD,diemHe1,diemHe2,diemHe3,idMon);
+    			return bangDiemChiTiet;
+    		}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+    	return bangDiemChiTiet;
+    	
+    }
+    
+   
+    
+    
+
+    
+    public static void main(String[] args) {
+    	String idNienKhoa = "NK001";
+    	ScoreStudentDAO scoreStudentDAO = new ScoreStudentDAO();
+    	NienKhoa nk = scoreStudentDAO.getIdNienKhoa(idNienKhoa);
+    	System.out.println(nk.getIdNienKhoa());
+    	HocKi hocKi = scoreStudentDAO.getIdKi(idNienKhoa);
+    	String idHk  = hocKi.getIdHocKi();
+    	System.out.println(idHk);
+    	String idsv ="2022SV001";
+    	BangDiem bangDiem = scoreStudentDAO.getIdBangDiem(idHk,idsv);
+    	String idBangDiem = bangDiem.getIdBangDiem();
+    	System.out.println(idBangDiem);
+    	List<BangDiemChiTiet> list = scoreStudentDAO.getIdMonHoc(idBangDiem);
+        for (BangDiemChiTiet bangDiemChiTiet : list) {
+			System.out.println(bangDiemChiTiet.getIdMonHoc());
+			 String idMon = bangDiemChiTiet.getIdMonHoc(); 
+			 MonHoc monHoc = scoreStudentDAO.getTenMon(idMon);
+			 System.out.println(monHoc.getTenMonhoc());
+		     BangDiemChiTiet bangDiemChiTiet2 = scoreStudentDAO.getIdChiTietDiem(idBangDiem, idMon);
+		     System.out.println(bangDiemChiTiet2.getDiemHe1());
+			 
+		}
+
+
+    	
+    }
 	
-//	public List<BangDiemPhu> getBangDiemPhu() {
-//		List<BangDiemPhu> list =  new ArrayList<BangDiemPhu>();
-//		
-////		String query = "select distinct f.namNienKhoa, e.tenHocKi, d.idMonHoc,d.tenMonhoc\r\n"
-////				+ "from BangDiemChiTiet  a\r\n"
-////				+ "inner join BangDiem b on a.idBangDiem = b.idBangDiem\r\n"
-////				+ "join SinhVien c on c.idSinhVien = b.idSinhVien\r\n"
-////				+ "join MonHoc d on d.idMonHoc = a.idMonHoc\r\n"
-////				+ "join HocKi e on e.idHocKi = b.idHocKi\r\n"
-////				+ "join NienKhoa f on f.idNienKhoa = e.idNienKhoa";
-//		String query = "select * from BangDiemChiTiet "
-//		try {
-//			connection =dbConnection.getConnection();
-//			stm = connection.prepareStatement(query);
-//			rs = stm.executeQuery();
-//			while (rs.next()) {
-//				System.out.println("h1");
-//				String namNienKhoa = rs.getString("namNienKhoa");
-//				String tenHocKi = rs.getNString("tenHocKi");
-//				String idMonHoc = rs.getString("idMonHoc");
-//				String tenMonhoc = rs.getNString("tenMonHoc");
-//				BangDiemPhu bd = new BangDiemPhu(namNienKhoa,tenHocKi,idMonHoc,tenMonhoc);
-//				System.out.println("h2");
-//				System.out.println(tenMonhoc);
-//				list.add(bd);
-//			}
-//		} catch (Exception e) {
-//			// TODO: handle exception
-//		}
-//		
-//		return list;
-//	}
+
 }

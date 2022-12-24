@@ -7,32 +7,30 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import QuanliCLB.dao.CourseDAO;
-
-
-@WebServlet("/DeleteCourseServlet")
-public class DeleteCourseServlet extends HttpServlet {
+/**
+ * Servlet implementation class StudentScoreServlet
+ */
+@WebServlet("/StudentScoreServlet")
+public class StudentScoreServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public StudentScoreServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html; charset=UTF-8");
-		request.setCharacterEncoding("UTF-8");
-		String idMonHoc = request.getParameter("txtIDMonHocDelete");
-		
-		CourseDAO courseDAO = new CourseDAO();
-		if (courseDAO.DeleteMonHoc(idMonHoc)==1) {
-			response.sendRedirect("CourseListServlet?msg=successDelete()");
-		}
-		else {
-			response.sendRedirect("CourseListServlet?msg=failDelete()");
-		}
-	    
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }
