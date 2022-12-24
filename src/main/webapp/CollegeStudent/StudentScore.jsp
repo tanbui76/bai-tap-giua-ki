@@ -1,5 +1,11 @@
+<%@page import="QuanliCLB.model.BangDiemChiTiet"%>
+<%@page import="java.util.List"%>
+<%@page import="QuanliCLB.dao.ScoreStudentDAO"%>
+<%@page import="QuanliCLB.model.MonHoc"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,11 +18,132 @@
 		<div class="container-fluid">
 			<div class="card">
 				<div class="card-body">
-				
-						<h3 class="result" style="text-align: center; color: white">Kết
+				<form action="ShowScoreStudentServlet" method="post">
+						<h3 class="result" style="text-align: center; color: white">Kết				
 							quả học tập sinh viên</h3>
+							<c:if test="${listBangDiemChiTiet ==null }">
+								<table width="100%" class="soft">
+							<tbody>
+								<tr>
+									<td align="right" width="40%" style="font-size: 20px;">Năm
+										học - Học kỳ:</td>
+									<td align="left">
+									<select id="cbbNienKhoa" name="cbbNienKhoa" onchange="funcNienKhoa()">
+											<option style="background: #fff !important"
+												selected disabled="disabled">Chọn năm học</option>
+											<c:forEach var="item" items="${listNienKhoa}">
+												<option style="background: #fff !important"
+													value="${item.idNienKhoa}">${item.namNienKhoa}
+													
+													</option>
+													
+											</c:forEach>
+
+									</select> 
+									<input hidden="hidden" style="width: 8%;" type="text" id="ipIdNienKhoa" name="idNienKhoa">
+									<select id="cbbHocKi" name="cbbHocKi"style="width: 120px;" onchange="funcHocKi()">
+											<option style="background: #fff !important"
+												selected disabled="disabled">Chọn học kỳ</option>
+											<c:forEach var="item" items="${listHocKi}">
+												<option style="background: #fff !important"
+													value="${item.idHocKi}">${item.tenHocKi}</option>
+											</c:forEach>
+									</select>
+									<input hidden="hidden" style="width: 8%;" type="text" id="ipIdHocKi" name="idHocKi">
+									</td>
+								</tr>
+								<tr>
+									<td align="center" colspan="2">
+									<input type="submit"
+										name="btnXem" id="btnXem" value="Xem" onclick="funcXem()">
+									</td>
+								</tr>
+							</tbody>
+						</table>
 							
-							<form action="ShowScoreStudentServlet" method="post">
+							</c:if>
+							</form>
+							
+							
+							
+							<c:if test="${listBangDiemChiTiet !=null}">
+							<fieldset class="list">
+							<legend>
+								<h4>Học kỳ: 1 - Năm học: 2022 - 2023</h4>
+							
+							</legend>
+							
+							<div id="table_tkb" class="divp-list" style="overflow: auto"
+								id="divp_xemketquahoctap_0">
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th scope="col">STT</th>
+											<th scope="col">Mã môn học</th>
+										    <th scope="col">Tên môn học</th>
+											<th scope="col">Điểm HP hệ 10</th>
+											<th scope="col">Chi tiết</th>
+										</tr>
+									</thead>
+									<tbody>
+									<% 
+										List<BangDiemChiTiet> bangDiemChiTiets = (List<BangDiemChiTiet>)request.getAttribute("listBangDiemChiTiet");
+										for(int i=0;i<bangDiemChiTiets.size();i++){
+									 %>
+									<tr>
+										     <th scope="row"><%=i %></th>											
+											<td><%= bangDiemChiTiets.get(i).getIdMonHoc() %></td>
+											<td>
+											<%
+											ScoreStudentDAO adao = new ScoreStudentDAO();
+											String idMon = bangDiemChiTiets.get(i).getIdMonHoc();
+											MonHoc monHoc = adao.getTenMon(idMon);
+											%>
+											<%= monHoc.getTenMonhoc() %>
+											</td>
+											<td>
+											<%
+												double tongdiemhe10 = (bangDiemChiTiets.get(i).getDiemHe1()*0.2) + (bangDiemChiTiets.get(i).getDiemHe2()*0.3) + (bangDiemChiTiets.get(i).getDiemHe3()*0.5);
+												
+											%>
+											<%= tongdiemhe10 %>
+											</td>
+											<td>
+											<button type="button" class="btn btn-light px-5" data-toggle="modal" data-target="#myModalChiTiet" onclick="funcChiTiet('${item.idBangDiemChiTiet}')">
+							               <i class="bi bi-wrench-adjustable-circle"></i>
+						                   </button>
+						                   <input style=" width: 8%;" type="text" id="dataHe1_<%= bangDiemChiTiets.get(i).getIdBangDiem() %>" value="<%= bangDiemChiTiets.get(i).getDiemHe1()%>">
+						                   <input style=" width: 8%;" type="text" id="dataHe2_<%= bangDiemChiTiets.get(i).getIdBangDiem() %>" value="<%= bangDiemChiTiets.get(i).getDiemHe2()%>">
+						                   <input style=" width: 8%;" type="text" id="dataHe3_<%= bangDiemChiTiets.get(i).getIdBangDiem() %>" value="<%= bangDiemChiTiets.get(i).getDiemHe3()%>">
+						                   <input style=" width: 8%;" type="text" id="dataHe4_<%= bangDiemChiTiets.get(i).getIdBangDiem() %>" value="<%= tongdiemhe10%>">
+						                   <input style=" width: 10%;" type="text" name="dataIdChiTiet" id="dataId_<%= bangDiemChiTiets.get(i).getIdBangDiem() %>" value="<%= bangDiemChiTiets.get(i).getIdBangDiem() %>">
+						                   </td>
+									</tr>
+									<%}; %>
+									
+									
+																	
+									</tbody>
+								</table>
+							</div>
+							<table width="100%" border="0" class="fixheader">
+								<tbody>
+									<tr>
+										<td align="left" width="30%" class="normal">Điểm trung
+											bình học kỳ hệ 10</td>
+										<td align="left" width="20%" class="normal"><b>8.54</b></td>
+										<td align="left" width="30%" class="normal">Điểm trung
+											bình học kỳ hệ 4</td>
+										<td align="left" width="20%" class="normal"><b>3.65</b></td>
+									</tr>
+								</tbody>
+							</table>
+						</fieldset>
+							
+							
+							</c:if>
+							
+						<%-- 	<form action="ShowScoreStudentServlet" method="post">
 						<table width="100%" class="soft">
 							<tbody>
 								<tr>
@@ -56,12 +183,13 @@
 							</tbody>
 						</table>
 						
-						<fieldset class="list">
+						 <fieldset class="list">
 							<legend>
 								<h4>Học kỳ: 1 - Năm học: 2022 - 2023</h4>
 							
 							</legend>
-							<div class="divp-list" style="overflow: auto"
+							
+							<div id="table_tkb" class="divp-list" style="overflow: auto"
 								id="divp_xemketquahoctap_0">
 								<table class="table table-bordered">
 									<thead>
@@ -74,23 +202,43 @@
 										</tr>
 									</thead>
 									<tbody>
-									<c:forEach items="${listBangDiemChiTiet}" var="item">
+									
+									
+									
+									<% 
+										List<BangDiemChiTiet> bangDiemChiTiets = (List<BangDiemChiTiet>)request.getAttribute("listBangDiemChiTiet");
+										for(int i=0;i<bangDiemChiTiets.size();i++){
+									 %>
 									<tr>
-										     <th scope="row">${i.index+1}</th>											
-											<td>${item.idMonHoc }</td>
-											<td></td>
-											<td></td>
+										     <th scope="row"><%=i %></th>											
+											<td><%= bangDiemChiTiets.get(i).getIdMonHoc() %></td>
+											<td>
+											<%
+											ScoreStudentDAO adao = new ScoreStudentDAO();
+											String idMon = bangDiemChiTiets.get(i).getIdMonHoc();
+											MonHoc monHoc = adao.getTenMon(idMon);
+											%>
+											<%= monHoc.getTenMonhoc() %>
+											</td>
+											<td>
+											<%
+												double tongdiemhe10 = (bangDiemChiTiets.get(i).getDiemHe1()*0.2) + (bangDiemChiTiets.get(i).getDiemHe2()*0.3) + (bangDiemChiTiets.get(i).getDiemHe3()*0.5);
+												
+											%>
+											<%= tongdiemhe10 %>
+											</td>
 											<td>
 											<button type="button" class="btn btn-light px-5" data-toggle="modal" data-target="#myModalChiTiet" onclick="funcChiTiet('${item.idBangDiemChiTiet}')">
 							               <i class="bi bi-wrench-adjustable-circle"></i>
 						                   </button>
-						                   <input style=" width: 8%;" type="text" id="dataHe1_${item.idBangDiemChiTiet}" value="${item.diemHe1}">
-						                   <input style=" width: 8%;" type="text" id="dataHe2_${item.idBangDiemChiTiet}" value="${item.diemHe2}">
-						                   <input style=" width: 8%;" type="text" id="dataHe3_${item.idBangDiemChiTiet}" value="${item.diemHe3}">
-						                   <input style=" width: 10%;" type="text" name="dataIdChiTiet" id="dataId_${item.idBangDiemChiTiet}" value="${item.idBangDiemChiTiet}">
+						                   <input style=" width: 8%;" type="text" id="dataHe1_<%= bangDiemChiTiets.get(i).getIdBangDiem() %>" value="<%= bangDiemChiTiets.get(i).getDiemHe1()%>">
+						                   <input style=" width: 8%;" type="text" id="dataHe2_<%= bangDiemChiTiets.get(i).getIdBangDiem() %>" value="<%= bangDiemChiTiets.get(i).getDiemHe2()%>">
+						                   <input style=" width: 8%;" type="text" id="dataHe3_<%= bangDiemChiTiets.get(i).getIdBangDiem() %>" value="<%= bangDiemChiTiets.get(i).getDiemHe3()%>">
+						                   <input style=" width: 8%;" type="text" id="dataHe4_<%= bangDiemChiTiets.get(i).getIdBangDiem() %>" value="<%= tongdiemhe10%>">
+						                   <input style=" width: 10%;" type="text" name="dataIdChiTiet" id="dataId_<%= bangDiemChiTiets.get(i).getIdBangDiem() %>" value="<%= bangDiemChiTiets.get(i).getIdBangDiem() %>">
 						                   </td>
 									</tr>
-									</c:forEach>
+									<%}; %>
 									
 									
 																	
@@ -109,8 +257,8 @@
 									</tr>
 								</tbody>
 							</table>
-						</fieldset>
-					</form>
+						</fieldset> 
+					</form> --%>
 				</div>
 			</div>
 
