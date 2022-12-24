@@ -135,6 +135,7 @@ public class ScoreStudentDAO {
     public MonHoc getTenMon(String tenMonHoc) {
     	MonHoc monHoc = null;
     	String query ="select *from MonHoc where idMonHoc=?";
+    	
     	try {
     		conn = dbConnection.getConnection();
     		stm =conn.prepareStatement(query); 
@@ -154,6 +155,40 @@ public class ScoreStudentDAO {
 		return monHoc;
     	
     }
+    
+    
+    // xu ly he 10
+    
+    
+    public BangDiemChiTiet getIdChiTietDiem(String idBangDiem, String idMonHoc) {
+    	BangDiemChiTiet bangDiemChiTiet = null;
+    	String query = "select * from BangDiemChiTiet where idBangDiem=? and idMonHoc=?";
+    	try {
+    		conn= dbConnection.getConnection();
+    		stm= conn.prepareStatement(query);
+    		stm.setString(1, idBangDiem);
+    		stm.setString(2, idMonHoc);
+    		rs= stm.executeQuery();
+    		if(rs.next()) {
+    			String idChiTietDiem = rs.getString("idBangDiemChiTiet");
+    			String idBangD = rs.getString("idBangDiem");    			
+    			float diemHe1 = rs.getFloat("diemHe1");
+    		    float diemHe2 = rs.getFloat("diemHe2");
+    			float diemHe3 = rs.getFloat("diemHe3");
+    			String idMon = rs.getString("idMonHoc");
+    			bangDiemChiTiet = new BangDiemChiTiet(idChiTietDiem,idBangD,diemHe1,diemHe2,diemHe3,idMon);
+    			return bangDiemChiTiet;
+    		}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+    	return bangDiemChiTiet;
+    	
+    }
+    
+   
     
     
 
@@ -176,7 +211,11 @@ public class ScoreStudentDAO {
 			 String idMon = bangDiemChiTiet.getIdMonHoc(); 
 			 MonHoc monHoc = scoreStudentDAO.getTenMon(idMon);
 			 System.out.println(monHoc.getTenMonhoc());
+		     BangDiemChiTiet bangDiemChiTiet2 = scoreStudentDAO.getIdChiTietDiem(idBangDiem, idMon);
+		     System.out.println(bangDiemChiTiet2.getDiemHe1());
+			 
 		}
+
 
     	
     }

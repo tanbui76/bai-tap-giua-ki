@@ -35,7 +35,7 @@
 											</c:forEach>
 
 									</select> 
-									<input style="width: 8%;" type="text" id="ipIdNienKhoa" name="idNienKhoa">
+									<input hidden="hidden" style="width: 8%;" type="text" id="ipIdNienKhoa" name="idNienKhoa">
 									<select id="cbbHocKi" name="cbbHocKi"style="width: 120px;" onchange="funcHocKi()">
 											<option style="background: #fff !important"
 												selected disabled="disabled">Chọn học kỳ</option>
@@ -44,13 +44,13 @@
 													value="${item.idHocKi}">${item.tenHocKi}</option>
 											</c:forEach>
 									</select>
-									<input style="width: 8%;" type="text" id="ipIdHocKi" name="idHocKi">
+									<input hidden="hidden" style="width: 8%;" type="text" id="ipIdHocKi" name="idHocKi">
 									</td>
 								</tr>
 								<tr>
 									<td align="center" colspan="2">
 									<input type="submit"
-										name="btnXem" id="btnXem" value="Xem">
+										name="btnXem" id="btnXem" value="Xem" onclick="funcXem()">
 									</td>
 								</tr>
 							</tbody>
@@ -59,6 +59,7 @@
 						<fieldset class="list">
 							<legend>
 								<h4>Học kỳ: 1 - Năm học: 2022 - 2023</h4>
+							
 							</legend>
 							<div class="divp-list" style="overflow: auto"
 								id="divp_xemketquahoctap_0">
@@ -86,6 +87,7 @@
 						                   <input style=" width: 8%;" type="text" id="dataHe1_${item.idBangDiemChiTiet}" value="${item.diemHe1}">
 						                   <input style=" width: 8%;" type="text" id="dataHe2_${item.idBangDiemChiTiet}" value="${item.diemHe2}">
 						                   <input style=" width: 8%;" type="text" id="dataHe3_${item.idBangDiemChiTiet}" value="${item.diemHe3}">
+						                   <input style=" width: 10%;" type="text" name="dataIdChiTiet" id="dataId_${item.idBangDiemChiTiet}" value="${item.idBangDiemChiTiet}">
 						                   </td>
 									</tr>
 									</c:forEach>
@@ -193,7 +195,13 @@ function funcChiTiet(id) {
 	document.getElementById("txtDiemHe2").value = diemHe2;
 	var diemHe3 = document.getElementById("dataHe3_"+ id).value;
 	document.getElementById("txtDiemHe3").value = diemHe3;
-	
+	// 
+	var idChiTietDiem = document.getElementById("dataId_"+ id).value;
+
+}
+
+function funcXem() {
+	alert("hello");
 	
 }
 </script>
