@@ -28,7 +28,7 @@
 							<a  class="btn btn-light px-5" onclick="funcDel()">
 								<i class="bi bi-person-x"></i> Xóa
 							</a>
-							<input style="display: block;" type="text" name="txtIDPhanQuyenDelete" id="txtIDPhanQuyenDelete"/>
+							<input style="display: none;" type="text" name="txtIDPhanQuyenDelete" id="txtIDPhanQuyenDelete"/>
 						</form>
 					</div>
 
