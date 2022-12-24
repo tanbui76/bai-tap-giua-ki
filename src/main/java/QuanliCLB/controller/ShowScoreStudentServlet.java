@@ -1,7 +1,6 @@
 package QuanliCLB.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -15,9 +14,7 @@ import javax.servlet.http.HttpSession;
 import QuanliCLB.dao.ScoreStudentDAO;
 import QuanliCLB.model.BangDiem;
 import QuanliCLB.model.BangDiemChiTiet;
-import QuanliCLB.model.HocKi;
 import QuanliCLB.model.MonHoc;
-import QuanliCLB.model.NienKhoa;
 
 /**
  * Servlet implementation class ShowScoreStudentServlet
@@ -25,21 +22,28 @@ import QuanliCLB.model.NienKhoa;
 @WebServlet("/ShowScoreStudentServlet")
 public class ShowScoreStudentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-   
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
     public ShowScoreStudentServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
-	
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String idNienKhoa = request.getParameter("idNienKhoa");
+        String idNienKhoa = request.getParameter("idNienKhoa");
 		
 		String idHocKy = request.getParameter("idHocKi");
 		/*
@@ -76,19 +80,13 @@ public class ShowScoreStudentServlet extends HttpServlet {
 			float diemhe10 = (float) (diemHe1*0.2 + diemHe2*0.3 + diemHe3*0.5);
 			System.out.println(diemhe10);
 			request.setAttribute("diemhe10", diemhe10);
+
 			
-			
-			
-			
-			
-			
-			//request.setAttribute("listBangDiemChiTiet", tenMonHoc);
+			;
 			
 			
 		}
-    	
 	
-		
 		RequestDispatcher rd = request.getRequestDispatcher("Score.jsp");
 		rd.forward(request, response);
 	}
