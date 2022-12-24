@@ -12,6 +12,7 @@ import java.util.List;
 
 import QuanliCLB.dbconnection.dbConnection;
 import QuanliCLB.model.BangDiem;
+import QuanliCLB.model.GiaoVien;
 import QuanliCLB.model.HocKi;
 import QuanliCLB.model.MonHoc;
 import QuanliCLB.model.NienKhoa;
@@ -110,6 +111,24 @@ public class ScheduleStudentDao {
 			e.printStackTrace();
 			return "";
 		}
+	}
+	
+	public String getTenGiaoVien(String idGiaoVien) {
+		GiaoVien gVien = new GiaoVien();
+		String query = "select *from GiaoVien where idGiaoVien=?";
+		try {
+			conn = dbConnection.getConnection();
+			stm = conn.prepareStatement(query);
+			stm.setString(1, idGiaoVien);
+			rs = stm.executeQuery();
+			if (rs.next()) {
+				gVien.setHoTenGiaoVien(rs.getNString("hoTenGiaoVien"));
+				return gVien.getHoTenGiaoVien();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	public static void main(String[] args) throws ParseException {

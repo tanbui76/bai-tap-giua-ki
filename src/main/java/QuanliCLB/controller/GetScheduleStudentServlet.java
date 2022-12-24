@@ -46,7 +46,7 @@ public class GetScheduleStudentServlet extends HttpServlet {
 		}
 		session.setAttribute("list", list);
 		session.setAttribute("listlenght", list.size());
-		RequestDispatcher rDispatcher = request.getRequestDispatcher("Schedule.jsp");
+		RequestDispatcher rDispatcher = request.getRequestDispatcher("Schedule.jsp?getdata=loadTKB()");
 		rDispatcher.forward(request, response);
 
 	}
