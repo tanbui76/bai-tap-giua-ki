@@ -22,7 +22,7 @@ public class PermissionDAO {
 	
 	public List<Permission> getPermissionTeacherList() {
 		List<Permission> list = new ArrayList<Permission>();
-		String query = "SELECT * FROM PhanQuyen where PhanQuyen = 2";
+		String query = "SELECT * FROM PhanQuyen where PhanQuyen = 2 and hidden is null";
 		try {
 			connection = dbConnection.getConnection();
 			stm = connection.prepareStatement(query);
@@ -42,12 +42,69 @@ public class PermissionDAO {
 		return list;
 	}
 	
-	public int AddPermissionServlet(String idPhanQuyen,String tenModule,String icon,String linkForm) {
-		return 1;
+	public int AddPermissionServlet(String idPhanQuyen,int PhanQuyen,String tenModule,String linkForm) {
+		Connection connection = null;
+		PreparedStatement stm = null;
+		try {
+			connection = dbConnection.getConnection();
+			String query = "insert into PhanQuyen (idPhanQuyen,PhanQuyen,tenModule,linkForm) "
+					+ "VALUES (?,?,?,?)";
+			stm = connection.prepareStatement(query);
+			stm.setString(1, idPhanQuyen);
+			stm.setInt(2, PhanQuyen);
+			stm.setNString(3, tenModule);
+			stm.setString(4, linkForm);
+		
+			
+			PermissionDAO permissionDAO = new PermissionDAO();
+			stm.executeUpdate();	
+			return 1;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			// TODO: handle exception
+			return 0;
+		}
+	}
+	public int UpDatePermission (String idPhanQuyen,int PhanQuyen,String tenModule,String linkForm) {
+		Connection con = null;
+		PreparedStatement  stm = null;
+		try {
+			con = dbConnection.getConnection();
+			String query = "update PhanQuyen set PhanQuyen = ?,tenModule = ?,linkForm = ? where idPhanQuyen = ?";
+			stm = con.prepareStatement(query);
+			stm.setInt(1, PhanQuyen);
+			stm.setNString(2, tenModule);
+			stm.setString(3, linkForm);
+			stm.setString(4, idPhanQuyen);
+			stm.execute();
+			return 1;
+		} catch (Exception e) {
+			e.printStackTrace();
+			// TODO: handle exception
+			return 0;
+		}
+		
+	}
+	public int DeletePermission(String idPhanQuyen) {
+		Connection con =null;
+		PreparedStatement stm = null;
+		try {
+			con = dbConnection.getConnection();
+			String query = "update PhanQuyen set hidden = 1 where idPhanQuyen = ?";
+			stm = con.prepareStatement(query);
+			stm.setString(1, idPhanQuyen);
+			stm.executeUpdate();
+			return 1;
+		} catch (Exception e) {
+			e.printStackTrace();
+			// TODO: handle exception
+			return 0;
+		}
 	}
 	public List<Permission> getPermissionStudentList() {
 		List<Permission> list = new ArrayList<Permission>();
-		String query = "SELECT * FROM PhanQuyen where PhanQuyen = 3";
+		String query = "SELECT * FROM PhanQuyen where PhanQuyen = 3 and hidden is null";
 		try {
 			connection = dbConnection.getConnection();
 			stm = connection.prepareStatement(query);
@@ -66,9 +123,10 @@ public class PermissionDAO {
 		}
 		return list;
 	}
+	
 	public List<Permission> getPermissionList() {
 		List<Permission> list = new ArrayList<Permission>();
-		String query = "SELECT * FROM PhanQuyen";
+		String query = "SELECT * FROM PhanQuyen order by idPhanQuyen desc";
 		try {
 			connection = dbConnection.getConnection();
 			stm = connection.prepareStatement(query);
