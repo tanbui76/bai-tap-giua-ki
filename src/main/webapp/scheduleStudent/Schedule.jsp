@@ -20,9 +20,9 @@ h2 {
 </style>
 </head>
 <body>
-	<% 
-		ScheduleStudentDao scheduleStudentDao = new ScheduleStudentDao(); 
-		List<PhanCongGiangDay> list = (List<PhanCongGiangDay>)session.getAttribute("list");
+	<%
+	ScheduleStudentDao scheduleStudentDao = new ScheduleStudentDao();
+	List<PhanCongGiangDay> list = (List<PhanCongGiangDay>) session.getAttribute("list");
 	%>
 	<div class="content-wrapper">
 		<div class="container-fluid">
@@ -133,117 +133,109 @@ h2 {
 													</tr>
 												</thead>
 												<tbody>
-													
+
 													<tr class="body">
-													<% for(int i=0;i<list.size();i++){ %>
-														
 														<td align="left" style="border: 1px solid gray;">1</td>
-														<td align="left" style="border: 1px solid gray;">
-														<% 
-															if(scheduleStudentDao.getThuNgay(list.get(i).getNgayGiangDay())=="Monday"){ 
-																%> ở đây<%
-															}
-														%>
-														</td>
-														
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"
-															rowspan="3"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"
-															rowspan="3"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-													<%} %>
+														<td align="left" id="thuhai1" style="border: 1px solid gray;"></td>
+														<td align="left" id="thuba1" style="border: 1px solid gray;"></td>
+														<td align="left" id="thutu1" style="border: 1px solid gray;"></td>
+														<td align="left" id="thunam1" style="border: 1px solid gray;"></td>
+														<td align="left" id="thusau1" style="border: 1px solid gray;"></td>
+														<td align="left" id="thubay1" style="border: 1px solid gray;"></td>
+														<td align="left" id="chunhat1" style="border: 1px solid gray;"></td>
 													</tr>
 													<tr class="body">
 														<td align="left" style="border: 1px solid gray;">2</td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
+														<td align="left" id="thuhai2" style="border: 1px solid gray;"></td>
+														<td align="left" id="thuba2" style="border: 1px solid gray;"></td>
+														<td align="left" id="thutu2" style="border: 1px solid gray;"></td>
+														<td align="left" id="thunam2" style="border: 1px solid gray;"></td>
+														<td align="left" id="thusau2" style="border: 1px solid gray;"></td>
+														<td align="left" id="thubay2" style="border: 1px solid gray;"></td>
+														<td align="left" id="chunhat2" style="border: 1px solid gray;"></td>
 													</tr>
 													<tr class="body">
 														<td align="left" style="border: 1px solid gray;">3</td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"
-															rowspan="2"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
+														<td align="left" id="thuhai3" style="border: 1px solid gray;"></td>
+														<td align="left" id="thuba3" style="border: 1px solid gray;"></td>
+														<td align="left" id="thutu3" style="border: 1px solid gray;"></td>
+														<td align="left" id="thunam3" style="border: 1px solid gray;"></td>
+														<td align="left" id="thusau3" style="border: 1px solid gray;"></td>
+														<td align="left" id="thubay3" style="border: 1px solid gray;"></td>
+														<td align="left" id="chunhat3" style="border: 1px solid gray;"></td>
 													</tr>
 													<tr class="body">
 														<td align="left" style="border: 1px solid gray;">4</td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
+														<td align="left" id="thuhai4" style="border: 1px solid gray;"></td>
+														<td align="left" id="thuba4" style="border: 1px solid gray;"></td>
+														<td align="left" id="thutu4" style="border: 1px solid gray;"></td>
+														<td align="left" id="thunam4" style="border: 1px solid gray;"></td>
+														<td align="left" id="thusau4" style="border: 1px solid gray;"></td>
+														<td align="left" id="thubay4" style="border: 1px solid gray;"></td>
+														<td align="left" id="chunhat4" style="border: 1px solid gray;"></td>
 													</tr>
 													<tr class="body">
 														<td align="left" style="border: 1px solid gray;">5</td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
+														<td align="left" id="thuhai5" style="border: 1px solid gray;"></td>
+														<td align="left" id="thuba5" style="border: 1px solid gray;"></td>
+														<td align="left" id="thutu5" style="border: 1px solid gray;"></td>
+														<td align="left" id="thunam5" style="border: 1px solid gray;"></td>
+														<td align="left" id="thusau5" style="border: 1px solid gray;"></td>
+														<td align="left" id="thubay5" style="border: 1px solid gray;"></td>
+														<td align="left" id="chunhat5" style="border: 1px solid gray;"></td>
 													</tr>
 													<tr class="body">
 														<td colspan="8" style="border: 1px solid gray;">&nbsp;</td>
 													</tr>
 													<tr class="body">
 														<td align="left" style="border: 1px solid gray;">6</td>
-														<td align="left" style="border: 1px solid gray;"
-															rowspan="4">1</td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"
-															rowspan="2"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
+														<td align="left" id="thuhai6" style="border: 1px solid gray;"></td>
+														<td align="left" id="thuba6" style="border: 1px solid gray;"></td>
+														<td align="left" id="thutu6" style="border: 1px solid gray;"></td>
+														<td align="left" id="thunam6" style="border: 1px solid gray;"></td>
+														<td align="left" id="thusau6" style="border: 1px solid gray;"></td>
+														<td align="left" id="thubay6" style="border: 1px solid gray;"></td>
+														<td align="left" id="chunhat6" style="border: 1px solid gray;"></td>
 													</tr>
 													<tr class="body">
 														<td align="left" style="border: 1px solid gray;">7</td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
+														<td align="left" id="thuhai7" style="border: 1px solid gray;"></td>
+														<td align="left" id="thuba7" style="border: 1px solid gray;"></td>
+														<td align="left" id="thutu7" style="border: 1px solid gray;"></td>
+														<td align="left" id="thunam7" style="border: 1px solid gray;"></td>
+														<td align="left" id="thusau7" style="border: 1px solid gray;"></td>
+														<td align="left" id="thubay7" style="border: 1px solid gray;"></td>
+														<td align="left" id="chunhat7" style="border: 1px solid gray;"></td>
 													</tr>
 													<tr class="body">
 														<td align="left" style="border: 1px solid gray;">8</td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
+														<td align="left" id="thuhai8" style="border: 1px solid gray;"></td>
+														<td align="left" id="thuba8" style="border: 1px solid gray;"></td>
+														<td align="left" id="thutu8" style="border: 1px solid gray;"></td>
+														<td align="left" id="thunam8" style="border: 1px solid gray;"></td>
+														<td align="left" id="thusau8" style="border: 1px solid gray;"></td>
+														<td align="left" id="thubay8" style="border: 1px solid gray;"></td>
+														<td align="left" id="chunhat8" style="border: 1px solid gray;"></td>
 													</tr>
 													<tr class="body">
 														<td align="left" style="border: 1px solid gray;">9</td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"
-															rowspan="2">31221010 - 20-0103<br>An toàn thông
-															tin<br>Phòng: A5-207
-														</td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
+														<td align="left" id="thuhai9" style="border: 1px solid gray;"></td>
+														<td align="left" id="thuba9" style="border: 1px solid gray;"></td>
+														<td align="left" id="thutu9" style="border: 1px solid gray;"></td>
+														<td align="left" id="thunam9" style="border: 1px solid gray;"></td>
+														<td align="left" id="thusau9" style="border: 1px solid gray;"></td>
+														<td align="left" id="thubay9" style="border: 1px solid gray;"></td>
+														<td align="left" id="chunhat9" style="border: 1px solid gray;"></td>
 													</tr>
 													<tr class="body">
 														<td align="left" style="border: 1px solid gray;">10</td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
-														<td align="left" style="border: 1px solid gray;"></td>
+														<td align="left" id="thuhai10" style="border: 1px solid gray;"></td>
+														<td align="left" id="thuba10" style="border: 1px solid gray;"></td>
+														<td align="left" id="thutu10" style="border: 1px solid gray;"></td>
+														<td align="left" id="thunam10" style="border: 1px solid gray;"></td>
+														<td align="left" id="thusau10" style="border: 1px solid gray;"></td>
+														<td align="left" id="thubay10" style="border: 1px solid gray;"></td>
+														<td align="left" id="chunhat10" style="border: 1px solid gray;"></td>
 													</tr>
 												</tbody>
 											</table>
@@ -251,16 +243,6 @@ h2 {
 										</div>
 
 									</c:if>
-
-
-
-
-
-
-
-
-
-
 									<button type="button" class="btn btn-light">
 										<i class="fa-solid fa-print"></i>In thời khóa biểu
 									</button>
@@ -274,5 +256,19 @@ h2 {
 
 		</div>
 	</div>
+	<script>
+		function addSub(id,tiethoc,tenmonhoc,phonghoc,giangvien){
+			var col = document.getElementById(id);
+			col.setAttribute("rowspan", tiethoc);
+			col.innerHTML = tenmonhoc + "<br>" + phonghoc + "<br>" + giangvien;
+		}
+		function loadTKB(){
+			<c:forEach items="${tkb}" var="tkb">
+				<c:forEach items="${tkb.tkb}" var="tkb1">
+					addSub("${tkb1.id}",${tkb1.tiethoc},"${tkb1.tenmonhoc}","${tkb1.phonghoc}","${tkb1.giangvien}");
+				</c:forEach>
+			</c:forEach>
+		}
+	</script>
 </body>
 </html>
