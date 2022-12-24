@@ -39,7 +39,7 @@ public class GetScheduleStudentServlet extends HttpServlet {
 			System.out.println(phanCongGiangDay.getSoTietDay());
 			System.out.println(phanCongGiangDay.getIdGiaoVien());
 			System.out.println(phanCongGiangDay.getIdMonHoc());
-			String idMon = phanCongGiangDay.getIdMonHoc();
+			String idMon = phanCongGiangDay.getIdMonHoc() ;
 			MonHoc monHoc = scheduleStudentDao.getMonHoc(idMon);
 			System.out.println(monHoc.getTenMonhoc());
 			
