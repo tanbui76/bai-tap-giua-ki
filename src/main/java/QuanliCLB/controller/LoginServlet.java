@@ -43,11 +43,15 @@ public class LoginServlet extends HttpServlet {
 		HomePageDAO homePageDAO = new HomePageDAO();
 		System.out.println(username+password);
 		TaiKhoan tk = loginDao.isLogin(username, password);
+		String idTaiKhoan = "";
+		
+		
 		
 		if (tk == null) {
 			response.sendRedirect("Login.jsp?isError=funcErr()");
 			
 		} else {
+				
 			Cookie user = new Cookie("username", username);
 			Cookie passCookie = new Cookie("password",password);
 			user.setMaxAge(60 * 60 * 24);
@@ -60,7 +64,15 @@ public class LoginServlet extends HttpServlet {
 			}
 			if (tk.getPhanQuyen() == 3) {
 				SinhVien sinhvien = (SinhVien) homePageDAO.getSinhVien(tk);
+				// ngan them vo
+				idTaiKhoan = sinhvien.getIdSinhVien();
+				System.out.println(idTaiKhoan);
+				// lay id luu vao session
+				session.setAttribute("idSinhVien", idTaiKhoan);
+			
 				session.setAttribute("sinhvien", sinhvien);
+				
+				
 			}
 			if (tk.getPhanQuyen() == 2) {
 				GiaoVien giaoVien = (GiaoVien) homePageDAO.getGiaoVien(tk);

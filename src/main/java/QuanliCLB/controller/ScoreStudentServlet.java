@@ -12,7 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import QuanliCLB.dao.ScoreStudentDAO;
+import QuanliCLB.dao.SemesterDao;
+import QuanliCLB.dao.WeekDao;
+import QuanliCLB.dao.YearDao;
 import QuanliCLB.model.BangDiemPhu;
+import QuanliCLB.model.HocKi;
+import QuanliCLB.model.NienKhoa;
+import QuanliCLB.model.TuanHoc;
 
 
 @WebServlet("/ScoreStudentServlet")
@@ -20,15 +26,20 @@ public class ScoreStudentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ScoreStudentDAO sDao = new ScoreStudentDAO();
-		HttpSession session = request.getSession();
-		try {
-			List<BangDiemPhu> list = sDao.getBangDiemPhu();
-			RequestDispatcher rDispatcher = request.getRequestDispatcher("Score.jsp");
-			rDispatcher.forward(request, response);
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
+		YearDao yearDao = new YearDao();
+		WeekDao weekDao = new WeekDao();
+		SemesterDao semesterDao = new SemesterDao();
+		List<NienKhoa> listNienKhoas = yearDao.getListNienKhoa();
+		request.setAttribute("listNienKhoa", listNienKhoas);
+		List<HocKi> listHocKis = semesterDao.getHocKi();
+		request.setAttribute("listHocKi", listHocKis);
+	
+		RequestDispatcher rd = request.getRequestDispatcher("Score.jsp");
+		rd.forward(request, response);
+		
+		
+		
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
