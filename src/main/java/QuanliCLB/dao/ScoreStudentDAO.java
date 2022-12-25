@@ -101,35 +101,28 @@ public class ScoreStudentDAO {
     	
     }
     
-    public List<BangDiemChiTiet> getIdMonHoc(String idBangDiem) {
-    	List<BangDiemChiTiet> listBangDiemChiTiets = new ArrayList<>();
-    
-    	String query = "select * from BangDiemChiTiet where idBangDiem=?";
-    	try {
-    		conn = dbConnection.getConnection();
-    		stm =conn.prepareStatement(query); 
-    		stm.setString(1, idBangDiem);
-    		rs = stm.executeQuery();
-    		if(rs.next()) {
-    			
-    			String idBangDiemChiTiet = rs.getString("idBangDiemChiTiet");
-    			String idBangD = rs.getString("idBangDiem");
-    			
-    			float diemHe1 = rs.getFloat("diemHe1");
-    		    float diemHe2 = rs.getFloat("diemHe2");
-    			float diemHe3 = rs.getFloat("diemHe3");
-    			String idMonHoc = rs.getString("idMonHoc");
-    			BangDiemChiTiet bangDiemChiTiet = new BangDiemChiTiet(idBangDiemChiTiet,idBangD,diemHe1,diemHe2,diemHe3,idMonHoc);
-    		    listBangDiemChiTiets.add(bangDiemChiTiet);
-    		}
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-			// TODO: handle exception
-		}
-    	return listBangDiemChiTiets;
-    	
-    }
+	/*
+	 * public List<BangDiemChiTiet> getIdMonHoc(String idBangDiem) {
+	 * List<BangDiemChiTiet> listBangDiemChiTiets = new ArrayList<>();
+	 * 
+	 * String query = "select * from BangDiemChiTiet where idBangDiem=?"; try { conn
+	 * = dbConnection.getConnection(); stm =conn.prepareStatement(query);
+	 * stm.setString(1, idBangDiem); rs = stm.executeQuery(); if(rs.next()) {
+	 * 
+	 * String idBangDiemChiTiet = rs.getString("idBangDiemChiTiet"); String idBangD
+	 * = rs.getString("idBangDiem");
+	 * 
+	 * float diemHe1 = rs.getFloat("diemHe1"); float diemHe2 =
+	 * rs.getFloat("diemHe2"); float diemHe3 = rs.getFloat("diemHe3"); String
+	 * idMonHoc = rs.getString("idMonHoc"); BangDiemChiTiet bangDiemChiTiet = new
+	 * BangDiemChiTiet(idBangDiemChiTiet,idBangD,diemHe1,diemHe2,diemHe3,idMonHoc);
+	 * listBangDiemChiTiets.add(bangDiemChiTiet); }
+	 * 
+	 * } catch (Exception e) { e.printStackTrace(); // TODO: handle exception }
+	 * return listBangDiemChiTiets;
+	 * 
+	 * }
+	 */
     
     
     public MonHoc getTenMon(String tenMonHoc) {
@@ -160,31 +153,31 @@ public class ScoreStudentDAO {
     // xu ly he 10
     
     
-    public BangDiemChiTiet getIdChiTietDiem(String idBangDiem, String idMonHoc) {
-    	BangDiemChiTiet bangDiemChiTiet = null;
-    	String query = "select * from BangDiemChiTiet where idBangDiem=? and idMonHoc=?";
+    public List<BangDiemChiTiet> getListSchedule(String idBangDiem) {
+    	List<BangDiemChiTiet> list = new ArrayList<>();
+    	String query = "select * from BangDiemChiTiet where idBangDiem=? ";
     	try {
     		conn= dbConnection.getConnection();
     		stm= conn.prepareStatement(query);
     		stm.setString(1, idBangDiem);
-    		stm.setString(2, idMonHoc);
     		rs= stm.executeQuery();
-    		if(rs.next()) {
+    		while(rs.next()) {
     			String idChiTietDiem = rs.getString("idBangDiemChiTiet");
     			String idBangD = rs.getString("idBangDiem");    			
     			float diemHe1 = rs.getFloat("diemHe1");
     		    float diemHe2 = rs.getFloat("diemHe2");
     			float diemHe3 = rs.getFloat("diemHe3");
     			String idMon = rs.getString("idMonHoc");
-    			bangDiemChiTiet = new BangDiemChiTiet(idChiTietDiem,idBangD,diemHe1,diemHe2,diemHe3,idMon);
-    			return bangDiemChiTiet;
+    			BangDiemChiTiet bangDiemChiTiet = new BangDiemChiTiet(idChiTietDiem,idBangD,diemHe1,diemHe2,diemHe3,idMon);
+    			list.add(bangDiemChiTiet);
+    			
     		}
 			
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-    	return bangDiemChiTiet;
+    	return list;
     	
     }
     
@@ -203,18 +196,17 @@ public class ScoreStudentDAO {
     	System.out.println(idHk);
     	String idsv ="2022SV001";
     	BangDiem bangDiem = scoreStudentDAO.getIdBangDiem(idHk,idsv);
-    	String idBangDiem = bangDiem.getIdBangDiem();
-    	System.out.println(idBangDiem);
-    	List<BangDiemChiTiet> list = scoreStudentDAO.getIdMonHoc(idBangDiem);
-        for (BangDiemChiTiet bangDiemChiTiet : list) {
-			System.out.println(bangDiemChiTiet.getIdMonHoc());
-			 String idMon = bangDiemChiTiet.getIdMonHoc(); 
-			 MonHoc monHoc = scoreStudentDAO.getTenMon(idMon);
-			 System.out.println(monHoc.getTenMonhoc());
-		     BangDiemChiTiet bangDiemChiTiet2 = scoreStudentDAO.getIdChiTietDiem(idBangDiem, idMon);
-		     System.out.println(bangDiemChiTiet2.getDiemHe1());
-			 
-		}
+    //	String idBangDiem = bangDiem.getIdBangDiem();
+    	String idBangDiem = "2022BD001";
+    	List<BangDiemChiTiet> list = scoreStudentDAO.getListSchedule(idBangDiem);
+		/*
+		 * for (BangDiemChiTiet bangDiemChiTiet : list) {
+		 * System.out.println(bangDiemChiTiet.getIdBangDiemChiTiet());
+		 * 
+		 * }
+		 */
+    	
+	
 
 
     	
