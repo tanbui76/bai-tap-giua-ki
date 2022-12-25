@@ -12,7 +12,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<link rel="stylesheet"
+<link rel="stylesheet "
 	href="/QuanLiCLB/src/main/webapp/assets/fonts/FontAwesome.otf">
 	<%@include file="includes/includeAdminStyle.jsp" %>
 	<script>

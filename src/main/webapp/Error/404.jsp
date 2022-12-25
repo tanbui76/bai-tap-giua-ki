@@ -320,7 +320,7 @@ li a:hover {
                 <!--  <img class="image-404" src="http://salehriaz.com/404Page/img/404.svg" width="300px"> -->
                 <h1 style="color: white; font-size: 180px;margin-top: -130px;">404</h1>
                 <h3 style="color: white; font-size: 50px; margin-top: -100px;"> Trang bạn yêu cầu không tồn tại</h3>
-                <a href="#" onclick="history.go(-1)" class="btn-go-home" >GO BACK HOME</a>
+                <a href="#" onclick="history.go(-1)" class="btn-go-home" >TRỞ VỀ</a>
             </div>
             <div class="objects">
                 <img class="object_rocket" src="http://salehriaz.com/404Page/img/rocket.svg" width="40px">

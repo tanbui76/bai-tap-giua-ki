@@ -1,3 +1,4 @@
+<%@page import="QuanliCLB.dao.PermissionDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <div class="content-wrapper">
@@ -20,15 +21,15 @@
 					</div>
 					
 					<div class="col-lg-2">
-						<form action="DeleteAccountServlet" method="post">
-						<button style="display:none;" type="submit" class="btn btn-light px-5" id="checkDel">
-							<i class="bi bi-person-x"></i> Xóa
-						</button> 
-						<a  class="btn btn-light px-5" onclick="funcDel()">
-							<i class="bi bi-person-x"></i> Xóa
-						</a>
-						<input style="display: block;" type="text" name="txtIDPhanQuyenDelete" id="txtIDTaiKhoanDelete"/>
-					</form>
+						<form action="DeletePermissionServlet" method="post">
+							<button style="display:none;" type="submit" class="btn btn-light px-5" id="deleteAction">
+								<i class="bi bi-person-x"></i> Xóa
+							</button> 
+							<a  class="btn btn-light px-5" onclick="funcDel()">
+								<i class="bi bi-person-x"></i> Xóa
+							</a>
+							<input style="display: none;" type="text" name="txtIDPhanQuyenDelete" id="txtIDPhanQuyenDelete"/>
+						</form>
 					</div>
 
 				</div>
@@ -42,13 +43,14 @@
 						<thead>
 							<tr>
 								<th scope="col">#</th>
+								<th scope="col">STT</th>
 								<th scope="col">ID Phân quyền</th>
 								<th scope="col">Tên module</th>
 								<th scope="col">Path</th>
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach var="listSt" items="${listSt}">
+							<c:forEach var="listSt" items="${listSt}" varStatus="i">
 								<tr>
 									<th scope="row">
 										<div class="icheck-material-white" style="margin: 0">
@@ -60,15 +62,15 @@
 										</div>
 
 									</th>
+									<td>${i.index+1}</td>
 									<td>${listSt.idPhanQuyen}</td>
-									<td>${listSt.tenModule}<input hidden="hidden" type="text"
-										id="txtDataIdPhanQuyen${idPhanQuyen}"
-										value="${idPhanQuyen}"> <input hidden="hidden" type="text"
-										id="txtDataLinkForm${idPhanQuyen}"
-										value="${listSt.linkForm}"> <input hidden="hidden" type="text"
-										id="txtDataIcon${idPhanQuyen}" value="${listSt.icon}">
-										 <input hidden="hidden" type="text" id="txtDataPhanQuyen${idPhanQuyen}" value="${listSt.phanQuyen}">
-									<%-- <input type="text" id="txtDataPath${idPhanQuyen}" value="${listSt. }"> --%>	
+									<td>${listSt.tenModule}
+									<input style="display: none;" type="text" id="txtDataTenModule${listSt.idPhanQuyen}"
+										value="${listSt.tenModule}"> 
+										
+									<input style="display: none;" type="text" id="txtDataLinkForm${listSt.idPhanQuyen}"
+										value="${listSt.linkForm}"> 
+									<input style="display: none;" type="text" id="txtDataPhanQuyen${listSt.idPhanQuyen}" value="${listSt.phanQuyen}">
 
 									</td>
 									
@@ -92,13 +94,14 @@
 						<thead>
 							<tr>
 								<th scope="col">#</th>
+								<th scope="col">STT</th>
 								<th scope="col">ID Phân quyền</th>
 								<th scope="col">Tên module</th>
 								<th scope="col">Path</th>
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach var="listTc" items="${listTc}">
+							<c:forEach var="listTc" items="${listTc}" varStatus="i">
 								<tr>
 									<th scope="row">
 										<div class="icheck-material-white" style="margin: 0">
@@ -110,16 +113,15 @@
 										</div>
 
 									</th>
+									<td>${i.index+1}</td>
 									<td>${listTc.idPhanQuyen}</td>
-									<td>${listTc.tenModule}<input hidden="hidden" type="text"
-										id="txtDataIdPhanQuyen${idPhanQuyen}"
-										value="${idPhanQuyen}"> <input hidden="hidden" type="text"
-										id="txtDataLinkForm${idPhanQuyen}"
-										value="${listTc.linkForm}"> <input hidden="hidden" type="text"
-										id="txtDataIcon${idPhanQuyen}" value="${listTc.icon}">
-										 <input hidden="hidden" type="text" id="txtDataPhanQuyen${idPhanQuyen}" value="${listTc.phanQuyen}">
-									<%-- <input type="text" id="txtDataPath${idPhanQuyen}" value="${listTc. }"> --%>	
-
+									<td>${listTc.tenModule}
+									<input style="display: none;" type="text" id="txtDataTenModule${listTc.idPhanQuyen}"
+										value="${listTc.tenModule}"> 
+										
+									<input style="display: none;" type="text" id="txtDataLinkForm${listTc.idPhanQuyen}"
+										value="${listTc.linkForm}"> 
+									<input style="display: none;" type="text" id="txtDataPhanQuyen${listTc.idPhanQuyen}" value="${listTc.phanQuyen}">
 									</td>
 									
 									<td>${listTc.linkForm}</td>
@@ -133,7 +135,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- myModal1: Thêm Tài Khoản -->
+	<!-- myModal1: Thêm Phân Quyền -->
 	<div class="modal fade" id="myModal1" tabindex="-1" role="dialog"
 		aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document"
@@ -148,23 +150,26 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form action="AddAccountServlet" method="post">
+				<%
+					PermissionDAO pDao = new PermissionDAO();
+				%>
+				<form action="AddPermissionServlet" method="post">
 					<div class="modal-body">
 						<div class="form-group">
 							<label for="message-text" class="col-form-label"
 								style="color: #000;">ID Phân quyền: </label> <input type="text"
-								readonly="readonly" id="recipient-name" name="txtIDPhanQuyen"
-								style="width: 100%;" value="" readonly >
+								readonly="readonly" id="idphanquuyen" name="txtIDPhanQuyen"
+								style="width: 100%;" value="<%= pDao.Matutang() %>">
 						</div>
 						<div class="form-group">
 							<label for="message-text" class="col-form-label"
 								style="color: #000;">Tên module: </label> <input type="text"
-								id="recipient-name" name="txtTenModule" style="width: 100%;">
+								id="tenmodule" name="txtTenModule" style="width: 100%;">
 						</div>
 						<div class="form-group">
 							<label for="message-text" class="col-form-label"
 								style="color: #000;">Đường dẫn: </label> <input type="text"
-								readonly="readonly" id="recipient-name" name="txtDuongDan"
+								 id="duongdan" name="txtLinkForm"
 								style="width: 100%;">
 						</div>
 						<div class="form-group">
@@ -172,7 +177,6 @@
 								style="color: #000;">Phân quyền: </label> <select id="txtphanquyen${item.idTaiKhoan}"
 								style="height: 4vh;" class="form-select" name="txtPhanQuyen">
 								<option style="background: #fff !important;" selected>--Chọn--</option>
-								<option style="background: #fff !important;" value="1">Admin</option>
 								<option style="background: #fff !important;" value="2">Giáo
 									Viên</option>
 								<option style="background: #fff !important;" value="3">Sinh
@@ -180,10 +184,10 @@
 							</select>
 						</div>
 
-					</div>
-					<div class="modal-footer">
-
-						<button class="btn btn-success"">Thêm</button>
+						<div class="modal-footer">
+	
+							<button class="btn btn-success"">Thêm</button>
+						</div>
 					</div>
 				</form>
 			</div>
@@ -206,36 +210,35 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form action="UpdateAccountServlet" method="post">
+				<form action="UpdatePermissionServlet" method="post">
 
 					<div class="modal-body">
 						<div class="form-group">
 							<label for="message-text" class="col-form-label"
 								style="color: #000;">ID phân quyền: </label> <input type="text"
-								readonly id="idtkUpdate" name="txtIDTaiKhoanUpdate"
+								readonly id="idPhanQuyenUpdate" name="txtIDPhanQuyenUpdate"
 								style="width: 100%;" value="">
 						</div>
 						<div class="form-group">
 							<label for="message-text" class="col-form-label"
 								style="color: #000;">Tên module: </label> <input type="text"
-								id="tenDangNhaptkUpdate" name="txtTenDangNhapUpdate"
+								id="tenModuleUpdate" name="txtTenModuleUpdate"
 								style="width: 100%;">
 						</div>
 						<div class="form-group">
 							<label for="message-text" class="col-form-label"
 								style="color: #000;">Đường dẫn: </label> <input type="text"
-								readonly="readonly" id="matkhautkUpdate"
-								name="txtPassTaiKhoanUpdate" style="width: 100%;">
+								 id="linkFormUpdate"
+								name="txtLinkFormUpdate" style="width: 100%;">
 						</div>
 
 
 						<div class="form-group"
 							style="display: flex; flex-direction: column;">
 							<label for="message-text" class="col-form-label"
-								style="color: #000;">Phân Quyền: </label> <select id="txtphanQuyenUp"
-								style="height: 4vh;" class="form-select" name="txtphanQuyenUpdate">
+								style="color: #000;">Phân Quyền: </label> <select id="PhanQuyenUpdate"
+								style="height: 4vh;" class="form-select" name="txtPhanQuyenUpdate">
 								<option style="background: #fff !important;" selected>--Chọn--</option>
-								<option style="background: #fff !important;" value="1">Admin</option>
 								<option style="background: #fff !important;" value="2">Giáo
 									Viên</option>
 								<option style="background: #fff !important;" value="3">Sinh
@@ -256,25 +259,8 @@
 
 
 </div>
+
 <script>
-	function funcIn(){	   
-		   Swal.fire({
-				position : 'center',
-				icon : 'success',
-				title : 'Thêm thành công',
-				showConfirmButton : false,
-				timer : 1500
-			})
-		}
-	function funcUp() {
-		   Swal.fire({
-				position : 'center',
-				icon : 'success',
-				title : 'Cập nhật thành công',
-				showConfirmButton : false,
-				timer : 1500
-			})	
-	}
 	
 /* 	function funcDel() {
 		Swal.fire({
@@ -302,18 +288,20 @@
 	} */
 	
 	 function GetDataUpdate(id) {
-		var getIdtk = document.getElementById("user-checkbox" + id).value;
-	//	 alert(getIdtk);
-		var idTaiKhoan = document.getElementById("txtDataIdTaiKhoan" + id).value;
-		var tenDangNhap = document.getElementById("txtDataTenDangNhap" + id).value;
-		var matKhau = document.getElementById("txtDataMatKhau" + id).value;
-		var phanquyen = document.getElementById("txtDataPhanQuyen" + id).value;
+		var getIdphanquyen = document.getElementById("user-checkbox" + id).value;
+		//alert(getIdphanquyen );
+
+
+		var PhanQuyen = document.getElementById("txtDataPhanQuyen" + id).value;
+		var tenModule = document.getElementById("txtDataTenModule" + id).value;
+		var linkForm = document.getElementById("txtDataLinkForm" + id).value;
 				
-		document.getElementById("idtkUpdate").value = idTaiKhoan;
-		document.getElementById("tenDangNhaptkUpdate").value = tenDangNhap;
-		document.getElementById("matkhautkUpdate").value = matKhau;
-		document.getElementById("txtphanQuyenUp").value = phanquyen;
-		document.getElementById("txtIDTaiKhoanDelete").value = idTaiKhoan;
+		document.getElementById("idPhanQuyenUpdate").value = getIdphanquyen;
+		document.getElementById("PhanQuyenUpdate").value = PhanQuyen;
+		document.getElementById("tenModuleUpdate").value = tenModule;
+		document.getElementById("linkFormUpdate").value = linkForm;
+		
+		document.getElementById("txtIDPhanQuyenDelete").value = getIdphanquyen;
 	
 		
 	} 

@@ -9,9 +9,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import QuanliCLB.dao.PermissionDAO;
 
-@WebServlet("/AddPermissionServlet")
-public class AddPermissionServlet extends HttpServlet {
-	
+@WebServlet("/UpdatePermissionServlet")
+public class UpdatePermissionServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
@@ -20,19 +21,18 @@ public class AddPermissionServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
-		String idPhanQuyen = request.getParameter("txtIDPhanQuyen");
-		String PhanQuyen = request.getParameter("txtPhanQuyen");
-		String tenModule =request.getParameter("txtTenModule");
-		String icon = "";
-		String linkForm = request.getParameter("txtLinkForm");
+		String idPhanQuyen = request.getParameter("txtIDPhanQuyenUpdate");
+		String PhanQuyen = request.getParameter("txtPhanQuyenUpdate");
+		String tenModule = request.getParameter("txtTenModuleUpdate");
+		String linkForm = request.getParameter("txtLinkFormUpdate");
 		PermissionDAO permissionDAO = new PermissionDAO();
 		
-		if (permissionDAO.AddPermissionServlet(idPhanQuyen,Integer.parseInt(PhanQuyen), tenModule,linkForm)==1) {
-			response.sendRedirect("PermissionDataServlet?msg=AddSucc()");
-		 }else {
-			 response.sendRedirect("PermissionDataServlet?msg=AddErr()");
+		if (permissionDAO.UpDatePermission(idPhanQuyen, Integer.parseInt(PhanQuyen), tenModule, linkForm)==1) {
+			response.sendRedirect("PermissionDataServlet?msg=successUpdate()");
 		}
-		 
+		else {
+			response.sendRedirect("PermissionDataServlet?msg=failUpdate()");
+		}
 	}
 
 }
