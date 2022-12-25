@@ -23,7 +23,7 @@ import QuanliCLB.model.GiaoVien;
 import QuanliCLB.model.SinhVien;
 import QuanliCLB.model.TaiKhoan;
 
-@WebServlet("/FirstRun")
+@WebServlet("/FirstRun" )
 public class FirstRun extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
