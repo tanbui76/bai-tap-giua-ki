@@ -118,14 +118,14 @@
 											<%= tongdiemhe10 %>
 											</td>
 											<td>
-											<button type="button" class="btn btn-light px-5" data-toggle="modal" data-target="#myModalChiTiet" onclick="funcChiTiet('<%=bangDiemChiTiets.get(i).getIdBangDiem() %>')">
+											<button type="button" class="btn btn-light px-5" data-toggle="modal" data-target="#myModalChiTiet" onclick="funcChiTiet('<%=bangDiemChiTiets.get(i).getIdBangDiemChiTiet() %>')">
 							               <i class="bi bi-wrench-adjustable-circle"></i>
 						                   </button>
-						                   <input hidden="hidden" style=" width: 8%;" type="text" id="dataHe1_<%= bangDiemChiTiets.get(i).getIdBangDiem() %>" value="<%= bangDiemChiTiets.get(i).getDiemHe1()%>">
-						                   <input hidden="hidden" style=" width: 8%;" type="text" id="dataHe2_<%= bangDiemChiTiets.get(i).getIdBangDiem() %>" value="<%= bangDiemChiTiets.get(i).getDiemHe2()%>">
-						                   <input hidden="hidden" style=" width: 8%;" type="text" id="dataHe3_<%= bangDiemChiTiets.get(i).getIdBangDiem() %>" value="<%= bangDiemChiTiets.get(i).getDiemHe3()%>">
-						                   <input hidden="hidden" style=" width: 8%;" type="text" id="dataHe10_<%= bangDiemChiTiets.get(i).getIdBangDiem() %>" value="<%= tongdiemhe10%>">
-						                   <input hidden="hidden" style=" width: 10%;" type="text" name="dataIdChiTiet" id="dataId_<%= bangDiemChiTiets.get(i).getIdBangDiem() %>" value="<%= bangDiemChiTiets.get(i).getIdBangDiem() %>">
+						                   <input hidden="hidden" style=" width: 8%;" type="text" id="dataHe1_<%= bangDiemChiTiets.get(i).getIdBangDiemChiTiet()%>" value="<%= bangDiemChiTiets.get(i).getDiemHe1()%>">
+						                   <input hidden="hidden" style=" width: 8%;" type="text" id="dataHe2_<%= bangDiemChiTiets.get(i).getIdBangDiemChiTiet()%>" value="<%= bangDiemChiTiets.get(i).getDiemHe2()%>">
+						                   <input hidden="hidden" style=" width: 8%;" type="text" id="dataHe3_<%= bangDiemChiTiets.get(i).getIdBangDiemChiTiet()%>" value="<%= bangDiemChiTiets.get(i).getDiemHe3()%>">
+						                   <input hidden="hidden" style=" width: 8%;" type="text" id="dataHe10_<%= bangDiemChiTiets.get(i).getIdBangDiemChiTiet()%>" value="<%= tongdiemhe10%>">
+						                   <input hidden="hidden" style=" width: 10%;" type="text" name="dataIdChiTiet" id="dataId_<%= bangDiemChiTiets.get(i).getIdBangDiemChiTiet()%>" value="<%= bangDiemChiTiets.get(i).getIdBangDiem() %>">
 						                   </td>
 									</tr>
 									<%}; %>
