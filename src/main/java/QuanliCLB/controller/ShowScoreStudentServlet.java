@@ -57,36 +57,13 @@ public class ShowScoreStudentServlet extends HttpServlet {
 		//System.out.println(idSinhVien);		
     	BangDiem bangDiem = scoreStudentDAO.getIdBangDiem(idHocKy,idSinhVien);
     	String idbangDiem = bangDiem.getIdBangDiem();
-    	System.out.println(idbangDiem);
-    	List<BangDiemChiTiet> bangDiemChiTiets = scoreStudentDAO.getIdMonHoc(idbangDiem);
-    	request.setAttribute("listBangDiemChiTiet", bangDiemChiTiets);
+    	List<BangDiemChiTiet> bangDiemChiTiets = scoreStudentDAO.getListSchedule(idbangDiem);
     	for (BangDiemChiTiet bangDiemChiTiet : bangDiemChiTiets) {
-			String idMon = bangDiemChiTiet.getIdMonHoc();
+			System.out.println(bangDiemChiTiet.getIdBangDiem());
 			System.out.println(bangDiemChiTiet.getIdMonHoc());
-			MonHoc monHoc = scoreStudentDAO.getTenMon(idMon);
-			String tenMonHoc = monHoc.getTenMonhoc();
-			System.out.println(monHoc.getTenMonhoc());
-			String idbangDiemChiTiet =bangDiemChiTiet.getIdBangDiemChiTiet();
-			System.out.println(idbangDiemChiTiet);
-			String idBangDiem = bangDiem.getIdBangDiem();
-			System.out.println(idBangDiem);
-			BangDiemChiTiet bangDiemChiTiet2 = scoreStudentDAO.getIdChiTietDiem(idbangDiem, idMon);
-			float diemHe1=	bangDiemChiTiet2.getDiemHe1();
-     		float diemHe2=	bangDiemChiTiet2.getDiemHe2();
-			float diemHe3=	bangDiemChiTiet2.getDiemHe3();
-			System.out.println(diemHe1);
-		    System.out.println(diemHe2);
-			System.out.println(diemHe3);
-			float diemhe10 = (float) (diemHe1*0.2 + diemHe2*0.3 + diemHe3*0.5);
-			System.out.println(diemhe10);
-			request.setAttribute("diemhe10", diemhe10);
-
-			
-			;
-			
-			
 		}
-	
+    	
+    	request.setAttribute("listBangDiemChiTiet", bangDiemChiTiets);	
 		RequestDispatcher rd = request.getRequestDispatcher("Score.jsp");
 		rd.forward(request, response);
 	}
