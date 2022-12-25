@@ -20,4 +20,18 @@
   	<exception-type> java.lang.Throwable</exception-type>
   	<location>/Error/500.jsp</location>
   </error-page>
+  <filter>
+  	<filter-name>AuthenicationFilter</filter-name>
+  	<filter-class>QuanliCLB.Filter.AuthenicationFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>AuthenicationFilter</filter-name>
+  	<url-pattern>/LoadDataScheduleServlet</url-pattern>
+  	<url-pattern>/CourseListServlet</url-pattern>
+  	<url-pattern>/LoginServlet</url-pattern>
+  	<url-pattern>/PermissionDataServlet</url-pattern>
+  	<url-pattern>/ScoreStudentServlet</url-pattern>
+  	<url-pattern>/TeacherListServlet</url-pattern>
+  	<url-pattern>/StudentScoreServlet</url-pattern>
+  </filter-mapping>
 </web-app>
