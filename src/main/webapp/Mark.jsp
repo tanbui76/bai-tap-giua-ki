@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Quản lý điểm</title>
+<title>QUẢN LÍ ĐIỂM</title>
 </head>
 <body>
 <%@include file="includes/includeAdminStyle.jsp" %>

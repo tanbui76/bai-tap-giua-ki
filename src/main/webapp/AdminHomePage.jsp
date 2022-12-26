@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Trang chủ</title>
+<title>TRANG CHỦ</title>
 <%@include file="includes/includeAdminStyle.jsp"%>
 </head>
 <body>

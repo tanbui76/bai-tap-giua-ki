@@ -164,18 +164,18 @@
 						<div class="form-group">
 							<label for="message-text" class="col-form-label"
 								style="color: #000;">Tên module: </label> <input type="text"
-								id="tenmodule" name="txtTenModule" style="width: 100%;">
+								id="tenmodule" name="txtTenModule" style="width: 100%;" required="required">
 						</div>
 						<div class="form-group">
 							<label for="message-text" class="col-form-label"
 								style="color: #000;">Đường dẫn: </label> <input type="text"
 								 id="duongdan" name="txtLinkForm"
-								style="width: 100%;">
+								style="width: 100%;" required="required">
 						</div>
 						<div class="form-group">
 							<label for="message-text" class="col-form-label"
 								style="color: #000;">Phân quyền: </label> <select id="txtphanquyen${item.idTaiKhoan}"
-								style="height: 4vh;" class="form-select" name="txtPhanQuyen">
+								style="height: 4vh;" class="form-select" name="txtPhanQuyen" required="required">
 								<option style="background: #fff !important;" selected>--Chọn--</option>
 								<option style="background: #fff !important;" value="2">Giáo
 									Viên</option>
@@ -223,13 +223,13 @@
 							<label for="message-text" class="col-form-label"
 								style="color: #000;">Tên module: </label> <input type="text"
 								id="tenModuleUpdate" name="txtTenModuleUpdate"
-								style="width: 100%;">
+								style="width: 100%;" required="required">
 						</div>
 						<div class="form-group">
 							<label for="message-text" class="col-form-label"
 								style="color: #000;">Đường dẫn: </label> <input type="text"
 								 id="linkFormUpdate"
-								name="txtLinkFormUpdate" style="width: 100%;">
+								name="txtLinkFormUpdate" style="width: 100%;" required="required">
 						</div>
 
 
@@ -237,7 +237,7 @@
 							style="display: flex; flex-direction: column;">
 							<label for="message-text" class="col-form-label"
 								style="color: #000;">Phân Quyền: </label> <select id="PhanQuyenUpdate"
-								style="height: 4vh;" class="form-select" name="txtPhanQuyenUpdate">
+								style="height: 4vh;" class="form-select" name="txtPhanQuyenUpdate" required="required">
 								<option style="background: #fff !important;" selected>--Chọn--</option>
 								<option style="background: #fff !important;" value="2">Giáo
 									Viên</option>

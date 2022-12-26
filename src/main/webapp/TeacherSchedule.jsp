@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>THỜI KHÓA BIỂU GIÁO VIÊN</title>
 </head>
 <body>
 <%@include file="includes/includeAdminStyle.jsp" %>

@@ -120,18 +120,18 @@
 						<div class="form-group">
 							<label for="message-text" class="col-form-label"
 								style="color: #000;">Tên đăng nhập: </label> <input type="text"
-								id="recipient-name" name="txtTenDangNhap" style="width: 100%;">
+								id="recipient-name" name="txtTenDangNhap" style="width: 100%;" required="required">
 						</div>
 						<div class="form-group">
 							<label for="message-text" class="col-form-label"
 								style="color: #000;">Mật khẩu: </label> <input type="text"
 								id="recipient-name" name="txtmatkhau"
-								style="width: 100%;">
+								style="width: 100%;" required="required">
 						</div>
 						<div class="form-group">
 							<label for="message-text" class="col-form-label"
 								style="color: #000;">Phân quyền: </label> <select id="txtphanquyen${item.idTaiKhoan}"
-								style="height: 4vh;" class="form-select" name="txtphanQuyen">
+								style="height: 4vh;" class="form-select" name="txtphanQuyen" required="required">
 								<option style="background: #fff !important;" selected>--Chọn--</option>
 								<option style="background: #fff !important;" value="1">Admin</option>
 								<option style="background: #fff !important;" value="2">Giáo
@@ -180,13 +180,13 @@
 							<label for="message-text" class="col-form-label"
 								style="color: #000;">Tên đăng nhập: </label> <input type="text"
 								id="tenDangNhaptkUpdate" name="txtTenDangNhapUpdate"
-								style="width: 100%;">
+								style="width: 100%;" required="required">
 						</div>
 						<div class="form-group">
 							<label for="message-text" class="col-form-label"
 								style="color: #000;">Mật khẩu: </label> <input type="text"
 								readonly="readonly" id="matkhautkUpdate"
-								name="txtPassTaiKhoanUpdate" style="width: 100%;">
+								name="txtPassTaiKhoanUpdate" style="width: 100%;" required="required">
 						</div>
 
 
@@ -194,7 +194,7 @@
 							style="display: flex; flex-direction: column;">
 							<label for="message-text" class="col-form-label"
 								style="color: #000;">Phân Quyền: </label> <select id="txtphanQuyenUp"
-								style="height: 4vh;" class="form-select" name="txtphanQuyenUpdate">
+								style="height: 4vh;" class="form-select" name="txtphanQuyenUpdate" required="required">
 								<option style="background: #fff !important;" selected>--Chọn--</option>
 								<option style="background: #fff !important;" value="1">Admin</option>
 								<option style="background: #fff !important;" value="2">Giáo
