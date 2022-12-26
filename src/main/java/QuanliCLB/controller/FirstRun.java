@@ -29,7 +29,7 @@ public class FirstRun extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession session = request.getSession();
+		HttpSession session = request.getSession ();
 		if (session.getAttribute("admin") != null || session.getAttribute("sinhvien") != null
 				|| session.getAttribute("giaovien") != null) {
 			RequestDispatcher rd = request.getRequestDispatcher("AdminHomePage.jsp");
