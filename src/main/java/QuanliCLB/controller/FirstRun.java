@@ -18,8 +18,10 @@ import org.apache.jasper.tagplugins.jstl.core.If;
 
 import QuanliCLB.dao.HomePageDAO;
 import QuanliCLB.dao.LoginDAO;
+import QuanliCLB.dao.PermissionDAO;
 import QuanliCLB.model.Admin;
 import QuanliCLB.model.GiaoVien;
+import QuanliCLB.model.Permission;
 import QuanliCLB.model.SinhVien;
 import QuanliCLB.model.TaiKhoan;
 
@@ -29,7 +31,14 @@ public class FirstRun extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession session = request.getSession ();
+		
+		HttpSession session = request.getSession();
+		PermissionDAO Adao = new PermissionDAO();
+		List<Permission> listTcPermission = Adao.getPermissionTeacherList();
+		List<Permission> listStPermission = Adao.getPermissionStudentList();
+		
+		session.setAttribute("listTcPermission", listTcPermission);
+		session.setAttribute("listStPermission", listStPermission);
 		if (session.getAttribute("admin") != null || session.getAttribute("sinhvien") != null
 				|| session.getAttribute("giaovien") != null) {
 			RequestDispatcher rd = request.getRequestDispatcher("AdminHomePage.jsp");

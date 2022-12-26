@@ -1,6 +1,7 @@
 package QuanliCLB.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,8 +14,10 @@ import javax.servlet.http.HttpSession;
 
 import QuanliCLB.dao.HomePageDAO;
 import QuanliCLB.dao.LoginDAO;
+import QuanliCLB.dao.PermissionDAO;
 import QuanliCLB.model.Admin;
 import QuanliCLB.model.GiaoVien;
+import QuanliCLB.model.Permission;
 import QuanliCLB.model.SinhVien;
 import QuanliCLB.model.TaiKhoan;
 
@@ -44,8 +47,12 @@ public class LoginServlet extends HttpServlet {
 		System.out.println(username+password);
 		TaiKhoan tk = loginDao.isLogin(username, password);
 		String idTaiKhoan = "";
+		PermissionDAO dao = new PermissionDAO();
+		List<Permission> listTcPermission = dao.getPermissionTeacherList();
+		List<Permission> listStPermission = dao.getPermissionStudentList();
 		
-		
+		session.setAttribute("listTcPermission", listTcPermission);
+		session.setAttribute("listStPermission", listStPermission);
 		
 		if (tk == null) {
 			response.sendRedirect("Login.jsp?isError=funcErr()");
@@ -78,6 +85,7 @@ public class LoginServlet extends HttpServlet {
 				GiaoVien giaoVien = (GiaoVien) homePageDAO.getGiaoVien(tk);
 				session.setAttribute("giaovien", giaoVien);
 			}
+			
 			session.setAttribute("tk", tk);
 			RequestDispatcher rd = request.getRequestDispatcher("AdminHomePage.jsp");
 			rd.forward(request, response);
