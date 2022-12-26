@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>QUẢN LÍ TÀI KHOẢN</title>
 </head>
 <body onload="<%= request.getParameter("msg")%>">
 	<%@include file="includes/includeAdminStyle.jsp"%>

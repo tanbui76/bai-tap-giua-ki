@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Danh sách sinh viên</title>
+<title>DANH SÁCH SINH VIÊN</title>
 </head>
 <body onload="<%= request.getParameter("msg")%>">
 	<%@include file="includes/includeAdminStyle.jsp"%>

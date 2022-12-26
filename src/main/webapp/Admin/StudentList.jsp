@@ -109,22 +109,18 @@
 					<div class="form-group">
 						<label for="message-text" class="col-form-label"
 							style="color: #000;">Email: </label> <input type="text"
-							id="emailsv" name="txtEmail" style="width: 100%;">
+							id="emailsv" name="txtEmail" style="width: 100%;" required="required">
 					</div>
 					<div class="form-group">
 						<label for="message-text" class="col-form-label"
 							style="color: #000;">Địa chỉ: </label> <input type="text"
 							id="diachisv" name="txtDiachi" style="width: 100%;">
 					</div>
-					<!--  	<div class="form-group">
-						<label for="message-text" class="col-form-label"
-							style="color: #000;">Mã Tài Khoản: </label> <input type="text"
-							id="recipient-name" name="txtMaTaiKhoan" style="width: 100%;">
-					</div>-->
+					
 					<div class="form-group" style="display: flex; flex-direction: column;">
 						<label for="message-text" class="col-form-label"
 							style="color: #000;">Tài Khoản: </label> <select style="height: 4vh;" id="idtksv"
-							class="form-select" name="txtMaTaiKhoan">
+							class="form-select" name="txtMaTaiKhoan" required="required">
 							<option style="background: #fff !important;" selected>Chọn
 								tài khoản</option>
 							<c:forEach var="tk" items="${tklist}">
@@ -173,12 +169,12 @@
 						<label for="message-text" class="col-form-label"
 							style="color: #000;">Họ tên sinh viên: </label> <input
 							type="text" id="hotensvUpdate" name="txtTenSinhVienUpdate"
-							style="width: 100%;">
+							style="width: 100%;" required="required">
 					</div>
 					<div class="form-group">
 						<label for="message-text" class="col-form-label"
 							style="color: #000;">Email: </label> <input type="text"
-							id="emailsvUpdate" name="txtEmailSinhVienUpdate" style="width: 100%;">
+							id="emailsvUpdate" name="txtEmailSinhVienUpdate" style="width: 100%;" required="required">
 					</div>
 					<div class="form-group">
 						<label for="message-text" class="col-form-label"
@@ -193,7 +189,7 @@
 					<div class="form-group" style="display: flex; flex-direction: column;">
 						<label for="message-text" class="col-form-label"
 							style="color: #000;">Tài Khoản: </label> <select style="height: 4vh;" id="idtksvUpdate"
-							class="form-select" name="txtMaTaiKhoanUpdate">
+							class="form-select" name="txtMaTaiKhoanUpdate" required="required">
 							<option style="background: #fff !important;" selected>Chọn
 								tài khoản</option>
 							<c:forEach var="tk" items="${tklist}">
