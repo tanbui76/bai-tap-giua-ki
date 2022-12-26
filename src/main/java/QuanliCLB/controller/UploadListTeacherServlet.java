@@ -56,6 +56,8 @@ public class UploadListTeacherServlet extends HttpServlet {
 		
 		List<GiaoVien> list = new ArrayList<>();
 			inp = new FileInputStream(request.getServletContext().getRealPath("/File/Upload/")+fileName);
+			
+			
 			XSSFWorkbook workbook = new XSSFWorkbook(inp);//
 			//get sheet
 			XSSFSheet sheet = workbook.getSheetAt(0); 

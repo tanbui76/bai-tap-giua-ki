@@ -118,7 +118,7 @@
 											<%= tongdiemhe10 %>
 											</td>
 											<td>
-											<button type="button" class="btn btn-light px-5" data-toggle="modal" data-target="#myModalChiTiet" onclick="funcChiTiet('<%=bangDiemChiTiets.get(i).getIdBangDiemChiTiet() %>')">
+											<button style="margin-left: 25%;" type="button" class="btn btn-light px-5" data-toggle="modal" data-target="#myModalChiTiet" onclick="funcChiTiet('<%=bangDiemChiTiets.get(i).getIdBangDiemChiTiet() %>')">
 							               <i class="bi bi-wrench-adjustable-circle"></i>
 						                   </button>
 						                   <input hidden="hidden" style=" width: 8%;" type="text" id="dataHe1_<%= bangDiemChiTiets.get(i).getIdBangDiemChiTiet()%>" value="<%= bangDiemChiTiets.get(i).getDiemHe1()%>">
