@@ -33,5 +33,6 @@
   	<url-pattern>/ScoreStudentServlet</url-pattern>
   	<url-pattern>/TeacherListServlet</url-pattern>
   	<url-pattern>/StudentScoreServlet</url-pattern>
+  	<url-pattern>/StudentListServlet</url-pattern>
   </filter-mapping>
 </web-app>
