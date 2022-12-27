@@ -71,7 +71,7 @@ public class UploadListTeacherServlet extends HttpServlet {
 				if(row.getRowNum() ==0) {  // bỏ qua hàng trên cùng 
 					continue;
 				}
-				Iterator<Cell> cellIterator = row.cellIterator();	// lay cac cell trong row						
+				Iterator<Cell> cellIterator = row.cellIterator();							
 				while(cellIterator.hasNext()) { 
 					// Read cell
 					Cell cell = cellIterator.next();
